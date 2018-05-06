@@ -1,7 +1,7 @@
-# Vim Lessons -- specific to pVim
+# Vim Lessons -- specific to Vimo
 Let's get you up and running with Vim!
 
-First of all, make sure to have pVim set up (that is Vim + the pVim
+First of all, make sure to have Vimo set up (that is Vim + the Vimo
 configuration).  If you don't, don't worry, just check out the __Installing__
 section and come back, I'll wait.
 
@@ -16,7 +16,7 @@ please open this file with Vim:
 
 # Lesson 1: Modes
 Welcome to Vim! Let's get down to bussiness. I'll give you a tour of Vim, and
-particularly, using Vim with pVim configuration.
+particularly, using Vim with Vimo configuration.
 
 __IMPORTANT__: Press `j` to scroll down this file. Press `zz` to center the
 screen in the current line. Press `<esc>u` to undo. We'll see more commands
@@ -68,4 +68,4 @@ As you might have seen by now, most Vim commands can be _memoized_ easily, this
 is no coincidence. Vim encourages you to try and memoize commands and makes it
 particularly easy to do so.
 
-pVim also adds to this by defining a very coherent set of key-bindings.
+Vimo also adds to this by defining a very coherent set of key-bindings.

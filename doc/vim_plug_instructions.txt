@@ -1,7 +1,7 @@
 ------------------------------------
 Vim Plug
 ------------------------------------
-Vim Plug is the package manager pVim
+Vim Plug is the package manager Vimo
 uses to manage Vim plugins.
 
 macOS/Linux:

@@ -3,7 +3,7 @@ FONTCONFIG - Optional
 ------------------------------------
 If you want to use doctor to check 
 you have installed the default GUI 
-font for pVim: "Source Code Sans".
+font for Vimo: "Source Code Sans".
 
 Ubuntu:
 

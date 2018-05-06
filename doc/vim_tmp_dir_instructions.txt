@@ -1,7 +1,7 @@
 ------------------------------------
 Vim tmp directory
 ------------------------------------
-pVim puts swap files in a tmp 
+Vimo puts swap files in a tmp 
 directory so your working directory
 is kept clean.
 

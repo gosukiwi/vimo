@@ -1,7 +1,7 @@
 #! /bin/bash
 
-# This is pVim's doctor. It will tell you if your system needs to install
-# something in order for pVim to work.
+# This is Vimo's doctor. It will tell you if your system needs to install
+# something in order for Vimo to work.
 #
 # It checks for:
 # - git
@@ -68,10 +68,11 @@ DOCUMENTATION_DIR="$(realpath "$CURRENT_DIR/../doc")"
 # Start of script
 # ========================================
 echo "===================================="
-echo "pVim - Pretty Vim"
+echo "     Vimo - Batteries-included"
+echo "      configuration for Vim!"
 echo "===================================="
-echo "DOCTOR"
-echo "  Checking system..."
+echo "Running Doctor..."
+echo ""
 
 # Check for git
 if hasGit
@@ -171,5 +172,8 @@ else
   echo ""
   echo "  SYSTEM READY"
   echo ""
-  echo "All good! Open up Vim and run :PlugInstall"
+  echo "All good! You can install Vimo now:"
+  echo ""
+  echo "    $ bin/install"
+  echo ""
 fi

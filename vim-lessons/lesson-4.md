@@ -46,7 +46,7 @@ You can also yank with `VISUAL` mode. Once you have a selection, simply press
 
 # The clipboard
 By default in Vim, the clipboard is stored in a different register called `"*`.
-pVim makes the `unnamed` and the `"*` registers equal, meaning you can yank to
+Vimo makes the `unnamed` and the `"*` registers equal, meaning you can yank to
 the clipboard and put from the clipboard by default.
 
 For example, you can `Y` to yank this line, then go to a browser and paste it
@@ -54,7 +54,7 @@ somewhere using `<control-v>`. Or you can copy some text from your browser and
 use `p` to _put_ it in your Vim instance.
 
 # Moving chunks of text
-pVim has a few bindings to make it easy to move text around. You can use `<c-j>`
+Vimo has a few bindings to make it easy to move text around. You can use `<c-j>`
 and `<c-k>` to sort the lines below:
 
 

@@ -22,7 +22,7 @@ worry about the last one for now ;)
 If you run `:ls` you can see a list of all buffers. Active buffers have an `a`
 and hidden buffers have an `h`, among other symbols.
 
-This list is not that friendly, so pVim provides `<space>b` for _buffers_. It
+This list is not that friendly, so Vimo provides `<space>b` for _buffers_. It
 shows you a list of all open buffers and their respective files, among some
 other info. You can scroll up and down with `<control-j>` and `<control-k>`, or
 as it's referred in Vim, `<c-j>` and `<c-k>`.

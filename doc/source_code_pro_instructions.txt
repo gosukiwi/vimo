@@ -2,7 +2,7 @@
 SOURCE CODE PRO - Optional
 ------------------------------------
 If you want to use the default GUI 
-font for pVim: "Source Code Pro".
+font for Vimo: "Source Code Pro".
 
 macOS:
 
