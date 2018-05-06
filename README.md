@@ -15,31 +15,44 @@ It also aims to have a coherent configuration and key-binding scheme. You
 can extend it any way you like, but first, let's see the features!
 
 ## Installing
-See the complete (Installing Guide)[lessons/installing.md] if you need detailed
-instructions. Here's a glimpse of how to do it:
+First, run the doctor and see if your system is ready:
 
     $ git clone git@github.com:gosukiwi/vimo.git
     $ cd vimo
     $ bin/doctor # this will warn you if there's something missing in your system
 
-If the doctor says everything is okay:
+## Installing Vimo on top of Vim
+If you don't want to keep your other Vim configuration, just replace it with
+Vimo:
+
+    $ bin/install
+
+This is what the install script looks like:
 
     $ mv ~/.vimrc ~/.vimrc.old
     $ ln -s .vimo ~/.vimrc
-    $ vim
-    
-Then inside Vim run `:PlugInstall`, restart Vim and you're done!
+    $ vim -c PlugInstall
 
-## Running Vimo along-side other Vim
+## Installing Vimo along-side Vim
 In this case, you can use `bin/vimo` executable which will open a `vim` instance
-with the `.vimo` configuration file.
+using the `.vimo` configuration file.
+
+If you like it this way, simply
+
+    $ ln -s bin/vimo /usr/local/bin/vimo
+    $ bin/vimo -c PlugInstall
+
+You can now use vimo and pass parameters to it as if it was any other vim
+executable by using `vimo` instead of `vim`.
+
+    $ vimo my-file
 
 If you want to use a GUI, something like `mvim` or `gvim`, you can make an alias
 anywhere in your `.profile` or `.zprofile` file:
 
-    alias vimo=mvim -u /path/to/.vimo
+    alias vimo=mvim -u /path/to/.vimo .
 
-You can also alias `bin/vimo` to `vimo` to make it easier.
+Remember to run `:PlugInstall` the first time you open Vimo.
 
 ### Updating
 To get the latest version simply go to the repo and do `git pull`, because the
