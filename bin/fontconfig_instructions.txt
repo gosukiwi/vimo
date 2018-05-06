@@ -1,0 +1,12 @@
+------------------------------------
+FONTCONFIG - Optional
+------------------------------------
+If you want to use doctor to check 
+you have installed the default GUI 
+font for pVim: "Source Code Sans".
+
+Ubuntu:
+
+    $ sudo apt-get install fontconfig
+
+------------------------------------

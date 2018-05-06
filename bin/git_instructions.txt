@@ -1,0 +1,11 @@
+------------------------------------
+GIT - Required
+------------------------------------
+Please install `git'. You can do it
+as follows:
+
+Ubuntu:
+
+    $ sudo apt-get install git
+
+------------------------------------

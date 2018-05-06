@@ -1,0 +1,30 @@
+------------------------------------
+SOURCE CODE PRO - Optional
+------------------------------------
+If you want to use the default GUI 
+font for pVim: "Source Code Pro".
+
+macOS:
+
+    $ brew tap caskroom/fonts && brew cask install font-source-code-pro
+
+Ubuntu:
+
+    $ [ -d /usr/share/fonts/opentype ] || sudo mkdir /usr/share/fonts/opentype
+    $ sudo git clone --depth 1 --branch release \
+      https://github.com/adobe-fonts/source-code-pro.git /usr/share/fonts/opentype/scp
+    $ sudo fc-cache -f -v
+
+Arch:
+
+    $ sudo pacman -S adobe-source-code-pro-fonts
+
+Fedora:
+
+    $ sudo dnf install adobe-source-code-pro-fonts
+
+Gentoo:
+
+    $ emerge -av source-pro
+
+------------------------------------

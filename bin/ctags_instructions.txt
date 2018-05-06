@@ -1,0 +1,12 @@
+------------------------------------
+CTAGS - Optional
+------------------------------------
+If you want to use Go-To-Definition
+and tag-related commands, please 
+install `ctags'.
+
+Ubuntu:
+
+    $ sudo apt-get install ctags
+
+------------------------------------

@@ -1,4 +1,4 @@
-# TODO: Use proper bash ehader
+#! /bin/bash
 
 # Check for:
 # git
@@ -7,3 +7,139 @@
 # vim plug
 # ctags
 # SourceCodePro (optional)
+#
+
+# Helper functions
+# ========================================
+ok() {
+  printf "  - OK: %s" "$1"
+  echo ""
+}
+
+fail() {
+  printf "  - ERROR: %s" "$1"
+  echo ""
+}
+
+warn() {
+  printf "  - WARN: %s" "$1"
+}
+
+hasGit() {
+  [[ $(command -v git) ]];
+}
+
+hasCTags() {
+  [[ $(command -v ctags) ]];
+}
+
+hasVim8() {
+  [[ "$(vim --version | sed -n '/Vi IMproved 8\./p')" =~ Vi\ IMproved\ 8\.[0-9]+ ]];
+}
+
+hasVimPlug() {
+  [[ -e "$HOME/.vim/autoload/plug.vim" ]]
+}
+
+hasVimTempDir() {
+  [[ -e "$HOME/.vim/tmp" ]]
+}
+
+hasFontConfig() {
+  [[ $(command -v fc-list) ]]
+}
+# ========================================
+
+# State
+# ========================================
+errors=()
+CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# ========================================
+
+
+echo "===================================="
+echo "pVim - Pretty Vim"
+echo "===================================="
+echo "DOCTOR"
+echo "  Checking system..."
+
+# Check for git
+if hasGit
+then
+  ok "Git"
+else
+  fail "Git"
+  errors+=("git")
+fi
+
+# Check for Vim 8
+if hasVim8
+then
+  ok "Vim 8"
+else
+  fail "Vim 8"
+  errors+=("vim")
+fi
+
+# Ctags
+if hasCTags
+then
+  ok "CTags"
+else
+  warn "CTags"
+  errors+=("ctags")
+fi
+
+# Vim-Plug
+if hasVimPlug
+then
+  ok "Vim Plug"
+else
+  fail "Vim Plug"
+  errors+=("vim_plug")
+fi
+
+# Vim temp dir, used for swap files
+if hasVimTempDir
+then
+  ok "~/.vim/tmp/"
+else
+  if [[ $(mkdir -p "$HOME/.vim/tmp") ]];
+  then
+    ok "~/.vim/tmp/"
+  else
+    fail "vim_tmp_dir"
+  fi
+fi
+
+# Check for font
+checkForGuiFont() {
+  if [[ "$(fc-list | grep "Source Code Pro")" ]];
+  then
+    ok "Font installed (Source Code Pro)"
+  else
+    warn "Source Code Pro"
+    errors+=('source_code_pro')
+  fi
+}
+
+if hasFontConfig
+then
+  checkForGuiFont
+else
+  warn "fontconfig"
+  errors+=("fontconfig")
+fi
+
+# Display errors
+echo ""
+echo ""
+if [[ ${#errors[@]} -gt 0 ]];
+then
+  for error in "${errors[@]}"
+  do
+    cat "$CURRENT_DIR/${error}_instructions.txt"
+  done
+else
+  echo "Lookin' good! You can just open up Vim and run :PlugInstall"
+fi
