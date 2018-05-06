@@ -7,11 +7,15 @@ It also aims to have a coherent configuration and key-binding scheme. You
 can extend it any way you like, but first, let's see the features!
 
 ## Installing
+See the complete (Installing Guide)[lessons/installing.md] if you need detailed
+instructions. Here's a glimpse of how to do it:
 
     $ git clone <repo-url>
-    $ pvim/test-system # this will tell you if you need to install something
+    $ cd pvim
+    $ bin/doctor # this will warn you if there's something missing in your system
 
-    # if everything looks ok:
+If the doctor says everything is okay:
+
     $ mv ~/.vimrc ~/.vimrc.old
     $ ln -s pvim/.vimrc ~/.vimrc
     $ vim
@@ -44,23 +48,15 @@ This is what you get out-of-the-box:
 > by default. To disable the features you don't want, simply toggle some
 > variables at the top of the configuration file.
 
-## Leader Key
-In Vim, the leader key is a special key which is used to run commands. The key
-itself varies from person to person, some person like to use `.` or `,` for
-this. In pVim, we use `space`.
+## Quick Guide
+pVim is a Vim configuration. See why it's cool in the [Quick
+Guide](quick-guide.md).
 
-What can you do with `space`? Let's see:
+# New to Vim?
+No worries! We have you covered. Check out the [lessons](lessons/) and get up to
+speed in no time.
 
-### Finding Files
-pVim uses [CtrlP]() to easily fuzzy-find files in your project. To find a file,
-simply run in normal mode `<leader>f` -- where `f` stands for `file`. The format
-`<leader>f` means first press the leader key, then press `f`. In our case, the
-leader key is `spacebar` so that means press `spacebar`, then press `f`.
-
-## Dependencies
-
-* Vim 8
-* `ag` binary -- The silver search, easily install with `brew install`
-* _SourceCodePro_, free coding font from Adobe
-* `ctags` binary -- for the Go-To-Definition functionality. `brew install ctags`
-  for macOS, comes pre-installed with most Linux systems.
+The lessons give a broad overview on how to use Vim (and particularly pVim)
+efficiently. It's designed to get you out of beginner level and enable you to
+continue learning on your own, using Vim's great `:help` system as well as the
+internet :) 
