@@ -1,0 +1,16 @@
+------------------------------------
+Vim 8
+------------------------------------
+You to install Vim first:
+
+macOS:
+
+    $ brew install vim
+
+Ubuntu:
+
+    $ sudo add-apt-repository ppa:jonathonf/vim
+    $ sudo apt-get update
+    $ sudo apt-get install vim
+
+------------------------------------

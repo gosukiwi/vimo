@@ -37,16 +37,20 @@ hasVim8() {
   [[ "$(vim --version | sed -n '/Vi IMproved 8\./p')" =~ Vi\ IMproved\ 8\.[0-9]+ ]];
 }
 
+hasAnyVim() {
+  [[ "$(command -v vim)" ]];
+}
+
 hasVimPlug() {
-  [[ -e "$HOME/.vim/autoload/plug.vim" ]]
+  [[ -e "$HOME/.vim/autoload/plug.vim" ]];
 }
 
 hasVimTempDir() {
-  [[ -e "$HOME/.vim/tmp" ]]
+  [[ -e "$HOME/.vim/tmp" ]];
 }
 
 hasFontConfig() {
-  [[ $(command -v fc-list) ]]
+  [[ $(command -v fc-list) ]];
 }
 # ========================================
 
@@ -78,7 +82,13 @@ then
   ok "Vim 8"
 else
   fail "Vim 8"
-  errors+=("vim")
+
+  if hasAnyVim
+  then
+    errors+=("vim_update")
+  else
+    errors+=("vim")
+  fi
 fi
 
 # Ctags
@@ -108,13 +118,14 @@ else
   then
     ok "~/.vim/tmp/"
   else
-    fail "vim_tmp_dir"
+    fail "Vim's tmp folder"
+    errors+=("vim_tmp_dir")
   fi
 fi
 
 # Check for font
 checkForGuiFont() {
-  if [[ "$(fc-list | grep "Source Code Pro")" ]];
+  if fc-list | grep -q "Source Code Pro"
   then
     ok "Font installed (Source Code Pro)"
   else
@@ -132,14 +143,18 @@ else
 fi
 
 # Display errors
-echo ""
-echo ""
 if [[ ${#errors[@]} -gt 0 ]];
 then
+  echo ""
+  echo ""
+
   for error in "${errors[@]}"
   do
     cat "$CURRENT_DIR/${error}_instructions.txt"
   done
 else
-  echo "Lookin' good! You can just open up Vim and run :PlugInstall"
+  echo ""
+  echo "  SYSTEM READY"
+  echo ""
+  echo "All good! Open up Vim and run :PlugInstall"
 fi

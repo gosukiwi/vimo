@@ -1,0 +1,16 @@
+------------------------------------
+Update to Vim 8
+------------------------------------
+You need version 8 of Vim:
+
+macOS:
+
+    $ brew install vim --with-override-system-vi
+
+Ubuntu:
+
+    $ sudo add-apt-repository ppa:jonathonf/vim
+    $ sudo apt-get update
+    $ sudo apt-get install vim
+
+------------------------------------
