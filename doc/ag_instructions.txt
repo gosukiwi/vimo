@@ -1,0 +1,28 @@
+------------------------------------
+ag - the silver searcher
+------------------------------------
+Very handy for fetching a list of 
+files. Is smart enough to read 
+`.gitignore' and such.
+
+macOS:
+
+    $ brew install the_silver_searcher
+
+Ubuntu:
+
+    $ sudo apt-get install silversearcher-ag
+
+Arch:
+
+    $ pacman -S the_silver_searcher
+
+Fedora:
+
+    $ dnf install the_silver_searcher
+
+Gentoo:
+
+    $ emerge -a sys-apps/the_silver_searcher
+
+------------------------------------

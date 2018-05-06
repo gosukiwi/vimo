@@ -55,6 +55,10 @@ hasFontConfig() {
   [[ $(command -v fc-list) ]];
 }
 
+hasAg() {
+  [[ $(command -v ag) ]];
+}
+
 # State
 # ========================================
 errors=()
@@ -123,6 +127,15 @@ else
     fail "Vim's tmp folder"
     errors+=("vim_tmp_dir")
   fi
+fi
+
+# Check for ag
+if hasAg
+then
+  ok "ag (the silver searcher)"
+else
+  fail "ag (the silver searcher)"
+  errors+=("ag")
 fi
 
 # Check for font
