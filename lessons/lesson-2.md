@@ -1,7 +1,7 @@
 # Lesson 2: Insert Mode
-We took a glimpse at modes in Lesson 1. We learnt about `NORMAL` mode. `NORMAL`
-mode is the mode you want to be on 99% of the time. It's for scrolling, finding,
-browsing and basically reading text.
+You did it! Welcome to lesson 2. We took a glimpse at modes in Lesson 1. We
+learnt about `NORMAL` mode. `NORMAL` mode is the mode you want to be on 99% of
+the time. It's for scrolling, finding, browsing and basically reading text.
 
 When working with a text file, most of the time spent is reading it. We spend 
 way less time writing it. Especially if we are writing code.
