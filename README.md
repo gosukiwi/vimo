@@ -30,6 +30,17 @@ If the doctor says everything is okay:
     
 Then inside Vim run `:PlugInstall`, restart Vim and you're done!
 
+## Running Vimo along-side other Vim
+In this case, you can use `bin/vimo` executable which will open a `vim` instance
+with the `.vimo` configuration file.
+
+If you want to use a GUI, something like `mvim` or `gvim`, you can make an alias
+anywhere in your `.profile` or `.zprofile` file:
+
+    alias vimo=mvim -u /path/to/.vimo
+
+You can also alias `bin/vimo` to `vimo` to make it easier.
+
 ### Updating
 To get the latest version simply go to the repo and do `git pull`, because the
 `.vimrc` file is symlinked it will update automatically.
