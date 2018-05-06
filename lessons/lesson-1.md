@@ -70,5 +70,5 @@ particularly easy to do so.
 
 Vimo also adds to this by defining a very coherent set of key-bindings.
 
-To move to the next section,  press `<space>f` and type "le2", fuzzy finding for
+To move to the next section,  press `<space>f` and type `le2`, fuzzy finding for
 "lesson 2", then press `<enter>`.
