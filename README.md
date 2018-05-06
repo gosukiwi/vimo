@@ -1,4 +1,9 @@
 # Vimo
+
+<p align="center">
+  <img src="img/logo.gif">
+</p>
+
 Vimo is a vim configuration fine-tuned for Web Development, designed to include
 everything you'll need for efficient web development while keeping it minimal
 and follow the UNIX philosophy.
