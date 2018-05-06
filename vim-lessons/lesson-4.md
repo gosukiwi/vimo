@@ -1,19 +1,17 @@
-# Lesson 4: Cut/Copy/Paste
-Cut, copy and paste behave a little differently in Vim. Let's see with an
-example:
+# Lesson 4: Moving text around
+Copy and paste behave a little differently in Vim.
 
-Say we delete the letter `f` from `foo` by pressing `x` in `NORMAL`
-mode. Now, deleted text has been moved to a register. Vim is not limited to the
-clipboard, it has many different registers and you can do complex things with
-it.
+Say we delete a letter from a file by pressing `x` in `NORMAL` mode. Now,
+the deleted text has been saved to a register. A register is like the OS
+`clipboard`, a memory slot which stores some temporary text for us.
 
-For now, let's stick to simple functionality. Take a chance to run `:help
-registers` and read a bit about it.
+Vim is not limited to a single register though, it has many. We will not dive
+very deep with registers, but if you want to learn more, see `:help registers`.
 
-As you might have seen, it explains:
+For now, let's only talk about the unnamed register:
 
-> 1. Unnamed register ""
-> Vim fills this register with text deleted with the "d", "c", "s", "x" commands
+> Vim fills [the unnamed] register with text deleted with the "d", "c", "s", "x"
+> commands
 > [...]
 > Vim uses the contents of the unnamed register for any put command (p or P)
 which does not specify a register.
@@ -24,7 +22,7 @@ So, we can put whatever is in the unnamed register with `p` and `P`. Let's see!
 
 Go to the `F` of `Foo`. Press `x`, then press `p`.
 
-Done it? Groovy. As you can see, it turns out it writes `oFo`, that's because
+Done? Groovy. As you can see, it turns out it writes `oFo`, that's because
 `p` puts the content _after_ the cursor, use `P` to put it before:
 
   Foo
@@ -32,14 +30,10 @@ Done it? Groovy. As you can see, it turns out it writes `oFo`, that's because
 Nice! We can now "cut" and "paste". What about copy? Well, we call that yanking,
 and it's done with `y`, for _yank_. We can then paste with `p` or `P`. 
 
-`y` expects a _motion_, a value which can tell it how much to yank, should it yank
-the character? the word? the line?  until some character? We can do all that:
-  
-    yl  - yank one to the right, this matches a single character
-    yw  - yank word
-    yy  - yank line
-    Y   - yank line
-    yf. - yank until you find a dot character
+`y` expects a _motion_, which as we saw in lesson 3, it's any operation which
+moves the cursor, like `hjkl`, `w`, `b`, `$`, `f.` (_find_ the dot character)
+etc. We can also use `yy` or `Y` to yank the whole line, just like we used `dd`
+or `D` to delete the whole line, or `cc` and `C` to change the whole line.
   
 Play with it here:
 
@@ -50,19 +44,24 @@ Play with it here:
 You can also yank with `VISUAL` mode. Once you have a selection, simply press
 `y` to yank it.
 
-# Moving text around
+# The clipboard
+By default in Vim, the clipboard is stored in a different register called `"*`.
+pVim makes the `unnamed` and the `"*` registers equal, meaning you can yank to
+the clipboard and put from the clipboard by default.
 
-# The repeat command
-Repeating commands are a core part of Vim experience. One of the main resons
-people don't quite get Vim is because they never learn about repeating commands.
+For example, you can `Y` to yank this line, then go to a browser and paste it
+somewhere using `<control-v>`. Or you can copy some text from your browser and
+use `p` to _put_ it in your Vim instance.
 
-It's one of the tools you use daily
+# Moving chunks of text
+pVim has a few bindings to make it easy to move text around. You can use `<c-j>`
+and `<c-k>` to sort the lines below:
 
-# Buffers and Windows
 
-# Surround
-Surrounds and change tags
+    Sort the lines below, from 1 up to 4
+    4 Taz
+    3 Baz
+    1 Foo
+    2 Bar
 
-# ADVANCED
-# Marks
-# Macros
+Pretty handy huh? And it also works in `INSERT` mode, give it a shot!
