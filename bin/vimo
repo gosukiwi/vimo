@@ -3,4 +3,4 @@
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 VIMOFILE="$(realpath "$CURRENT_DIR/../.vimo")"
 
-vim -u $VIMOFILE
+vim -u $VIMOFILE $*
