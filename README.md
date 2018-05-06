@@ -18,14 +18,14 @@ can extend it any way you like, but first, let's see the features!
 See the complete (Installing Guide)[lessons/installing.md] if you need detailed
 instructions. Here's a glimpse of how to do it:
 
-    $ git clone <repo-url>
-    $ cd pvim
+    $ git clone git@github.com:gosukiwi/vimo.git
+    $ cd vimo
     $ bin/doctor # this will warn you if there's something missing in your system
 
 If the doctor says everything is okay:
 
     $ mv ~/.vimrc ~/.vimrc.old
-    $ ln -s pvim/.vimrc ~/.vimrc
+    $ ln -s .vimo ~/.vimrc
     $ vim
     
 Then inside Vim run `:PlugInstall`, restart Vim and you're done!
