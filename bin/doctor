@@ -1,13 +1,15 @@
 #! /bin/bash
 
-# Check for:
-# git
-# vim 8
-# .vim/tmp directory
-# vim plug
-# ctags
-# SourceCodePro (optional)
+# This is pVim's doctor. It will tell you if your system needs to install
+# something in order for pVim to work.
 #
+# It checks for:
+# - git
+# - vim 8
+# - .vim/tmp directory
+# - vim plug
+# - ctags (optional)
+# - Source Code Pro font (optional)
 
 # Helper functions
 # ========================================
@@ -52,15 +54,15 @@ hasVimTempDir() {
 hasFontConfig() {
   [[ $(command -v fc-list) ]];
 }
-# ========================================
 
 # State
 # ========================================
 errors=()
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOCUMENTATION_DIR="$(realpath "$CURRENT_DIR/../doc")"
+
+# Start of script
 # ========================================
-
-
 echo "===================================="
 echo "pVim - Pretty Vim"
 echo "===================================="
@@ -150,7 +152,7 @@ then
 
   for error in "${errors[@]}"
   do
-    cat "$CURRENT_DIR/${error}_instructions.txt"
+    cat "$DOCUMENTATION_DIR/${error}_instructions.txt"
   done
 else
   echo ""
