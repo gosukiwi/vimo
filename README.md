@@ -34,21 +34,21 @@ This is what the install script looks like:
     $ vim -c PlugInstall
 
 ## Installing Vimo along-side Vim
-In this case, you can use `bin/vimo` executable which will open a `vim` instance
-using the `.vimo` configuration file.
-
-If you like it this way, simply
+To install Vimo this way, you can use the `bin/vimo` executable. It will open a
+`vim` instance using the `.vimo` configuration file.
 
     $ ln -s bin/vimo /usr/local/bin/vimo
     $ bin/vimo -c PlugInstall
 
 You can now use vimo and pass parameters to it as if it was any other vim
-executable by using `vimo` instead of `vim`.
+executable:
 
     $ vimo my-file
 
-If you want to use a GUI, something like `mvim` or `gvim`, you can make an alias
-anywhere in your `.profile` or `.zprofile` file:
+If you want to use a __GUI__, something like `mvim` or `gvim`, you can make an
+alias anywhere in your `.profile` or `.zprofile` file. 
+
+For example, for `mvim`:
 
     alias vimo=mvim -u /path/to/.vimo .
 
