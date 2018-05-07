@@ -62,10 +62,14 @@ For example, for `mvim`:
 
 Remember to run `:PlugInstall` the first time you open Vimo.
 
-### Updating
+## Updating
 To get the latest version simply go to the repo and do `git pull`, because the
 `.vimrc` file is symlinked it will update automatically.
 
+## Uninstall
+To uninstall you can simply
+
+    $ mv ~/.vimrc.old ~/.vimrc
 
 # New to Vim?
 No worries! We have you covered. Check out the [lessons](lessons/) and get up to
