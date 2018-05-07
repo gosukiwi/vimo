@@ -123,3 +123,5 @@ then press `cit` for _change inside tag_. Then simply type the text and press
 
 You can change the whole line with `cc` or `C`. There is also an in-place
 character replace command: `r`. This is the best for fixing typos.
+
+Now let's go to lesson 4 by doing `<space>fle4<enter>`.

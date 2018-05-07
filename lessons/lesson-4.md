@@ -65,3 +65,5 @@ and `<c-k>` to sort the lines below:
     2 Bar
 
 Pretty handy huh? And it also works in `INSERT` mode, give it a shot!
+
+Now let's go to lesson 5 by doing `<space>fle5<enter>`.

@@ -60,3 +60,5 @@ example, say you want to replace all the `_` with spaces in the text below:
 Put the cursor in `A`, press `f_` to find the first underscore, then press `r `
 to replace it with a space. Press `;` to repeat the search, press `.` to repeat
 the command. Press `;.` a few more times and you are done.
+
+Now let's go to lesson 6 by doing `<space>fle6<enter>`.

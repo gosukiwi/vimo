@@ -80,3 +80,5 @@ If you want to rename, move or delete a file, you can always use the terminal:
 
     $ mv old-file new-file
     $ rm some-other-file
+
+Now let's go to lesson 7 by doing `<space>fle7<enter>`.

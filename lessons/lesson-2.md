@@ -127,3 +127,5 @@ it's consistent so eventually it gets easier.
 We'll see more commands in the next lessons, for now just know that pressing `:`
 enters command-line mode, you run commands by pressing `<enter>` and you can
 leave anytime by pressing `<esc>`, which will take you back to `NORMAL` mode.
+
+Now let's go to lesson 3 by doing `<space>fle3<enter>`.
