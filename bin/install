@@ -1,0 +1,15 @@
+#! /bin/bash
+
+CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASE_DIR="$(realpath "$CURRENT_DIR/../")"
+
+"$CURRENT_DIR/doctor" || exit 1;
+
+echo "* Installing..."
+
+if [[ -e "$HOME/.vimrc" ]];
+then
+  mv ~/.vimrc ~/.vimrc.old
+fi
+ln -s "$BASE_DIR/.vimo" ~/.vimrc
+vim -c PlugInstall

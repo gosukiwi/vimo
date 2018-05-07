@@ -71,7 +71,7 @@ echo "===================================="
 echo "     Vimo - Batteries-included"
 echo "      configuration for Vim!"
 echo "===================================="
-echo "Running Doctor..."
+echo "* Running Doctor..."
 echo ""
 
 # Check for git
@@ -168,12 +168,7 @@ then
   do
     cat "$DOCUMENTATION_DIR/${error}_instructions.txt"
   done
-else
-  echo ""
-  echo "  SYSTEM READY"
-  echo ""
-  echo "All good! You can install Vimo now:"
-  echo ""
-  echo "    $ bin/install"
-  echo ""
+
+  exit 1
 fi
+echo ""
