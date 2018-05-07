@@ -32,9 +32,8 @@ can extend it any way you like, but first, let's see the features!
 * Very well documented set of configuration
 * Lessons for new users as well as a quick-start guide for experienced Vim users
 
-## Quick Guide
-Vimo is a Vim configuration. See why it's cool in the [Quick
-Guide](quick-guide.md).
+Take a glance at the features in the [Quick Start
+Guide](doc/quick-start-guide.md).
 
 ## Installing
 Clone the repo and run the `install` script:
@@ -42,12 +41,9 @@ Clone the repo and run the `install` script:
     $ git clone git@github.com:gosukiwi/vimo.git
     $ vimo/bin/install
 
-If you lack some dependency, the script will help you install everything you
-need.
-
 ## Installing Vimo along-side Vim
-To install Vimo this way, you can use the `bin/vimo` executable. It will open a
-`vim` instance using the `.vimo` configuration file.
+To use Vimo as a separate editor, you can use the `bin/vimo` executable. It will
+open a `vim` instance using the `.vimo` configuration file.
 
     $ ln -s bin/vimo /usr/local/bin/vimo
     $ bin/vimo -c PlugInstall
