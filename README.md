@@ -37,23 +37,13 @@ Vimo is a Vim configuration. See why it's cool in the [Quick
 Guide](quick-guide.md).
 
 ## Installing
-First, run the doctor and see if your system is ready:
+Clone the repo and run the `install` script:
 
     $ git clone git@github.com:gosukiwi/vimo.git
-    $ cd vimo
-    $ bin/doctor # this will warn you if there's something missing in your system
+    $ vimo/bin/install
 
-## Installing Vimo on top of Vim
-If you don't want to keep your other Vim configuration, just replace it with
-Vimo:
-
-    $ bin/install
-
-This is what the install script looks like:
-
-    $ mv ~/.vimrc ~/.vimrc.old
-    $ ln -s .vimo ~/.vimrc
-    $ vim -c PlugInstall
+If you lack some dependency, the script will help you install everything you
+need.
 
 ## Installing Vimo along-side Vim
 To install Vimo this way, you can use the `bin/vimo` executable. It will open a

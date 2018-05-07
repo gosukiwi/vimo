@@ -3,7 +3,14 @@
 CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 BASE_DIR="$(realpath "$CURRENT_DIR/../")"
 
-"$CURRENT_DIR/doctor" || exit 1;
+if ! "$CURRENT_DIR/doctor"
+then
+  echo ""
+  echo "There are missing requirements. The installation cannot continue."
+  echo "Please address the issues above and then run 'install' again."
+  echo ""
+  exit 1
+fi
 
 echo "* Installing..."
 
@@ -13,3 +20,7 @@ then
 fi
 ln -s "$BASE_DIR/.vimo" ~/.vimrc
 vim -c PlugInstall
+
+echo ""
+echo "  Vimo has been installed. Happy Vimming!"
+echo ""
