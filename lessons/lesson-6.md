@@ -54,4 +54,4 @@ Try it, put a mark here with `mq`, then scroll around, then come back with
 This is very useful for big files, or going back and forth between to methods of
 the same file.
 
-Now let's go to lesson 8 by doing `<space>fle8<enter>`.
+Now let's go to lesson 7 by doing `<space>fle7<enter>`.

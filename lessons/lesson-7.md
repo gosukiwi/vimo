@@ -61,4 +61,4 @@ Put the cursor in `A`, press `f_` to find the first underscore, then press `r `
 to replace it with a space. Press `;` to repeat the search, press `.` to repeat
 the command. Press `;.` a few more times and you are done.
 
-Now let's go to lesson 6 by doing `<space>fle6<enter>`.
+Now let's go to lesson 8 by doing `<space>fle8<enter>`.

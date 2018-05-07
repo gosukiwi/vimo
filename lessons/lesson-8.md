@@ -1,4 +1,4 @@
-# Lesson 8: Macros
+# Lesson 8: Repeating with Macros
 Macros allow you to record commands and reproduce several times. It's great for
 repetitive tasks, and can save you quite a considerable amount of time.
 

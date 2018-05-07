@@ -81,7 +81,12 @@ If you want to rename, move or delete a file, you can always use the terminal:
     $ mv old-file new-file
     $ rm some-other-file
 
-Now let's go to lesson 7 by doing `<space>fle7<enter>`.
+Now let's go to lesson 6 by doing `<space>fle6<enter>`.
 
 # Tabs
-Tabs are...
+Tabs are a way to group windows. They are rarely used in Vim, but they allow for
+some pretty complex workflow.
+
+TODO
+
+For more info on this topic see `:help buffers` and `:help tab-page-intro`.
