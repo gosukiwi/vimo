@@ -75,6 +75,3 @@ The lessons give a broad overview on how to use Vim (and particularly Vimo)
 efficiently. It's designed to get you out of beginner level and enable you to
 continue learning on your own, using Vim's great `:help` system as well as the
 internet :) 
-
-# TODO
-- doctor && install
