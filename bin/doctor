@@ -8,6 +8,7 @@
 # - vim 8
 # - .vim/tmp directory
 # - vim plug
+# - ag (the silver searcher)
 # - ctags (optional)
 # - Source Code Pro font (optional)
 
