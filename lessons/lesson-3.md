@@ -125,3 +125,9 @@ You can change the whole line with `cc` or `C`. There is also an in-place
 character replace command: `r`. This is the best for fixing typos.
 
 Now let's go to lesson 4 by doing `<space>fle4<enter>`.
+
+# Go-To-Definition
+This is a very handy feature when writing code. Vimo includes some bindings for
+working with `tags`.
+
+TODO

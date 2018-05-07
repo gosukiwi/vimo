@@ -1,84 +1,57 @@
-# Lesson 6: Buffers, Windows, Tabs?
-This is a common make-or-break moment for many new users. 
+# Lesson 6: Surround and Matching Pairs
+One cool feature is _surround_. You can use it in `VISUAL` mode to wrap the
+selection with a _pair_.
 
-> How do I do tabs in Vim?
+For example:
 
-That is a common question among IDE users, or users with editors like Textmate,
-Sublime, VSCode or Atom. The answer is: You can, but it's not really what you
-think it is.
+    a = Hello World!
 
-Vim has it's own way to display and navigate though files. It might be daunting
-but it's mostly bad reputation. You can do some interesting things with it, like
-having many viewports on different parts of the same file or even replacing
-`tmux`.
+Put the cursor in `H`, press `v` then `f!` to select the whole `Hello World!`.
+Now press `S"` to surround the selection with quotes.
 
-Let's start with `buffer`. A buffer is the in-memory text of a file. The file
-remains unchanged until you write the buffer to the file. 
+Vim is smart enough know how to interpret more characters. For example:
 
-A buffer can be `active`, `hidden` or `inactive`. A buffer is `active` if it's
-being displayed in a window, when it's not being displayed is `hidden`. Don't
-worry about the last one for now ;)
+    a = 2 + 3 - 1
 
-If you run `:ls` you can see a list of all buffers. Active buffers have an `a`
-and hidden buffers have an `h`, among other symbols.
+Put the cursor in the `2`, press `vf3` to select the first binary operation
+(addition) -- then press `S(` to add parens around.
 
-This list is not that friendly, so Vimo provides `<space>b` for _buffers_. It
-shows you a list of all open buffers and their respective files, among some
-other info. You can scroll up and down with `<control-j>` and `<control-k>`, or
-as it's referred in Vim, `<c-j>` and `<c-k>`.
+Pretty cool! It works with `{ and [` too.
 
-If you don't see many buffers, it's because you haven't opened any other file
-yet. To open a file do `<space>f` for _files_. It will show all the files in the
-current working directory. Select any file, like a lesson for example. Type
-`lesson` and the fuzzy finder will show all matching files. Press `<c-v>` for
-`vertical` to open it in a vertical split window.
+# Find pair
 
-If you now do `<space>b` you should see the new file in your buffer list.
+You can use `%` to quickly _find the pair_ of the character under the cursor.
 
-But what did just happen? A new window opened. A window is a viewport of a
-buffer. We are now looking at two buffers in two windows, side by side.
+    (+ 2 (- 3 2))
 
-We can create more windows and arrange them in many different patterns. For
-example, `<space>wv` for `windows vertical` creates a new vertical window.
-`<space>ww` for `windows create` creates a new horizontal window. You can
-navigate from one window to another with `<space>w` and `hjkl`. So `<space>wj`
-to go to the window below, `<space>wl` to go to the window on the right, and so
-on. You can also use `<c-hjkl>` if you prefer that way.
+Place the cursor in any `(`. Press `%` to move the cursor to the matching
+parentheses. This is very useful in complex strings.
 
-You can even press `<space>wr` to rotate the window layout :)
+It also works with XML tags:
 
-Now, to change the buffer a windows is showing, focus that window, and then
-press `<space>b`, use `<c-j>` and `<c-k>` to pick a buffer and press `<enter>`
-to display it.
+    <p>Hello, World</p>
 
-Try it, focus the other window and pick this buffer, the `lesson-6.md` buffer.
+Put the cursor in the `p`, then press `%` to go to the closing tag. Note that if
+you put the cursor in `>` or `<` it matches the other pair within the same tag,
+it doesn't work in the same way.
 
-You are now looking at the same buffer from two different pointviews at the same
-time. This can be useful for big files.
+You can use _text objects_ using pairs too:
 
-## [TIP] Toggle Buffers
-There is a very easy way to toggle between the current buffer and the last
-buffer, that is `<space><tab>`. It's very handy to go back and forward between
-files, like when editing HTML and CSS or checking on a documentation file while
-writing code.
+    (select me)
 
-# Browsing files
-As you have seen, you can use `<space>f` to open and search for files. Sometimes
-you just don't know the name of the file, it those cases it feels easier to just
-see the contents of some folder.
+To select the text inside the parentheses, go to `(`, press `vi(` to _visually
+select inside (_. As you have guessed, this works for XML tags, parens, quotes
+and pretty much any pair.
 
-In that case, you can use the file browser by pressing `<space>F` for _Files_ or
-`-` for short.
+# Marks
+You can add _marks_ to some positions inside a buffer with `m` followed by an
+identifier so we can refer to it later. For example, `ma` for _mark a_. You can
+then go to mark a by pressing `'a`.
 
-You can use `-` to go up one level. Press `<enter>` to open a file and `%` to
-create a new file.
+Try it, put a mark here with `mq`, then scroll around, then come back with
+`'q`.
 
-Moving, renaming and changing files is not implemented, because of the UNIX
-philosophy, this plugin tries not to do too much.
+This is very useful for big files, or going back and forth between to methods of
+the same file.
 
-If you want to rename, move or delete a file, you can always use the terminal:
-
-    $ mv old-file new-file
-    $ rm some-other-file
-
-Now let's go to lesson 7 by doing `<space>fle7<enter>`.
+Now let's go to lesson 8 by doing `<space>fle8<enter>`.
