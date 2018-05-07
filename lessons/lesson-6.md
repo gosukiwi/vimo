@@ -63,11 +63,20 @@ files, like when editing HTML and CSS or checking on a documentation file while
 writing code.
 
 # Browsing files
-As you have seen, you can use `<space>f` to open and search for files. What
+As you have seen, you can use `<space>f` to open and search for files. Sometimes
+you just don't know the name of the file, it those cases it feels easier to just
+see the contents of some folder.
 
-# Surround and Matching Pairs
-Surrounds and change tags
+In that case, you can use the file browser by pressing `<space>F` for _Files_ or
+`-` for short.
 
-# ADVANCED
-# Marks
-# Macros
+You can use `-` to go up one level. Press `<enter>` to open a file and `%` to
+create a new file.
+
+Moving, renaming and changing files is not implemented, because of the UNIX
+philosophy, this plugin tries not to do too much.
+
+If you want to rename, move or delete a file, you can always use the terminal:
+
+    $ mv old-file new-file
+    $ rm some-other-file
