@@ -243,8 +243,12 @@ nnoremap <leader>cr :call ReloadCTags()<CR>
 " on vim open, reload the tags
 ":autocmd VimEnter * :call ReloadCTags()
 
-" use a `.tags` file so it's hidden by default
-set tags=./tags,tags,.tags
+" Allow to use a `.tags` file so it's hidden by default, `tags` can also be
+" used if you prefer.
+"
+" Because of the `;`, vim also recurses upwards so you can open deeply nested
+" files and Vim will look up for a corresponding tagfile.
+set tags=./.tags;,./tags;
 
 " [ PLUGINS & VISUALS ] -----------------------------------------------------
 " Plugin-related configuration
