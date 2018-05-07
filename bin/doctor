@@ -60,7 +60,7 @@ hasAg() {
   [[ $(command -v ag) ]];
 }
 
-printDocumentationFor() {
+printDocumentation() {
   echo ""
   echo ""
 
@@ -173,14 +173,14 @@ fi
 # Display errors
 if [[ ${#errors[@]} -gt 0 ]];
 then
-  printDocumentationFor "${errors[@]}"
+  printDocumentation "${errors[@]}"
   exit 1
 fi
 
 # Display warnings
 if [[ ${#warns[@]} -gt 0 ]];
 then
-  printDocumentationFor "${warns[@]}"
+  printDocumentation "${warns[@]}"
 fi
 
 echo ""
