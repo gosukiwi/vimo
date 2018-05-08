@@ -70,5 +70,24 @@ particularly easy to do so.
 
 Vimo also adds to this by defining a very coherent set of key-bindings.
 
+# Relative Line Numbers
+Something you might find odd is that the line numbers are relative, that means,
+they start counting from the position of the current line. This is very handy
+when using `j` and `k` with a `[counter]`.
+
+You can append a `[counter]` to some commands, like the moving commands, to
+repeat them. For example, `3j` means _3 times, go down_, which will move the
+cursor 3 lines down.
+
+Because of this feature, to go to a particular line, all you need to do is read
+the line-number and press either `j` or `k` respectively. For example, to go to
+the heading, you can press `11k`. Then use `11j` to come back.
+
+Note that the current line always displays it's __real__ line number, so you
+know where you are in the file. Remember you can always go to a line by perssing
+`[line-number]G`, like `85G` or `87G`.
+
+TODO: Talk about <c-a>
+
 To move to the next section,  press `<space>f` and type `le2`, fuzzy finding for
 "lesson 2", then press `<enter>`.

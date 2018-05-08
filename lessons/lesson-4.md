@@ -66,4 +66,15 @@ and `<c-k>` to sort the lines below:
 
 Pretty handy huh? And it also works in `INSERT` mode, give it a shot!
 
-Now let's go to lesson 5 by doing `<space>fle5<enter>`.
+# Joining lines
+This is another very useful feature. You can _join_ lines with `J`, try it:
+
+    Today
+    is
+    a
+    nice
+    day.
+
+Now put the cursor anywhere in the `Today` line. Press `J` a few times.
+
+Great job! Let's go to lesson 5 by doing `<space>fle5<enter>`.

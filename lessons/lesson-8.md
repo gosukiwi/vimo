@@ -69,14 +69,3 @@ ignore this for now.
 
 If you are interested, see `:help complex-repeat` to learn everything about
 macros.
-
-# You did it!
-Yay! You did it! Hopefully you learnt something along the way. You can do a lot
-with what you've learnt, enough to 
-
-Remember to use the `:help` command, try and get used to it, it will take you
-far.
-
-Cheers!
-
--- Fede

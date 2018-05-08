@@ -28,6 +28,7 @@ then
 fi
 
 ln -s "$BASE_DIR/.vimo" ~/.vimrc
+mkdir "$HOME/.vimo"
 vim -c PlugInstall
 
 echo ""

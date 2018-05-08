@@ -16,13 +16,14 @@ set nocompatible
 " automatically-inserted indentation.
 set backspace=indent,eol,start
 
-" turn on syntax highlighting
-syntax on
-
-" make vim try to detect file types and load plugins for them
-filetype on
-filetype plugin on
-filetype indent on
+" a filetype plugin is a Vim script that is loaded whenever Vim opens or
+" creates a file of that type.
+"
+" these lines add `~/.vimo` to the `runtimepath` so all file-type plugins can
+" live in `~/.vimo/ftplugin`
+"
+let &runtimepath .= ',' . string("~/.vimo")
+filetype plugin indent on
 
 " reload files changed outside vim
 set autoread
@@ -34,6 +35,9 @@ autocmd FocusGained,BufEnter * :checktime
 " default encoding to utf 8
 set encoding=utf-8
 set fileencoding=utf-8
+
+" turn on syntax highlighting
+syntax on
 
 " enable matchit plugin which ships with vim and greatly enhances `%`
 runtime macros/matchit.vim
@@ -269,6 +273,7 @@ Plug 'mbbill/undotree'                " display a graph of the undo history when
 " -- Web Development
 Plug 'w0rp/ale'                       " linters
 Plug 'vim-ruby/vim-ruby'              " default ruby syntax is SLOW
+Plug 'rhysd/vim-textobj-ruby'         " add `r` (for Ruby) text-object, allow for things like `dar` and `cir`
 Plug 'mattn/emmet-vim'                " emmet/zen-coding
 Plug 'kchmck/vim-coffee-script'       " coffeescript support
 Plug 'hail2u/vim-css3-syntax'         " css3 support

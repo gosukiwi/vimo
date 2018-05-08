@@ -31,6 +31,12 @@ As you might have realized, in this case, both with `f` and `n`, their uppercase
 counterpart does the same but in opposite direction. Vim tries to keep things
 somewhat consistent.
 
+# Go-To-Definition
+This is a very handy feature when writing code. Vimo includes some bindings for
+working with `tags`.
+
+TODO
+
 # Deleting text
 Deleting text in `VISUAL` mode is quite simple, just press `x` or `d` and your
 selection is deleted.
@@ -126,8 +132,7 @@ character replace command: `r`. This is the best for fixing typos.
 
 Now let's go to lesson 4 by doing `<space>fle4<enter>`.
 
-# Go-To-Definition
-This is a very handy feature when writing code. Vimo includes some bindings for
-working with `tags`.
+## Add
+Add with `<c-a>`
 
 TODO

@@ -68,6 +68,11 @@ Try it below, fix the following sequence. Play around with `o` and `O`:
   6
   9
 
+## Insert Mode Commands
+There are several insert-mode commands:
+
+    <c-w> - Delete word
+
 # Visual Mode
 Visual mode is basically what other editors call a "selection". In Vim, you can
 select manually by using the moving commands, select by line or select by block.

@@ -8,24 +8,21 @@ Vimo is a vim configuration fine-tuned for Web Development, designed to include
 everything you'll need for efficient web development while keeping it minimal
 and follow the UNIX philosophy.
 
-It tries to keep plugins minimal and use as many core functionality as possible
-in order to perform most tasks.
+Vimo tries to keep plugins minimal and use as many core functionality as
+possible.
 
-It also aims to have a coherent configuration and key-binding scheme. You
-can extend it any way you like, but first, let's see the features!
+The biggest feature for Vimo though is the coherent set of key-bindings. If
+you've used Spacemacs, then you know what I mean. Otherwise, don't worry, just
+check out the [respective lesson here].
 
 # What you get
 
 * Fuzzy-finder for files, buffers and tags
-* Go-To-Definition, Find-All-Instances for popular programming languages
+* Go-To-Definition for popular programming languages
+* Linting (async) for popular programming languages
 * Persistent undo -- Close vim, open it again, and still be able to use undo!
 * Undo Tree -- A UI which displays the history of all undo commands and their
   branching, like a git log
-* Linting (async) for popular programming languages
-* Lightline -- A status bar at the bottom of Vim to show important file info
-* Tab autocompletion while typing
-* Familiar functionality, save with Ctrl-S, copy with Ctrl-C and paste with
-  Ctrl-V
 * Emmet/Zencoding -- Expand CSS selectors into HTML elements
 * Coherent Bindings -- Easily memoizable commands for managing windows, buffers,
   files, and pretty much every feature.
