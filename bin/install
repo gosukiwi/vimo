@@ -18,6 +18,15 @@ if [[ -e "$HOME/.vimrc" ]];
 then
   mv ~/.vimrc ~/.vimrc.old
 fi
+
+# If it still exists, it's because vimrc.old already exists too
+if [[ -e "$HOME/.vimrc" ]];
+then
+  echo "Looks like $HOME/.vimrc cannot be renamed to '.vimrc.old'"
+  echo "Please do it manually and then try again."
+  exit 1
+fi
+
 ln -s "$BASE_DIR/.vimo" ~/.vimrc
 vim -c PlugInstall
 
