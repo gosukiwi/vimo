@@ -365,3 +365,5 @@ colorscheme nova   " set the color theme to atom-dark
 set colorcolumn=80 " make a mark for column 80
 " and set the mark color to lightgray
 highlight OverLength ctermbg=lightgray guibg=lightgray
+
+" vim:ft=vim
