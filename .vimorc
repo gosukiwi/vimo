@@ -19,10 +19,10 @@ set backspace=indent,eol,start
 " a filetype plugin is a Vim script that is loaded whenever Vim opens or
 " creates a file of that type.
 "
-" these lines add `~/.vimo` to the `runtimepath` so all file-type plugins can
-" live in `~/.vimo/ftplugin`
+" these lines add `~/.vimorc` to the `runtimepath` so all file-type plugins can
+" live in `~/.vimorc/ftplugin`
 "
-let &runtimepath .= ',' . string("~/.vimo")
+let &runtimepath .= ',' . string("~/.vimorc")
 filetype plugin indent on
 
 " reload files changed outside vim
