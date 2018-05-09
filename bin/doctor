@@ -171,17 +171,17 @@ else
   warns+=("fontconfig")
 fi
 
+# Display warnings
+if [[ ${#warns[@]} -gt 0 ]];
+then
+  printDocumentation ${warns[@]}
+fi
+
 # Display errors
 if [[ ${#errors[@]} -gt 0 ]];
 then
   printDocumentation ${errors[@]}
   exit 1
-fi
-
-# Display warnings
-if [[ ${#warns[@]} -gt 0 ]];
-then
-  printDocumentation ${warns[@]}
 fi
 
 echo ""

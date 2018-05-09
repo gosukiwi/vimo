@@ -9,4 +9,3 @@ Ubuntu:
 
     $ sudo apt-get install fontconfig
 
-------------------------------------

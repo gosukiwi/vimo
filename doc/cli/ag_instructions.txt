@@ -25,4 +25,3 @@ Gentoo:
 
     $ emerge -a sys-apps/the_silver_searcher
 
-------------------------------------
