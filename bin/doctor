@@ -12,7 +12,16 @@
 # - ctags (optional)
 # - Source Code Pro font (optional)
 
-# Helper functions
+# ========================================
+# state
+# ========================================
+errors=()
+warns=()
+CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DOCUMENTATION_DIR="$(realpath "$CURRENT_DIR/../doc/cli")"
+
+# ========================================
+# helper functions
 # ========================================
 ok() {
   printf "  - OK: %s" "$1"
@@ -22,10 +31,13 @@ ok() {
 fail() {
   printf "  - ERROR: %s" "$1"
   echo ""
+  errors+=("$2")
 }
 
 warn() {
   printf "  - WARN: %s" "$1"
+  echo ""
+  warns+=("$2")
 }
 
 hasGit() {
@@ -70,13 +82,6 @@ printDocumentation() {
   done
 }
 
-# State
-# ========================================
-errors=()
-warns=()
-CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-DOCUMENTATION_DIR="$(realpath "$CURRENT_DIR/../doc/cli")"
-
 # Start of script
 # ========================================
 echo "===================================="
@@ -91,8 +96,7 @@ if hasGit
 then
   ok "Git"
 else
-  fail "Git"
-  errors+=("git")
+  fail "Git" "git"
 fi
 
 # Check for Vim 8
@@ -100,13 +104,11 @@ if hasVim8
 then
   ok "Vim 8"
 else
-  fail "Vim 8"
-
   if hasAnyVim
   then
-    errors+=("vim_update")
+    fail "Vim 8" "vim_update"
   else
-    errors+=("vim")
+    fail "Vim 8" "vim"
   fi
 fi
 
@@ -115,8 +117,7 @@ if hasCTags
 then
   ok "CTags"
 else
-  warn "CTags"
-  warns+=("ctags")
+  warn "CTags" "ctags"
 fi
 
 # Vim-Plug
@@ -124,8 +125,7 @@ if hasVimPlug
 then
   ok "Vim Plug"
 else
-  fail "Vim Plug"
-  errors+=("vim_plug")
+  fail "Vim Plug" "vim_plug"
 fi
 
 # Vim temp dir, used for swap files
@@ -137,8 +137,7 @@ else
   then
     ok "~/.vim/tmp/"
   else
-    fail "Vim's tmp folder"
-    errors+=("vim_tmp_dir")
+    fail "Vim's tmp folder" "vim_tmp_dir"
   fi
 fi
 
@@ -147,8 +146,7 @@ if hasAg
 then
   ok "ag (the silver searcher)"
 else
-  fail "ag (the silver searcher)"
-  errors+=("ag")
+  fail "ag (the silver searcher)" "ag"
 fi
 
 # Check for font
@@ -157,8 +155,7 @@ checkForGuiFont() {
   then
     ok "Font installed (Source Code Pro)"
   else
-    warn "Source Code Pro"
-    warns+=('source_code_pro')
+    warn "Source Code Pro" "source_code_pro"
   fi
 }
 
@@ -166,8 +163,7 @@ if hasFontConfig
 then
   checkForGuiFont
 else
-  warn "fontconfig"
-  warns+=("fontconfig")
+  warn "fontconfig" "fontconfig"
 fi
 
 # Display errors
