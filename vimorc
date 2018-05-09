@@ -4,261 +4,28 @@
 "
 "  DEPENDENCIES:
 "  Run `bin/doctor` to check your system.
-"
-" [ CORE ] ------------------------------------------------------------------
-"  Very much needed settings to provide a solid base for source code editting
-" ---------------------------------------------------------------------------
 
 " don't make vim compatible with vi
 set nocompatible
 
-" in insert mode, force backspace to delete over line breaks, or
-" automatically-inserted indentation.
-set backspace=indent,eol,start
-
-" a filetype plugin is a Vim script that is loaded whenever Vim opens or
-" creates a file of that type.
-"
-" these lines add `~/.vimo` to the `runtimepath` so all file-type plugins can
-" live in `~/.vimo/ftplugin`
-"
-let &runtimepath = "~/.vimo" . "," . &runtimepath
-filetype plugin indent on
-
-" reload files changed outside vim
-set autoread
-" because Vim doesn't always check for `autoread`, force it to check whenever
-" the editor gains focus
-" TODO: Test if this is needed with a GUI
-autocmd FocusGained,BufEnter * :checktime
-
-" default encoding to utf 8
-set encoding=utf-8
-set fileencoding=utf-8
-
-" turn on syntax highlighting
-syntax on
-
-" enable matchit plugin which ships with vim and greatly enhances `%`
-runtime macros/matchit.vim
-
-" allow to leave unsaved buffers and keep them in the background
-set hidden
-
-" the order in which vim tries the file formats when reading a new file. The
-" first one is the default for new buffers
-set fileformats=unix,mac,dos
-
-" screen will not be redrawn while running macros, registers or other
-" non-typed comments. This is important for remote connections.
-set lazyredraw
-
-" [ CUSTOMIZATION ] ---------------------------------------------------------
-" All of the following are opinionated configurations optimized for web 
-" development, particularly with Rails, but also supports other formats.
-" ---------------------------------------------------------------------------
 " use the SPACEBAR as mapleader
 let mapleader = " "
 
-" code folding
-" function! useMarkers()
-"   set foldmethod=expr
-"   set foldexpr=strlen(substitute(substitute(getline(v:lnum),'\\s','',\"g\"),'[^>].*','',''))
-"   substitute(getline(v:lnum), '\[.*\]\s*-\+', ".", "")
-" endfunction
-
-" use relative line numbers for easier j/k navigation (eg: 10g, 25j, etc)
-set relativenumber
-" also, show the current line number instead of 0 for the cursor line
-set number
-
-" [ BUFFERS ] ---------------------------------------------------------------
-" map <leader><tab> to toggle active buffers
-noremap <leader><tab> :b#<CR>
-" ---------------------------------------------------------------------------
-
-" When the "unnamed" string is included in the 'clipboard' option, the unnamed
-" register is the same as the "* register.  Thus you can yank to and paste the
-" selection without prepending "* to commands.
-"
-" X-11 systems use other registers, that's why we check for "unnamedplus"
-let &clipboard = has('unnamedplus') ? 'unnamedplus' : 'unnamed'
-
-" save with ctrl+s
-nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
-
-" allow Tab and Shift+Tab to
-" tab selection in visual mode
-vmap <Tab> >gv
-vmap <S-Tab> <gv
-
-" backup and swap files are saved in ~/.vim/tmp or the current directory if 
-" that folder doesn't exists
-set backupdir=~/.vim/tmp,.
-set directory=~/.vim/tmp,.
-
-" undo peristent across sessions -- https://jovicailic.org/2017/04/vim-persistent-undo/
-set undofile
-set undodir=~/.vim/tmp
-
-" search settings
-set incsearch        " find the next match as we type the search
-set hlsearch         " highlight searches by default
-
-" use ESC to remove search higlight in normal mode
-nnoremap <esc> :noh<return><esc>
-nnoremap <esc>^[ <esc>^[
-
-" most of the time I should use ` instead of ' but typing it with my keyboard
-" is a pain, so just toggle them
-nnoremap ' `
-nnoremap ` '
-
-" suggestion for normal mode commands
-set wildmode=list:longest
-
-" keep the cursor visible within 3 lines when scrolling
-set scrolloff=3
-
-" indentation
-set expandtab       " use spaces instead of tabs
-set autoindent      " autoindent based on line above, works most of the time
-set smartindent     " smarter indent for C-like languages
-
-" tabs are 2 spaces
-set shiftwidth=2    " when reading
-set softtabstop=2   " in insert mode
-
-" use 4 spaces for...
-autocmd FileType php setlocal shiftwidth=4 softtabstop=4
-
-" no lines longer than 80 cols, use this for markdown
-autocmd FileType markdown setlocal textwidth=80
-
-" [ WINDOW MANAGEMENT ] -----------------------------------------------------
-" Consistently manage windows:
-"
-" - <leader>ww  - Window horizontal split
-" - <leader>wv  - Window vertical split
-" - <leader>wh  - Window go left
-" - <leader>wj  - Window go down
-" - <leader>wk  - Window go up
-" - <leader>wl  - Window go right
-" - <leader>wq  - Window quit
-" - <leader>wf  - Window full screen (close all other windows)
-" - <leader>wr  - Window rotate to the right
-" - <leader>wf  - Window rotate to the left
-" - <leader>w=  - Window equalize size
-" - <leader>waw - Window add width
-" - <leader>wdw - Window decrease width
-" - <leader>wah - Window add height
-" - <leader>wdh - Window decrease height
-nnoremap <leader>ww :split<CR>
-nnoremap <leader>wv :vsplit<CR>
-nnoremap <leader>wh <c-w>h
-nnoremap <leader>wj <c-w>j
-nnoremap <leader>wk <c-w>k
-nnoremap <leader>wl <c-w>l
-nnoremap <leader>wq <c-w>q
-nnoremap <leader>wf <c-w>o
-nnoremap <leader>wr <c-w>r
-nnoremap <leader>wR <c-w>R
-nnoremap <leader>w= <c-w>=
-nnoremap <leader>waw 10<c-w>>
-nnoremap <leader>wdw 10<c-w><
-nnoremap <leader>wah :resize +10<CR>
-nnoremap <leader>wdh :resize -10<CR>
-" ---------------------------------------------------------------------------
-
-" [TAB AUTOCOMPLETE] --------------------------------------------------------
-" use <Tab> for Vim's default keyword autocomplete in insert mode
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<tab>"
-  else
-    return "\<c-p>"
-  endif
+" load files in a directory
+function! s:SourceConfigFilesIn(directory)
+  let directory_splat = '~/.vimo/' . a:directory . '/*'
+  for config_file in split(glob(directory_splat), '\n')
+    if filereadable(config_file)
+      execute 'source' config_file
+    endif
+  endfor
 endfunction
 
-inoremap <expr> <tab> InsertTabWrapper()
-inoremap <s-tab> <c-n>
+call s:SourceConfigFilesIn('rcfiles')
 
-" use j and k to scroll though suggestions
-inoremap <expr> j ((pumvisible()) ? ("\<C-n>") : ("j"))
-inoremap <expr> k ((pumvisible()) ? ("\<C-p>") : ("k"))
-" ---------------------------------------------------------------------------
-
-" on file types...
-"   .md files are markdown files
-autocmd BufNewFile,BufRead *.md setlocal ft=markdown
-"   .coffee files use coffeescript syntax
-autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
-
-" when pasting over SSH it's a pain to type :set paste and :set nopaste
-" just map it to <f9>
-set pastetoggle=<f9>
-
-" select all mapping
-noremap <leader>a ggVG
-
-" use <C-j> and <C-k> to move lines up and down
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
-inoremap <C-j> <ESC>:m .+1<CR>==gi
-inoremap <C-k> <ESC>:m .-2<CR>==gi
-
-" always display the status line
-set laststatus=2
-
-" disable Ex mode, never use it anyways
-noremap Q <Nop>
-
-" Show next matched string at the center of the screen
-nnoremap n nzz
-nnoremap N Nzz
-
-" [ CTAGS ] -----------------------------------------------------------------
-" All these are settings to use ctags from Vim.
-"
-" * You can go to a definition by <leader>cg - which reads ctags, go-to-file
-" * You can go back with <leader>cb - which reads ctags, back
-" * You can list all tags using CtrlP with <leader>cl - which reads ctags, list
-" * You can re-generate all tags using <leader>cr - which reads ctags,
-" re-generate
-"
-" The `tags' file will update automatically every time vim opens.
-"
-" NOTE: `ctags` binary must be installed in order for this to work. On macOS:
-" `$ brew install ctags`. Linux systems have it installed by default most of
-" the time.
-" ---------------------------------------------------------------------------
-function ReloadCTags()
-  silent execute "!git status > /dev/null && ctags -f .tags -R . &"
-  redraw!
-endfunction
-
-nnoremap <leader>cg <C-]>
-nnoremap <leader>cb <C-t>
-nnoremap <leader>cl :CtrlPTag<CR>
-nnoremap <leader>cr :call ReloadCTags()<CR>
-
-" on vim open, reload the tags
-":autocmd VimEnter * :call ReloadCTags()
-
-" Allow to use a `.tags` file so it's hidden by default, `tags` can also be
-" used if you prefer.
-"
-" Because of the `;`, vim also recurses upwards so you can open deeply nested
-" files and Vim will look up for a corresponding tagfile.
-set tags=./.tags;,./tags;
-
-" [ PLUGINS & VISUALS ] -----------------------------------------------------
+" [ PLUGINS & THEMES ] ------------------------------------------------------
 " Plugin-related configuration
 " ---------------------------------------------------------------------------
-
-" initiate vim-plug
 call plug#begin('~/.vim/plugged')
 
 " -- Generic
@@ -268,8 +35,6 @@ Plug 'itchyny/lightline.vim'          " lightweight and pure vimscript status ba
 Plug 'tpope/vim-surround'             " visual mode surround
 Plug 'jiangmiao/auto-pairs'           " smart () [] {} matching
 Plug 'tpope/vim-endwise'              " similar to the one above but this one inserts `end` where needed
-"Plug 'ervandew/supertab'              " dummy autocomplete in insert mode using <TAB>
-Plug 'mbbill/undotree'                " display a graph of the undo history when needed
 " -- Web Development
 Plug 'w0rp/ale'                       " linters
 Plug 'vim-ruby/vim-ruby'              " default ruby syntax is SLOW
@@ -283,7 +48,6 @@ Plug 'othree/yajs.vim'                " ES6 syntax
 " -- Theme
 Plug 'trevordmiller/nova-vim'         " pretty colors
 
-" end plugin definition
 call plug#end()
 
 " [FILEBEAGLE] --------------------------------------------------------------

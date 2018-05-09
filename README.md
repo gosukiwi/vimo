@@ -21,8 +21,6 @@ check out the [respective lesson here].
 * Go-To-Definition for popular programming languages
 * Linting (async) for popular programming languages
 * Persistent undo -- Close vim, open it again, and still be able to use undo!
-* Undo Tree -- A UI which displays the history of all undo commands and their
-  branching, like a git log
 * Emmet/Zencoding -- Expand CSS selectors into HTML elements
 * Coherent Bindings -- Easily memoizable commands for managing windows, buffers,
   files, and pretty much every feature.

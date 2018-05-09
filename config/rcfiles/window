@@ -1,0 +1,37 @@
+" [ WINDOW MANAGEMENT ]
+" Bindings for managing windows
+"
+"     <leader>ww  - Window horizontal split
+"     <leader>wv  - Window vertical split
+"     <leader>wh  - Window go left
+"     <leader>wj  - Window go down
+"     <leader>wk  - Window go up
+"     <leader>wl  - Window go right
+"     <leader>wq  - Window quit
+"     <leader>wf  - Window full screen (close all other windows)
+"     <leader>wr  - Window rotate to the right
+"     <leader>wf  - Window rotate to the left
+"     <leader>w=  - Window equalize size
+"     <leader>waw - Window add width
+"     <leader>wdw - Window decrease width
+"     <leader>wah - Window add height
+"     <leader>wdh - Window decrease height
+"
+
+nnoremap <leader>ww :split<CR>
+nnoremap <leader>wv :vsplit<CR>
+nnoremap <leader>wh <c-w>h
+nnoremap <leader>wj <c-w>j
+nnoremap <leader>wk <c-w>k
+nnoremap <leader>wl <c-w>l
+nnoremap <leader>wq <c-w>q
+nnoremap <leader>wf <c-w>o
+nnoremap <leader>wr <c-w>r
+nnoremap <leader>wR <c-w>R
+nnoremap <leader>w= <c-w>=
+nnoremap <leader>waw 10<c-w>>
+nnoremap <leader>wdw 10<c-w><
+nnoremap <leader>wah :resize +10<CR>
+nnoremap <leader>wdh :resize -10<CR>
+
+" vim:ft=vim

@@ -1,0 +1,29 @@
+" [ TAGS ]
+" Using `ctags' with Vim
+"
+"     <leader>cg - Ctags, Go to definition
+"     <leader>cb - Ctags, go Back one definition
+"     <leader>cr - Ctags, Reload
+"     <leader>cl - Ctags, List
+"
+function ReloadCTags()
+  silent execute "!git status > /dev/null && ctags -f .tags -R . &"
+  redraw!
+endfunction
+
+nnoremap <leader>cg <C-]>
+nnoremap <leader>cb <C-t>
+nnoremap <leader>cl :CtrlPTag<CR>
+nnoremap <leader>cr :call ReloadCTags()<CR>
+
+" on vim open, reload the tags
+":autocmd VimEnter * :call ReloadCTags()
+
+" Allow to use a `.tags` file so it's hidden by default, `tags` can also be
+" used if you prefer.
+"
+" Because of the `;`, vim also recurses upwards so you can open deeply nested
+" files and Vim will look up for a corresponding tagfile.
+set tags=./.tags;,./tags;
+
+" vim:ft=vim

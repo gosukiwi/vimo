@@ -1,0 +1,19 @@
+" [ CHANGE TEXT ]
+" When the "unnamed" string is included in the 'clipboard' option, the unnamed
+" register is the same as the "* register.  Thus you can yank to and paste the
+" selection without prepending "* to commands.
+"
+" X-11 systems use other registers, that's why we check for "unnamedplus"
+let &clipboard = has('unnamedplus') ? 'unnamedplus' : 'unnamed'
+
+" allow <tab> and <shift-tab> to tab selection in visual mode
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
+" use <C-j> and <C-k> to move lines up and down
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+
+" vim:ft=vim

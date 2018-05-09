@@ -1,0 +1,12 @@
+" [ WRITING ]
+" Settings for writing
+
+set expandtab       " use spaces instead of tabs
+set autoindent      " autoindent based on line above, works most of the time
+set smartindent     " smarter indent for C-like languages
+
+" tabs are 2 spaces
+set shiftwidth=2    " when reading
+set softtabstop=2   " in insert mode
+
+" vim:ft=vim

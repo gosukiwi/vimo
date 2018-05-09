@@ -1,0 +1,48 @@
+" [CORE]
+" Defaults we can all agree on
+
+" in insert mode, force backspace to delete over line breaks, or
+" automatically-inserted indentation.
+set backspace=indent,eol,start
+
+" a filetype plugin is a Vim script that is loaded whenever Vim opens or
+" creates a file of that type.
+"
+" these lines add `~/.vimo` to the `runtimepath` so all file-type plugins can
+" live in `~/.vimo/ftplugin`
+"
+let &runtimepath = "~/.vimo" . "," . &runtimepath
+filetype plugin indent on
+
+" reload files changed outside vim
+set autoread
+" because Vim doesn't always check for `autoread`, force it to check whenever
+" the editor gains focus
+" TODO: Test if this is needed with a GUI
+autocmd FocusGained,BufEnter * :checktime
+
+" default encoding to utf 8
+set encoding=utf-8
+set fileencoding=utf-8
+
+" turn on syntax highlighting
+syntax on
+
+" enable matchit plugin which ships with vim and greatly enhances `%`
+runtime macros/matchit.vim
+
+" allow to leave unsaved buffers and keep them in the background
+set hidden
+
+" the order in which vim tries the file formats when reading a new file. The
+" first one is the default for new buffers
+set fileformats=unix,mac,dos
+
+" disable Ex mode
+noremap Q <Nop>
+
+" when pasting over SSH it's a pain to type :set paste and :set nopaste
+" just map it to <f9>
+set pastetoggle=<f9>
+
+" vim:ft=vim

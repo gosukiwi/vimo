@@ -1,0 +1,18 @@
+" use <tab> in insert mode for Vim autocomplete
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-p>"
+  endif
+endfunction
+
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+
+" use j and k to scroll though suggestions
+inoremap <expr> j ((pumvisible()) ? ("\<C-n>") : ("j"))
+inoremap <expr> k ((pumvisible()) ? ("\<C-p>") : ("k"))
+
+" vim:ft=vim

@@ -1,0 +1,8 @@
+" [ FILETYPES ]
+" Associations between extensions and file types
+
+autocmd BufNewFile,BufRead *.md setlocal ft=markdown
+" TODO: Is this needed?
+autocmd BufNewFile,BufRead *.coffee setlocal ft=coffee
+
+" vim:ft=vim

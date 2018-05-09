@@ -1,0 +1,18 @@
+" [ DISPLAY ] --.
+" Change the way Vim displays stuff
+
+" use relative line numbers for easier j/k navigation (eg: 10g, 25j, etc)
+set relativenumber
+" also, show the current line number instead of 0 for the cursor line
+set number
+
+" suggestion for normal mode commands
+set wildmode=list:longest
+
+" keep the cursor visible within 3 lines when scrolling
+set scrolloff=3
+
+" always display the status line
+set laststatus=2
+
+" vim:ft=vim

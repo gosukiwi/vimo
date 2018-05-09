@@ -1,0 +1,10 @@
+" [ MOVEMENT ]
+" most of the time I should use ` instead of ' but typing it with my keyboard
+" is a pain, so just toggle them
+nnoremap ' `
+nnoremap ` '
+
+" select all mapping
+noremap <leader>a ggVG
+
+" vim:ft=vim
