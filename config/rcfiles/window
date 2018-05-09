@@ -29,9 +29,9 @@ nnoremap <leader>wf <c-w>o
 nnoremap <leader>wr <c-w>r
 nnoremap <leader>wR <c-w>R
 nnoremap <leader>w= <c-w>=
-nnoremap <leader>waw 10<c-w>>
-nnoremap <leader>wdw 10<c-w><
-nnoremap <leader>wah :resize +10<CR>
-nnoremap <leader>wdh :resize -10<CR>
+nnoremap <leader>w+w 10<c-w>>
+nnoremap <leader>w-w 10<c-w><
+nnoremap <leader>w+h :resize +10<CR>
+nnoremap <leader>w-h :resize -10<CR>
 
 " vim:ft=vim
