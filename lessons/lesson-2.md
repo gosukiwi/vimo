@@ -75,9 +75,9 @@ There are several insert-mode commands:
 
 # Visual Mode
 Visual mode is basically what other editors call a "selection". In Vim, you can
-select manually by using the moving commands, select by line or select by block.
+select character-wise, line-wise or block-wise.
 
-The first mode we can enter by pressing `v`, for _visual mode_. We can then use
+The first mode (character-wise) we can enter by pressing `v`, for _visual mode_. We can then use
 our regular moving commands, such as `h, j, k, l, b, w, gg, G, ^, $, etc`.
 
 Try selecting the text inside the quotes: "This is a demo text. Hello World!"
@@ -86,10 +86,10 @@ One way is positioning the cursor on the `T`, then press `v` to start visual
 mode in this character. Then press `w` until the seletion includes `World`, then press
 `l` to move it one letter to the right, and select the shebang too.
 
-Nice! Now let's select the a whole line. Press `<esc>` to go back to `NORMAL`
+Nice! Now let's select a whole line. Press `<esc>` to go back to `NORMAL`
 mode, now position the cursor in the line below and press `V`:
 
-This is a whole line!
+This is a whole line. This is part of the line too.
 
 The whole line is selected! That's nice. Now go back to `NORMAL` mode.
 
