@@ -6,7 +6,6 @@
 # It checks for:
 # - git
 # - vim 8
-# - .vim/tmp directory
 # - vim plug
 # - ag (the silver searcher)
 # - ctags (optional)
@@ -47,10 +46,6 @@ hasAnyVim() {
 
 hasVimPlug() {
   [[ -e "$HOME/.vim/autoload/plug.vim" ]];
-}
-
-hasVimTempDir() {
-  [[ -e "$HOME/.vim/tmp" ]];
 }
 
 hasFontConfig() {
@@ -127,20 +122,6 @@ then
 else
   fail "Vim Plug"
   errors+=("vim_plug")
-fi
-
-# Vim temp dir, used for swap files
-if hasVimTempDir
-then
-  ok "~/.vim/tmp/"
-else
-  if [[ $(mkdir -p "$HOME/.vim/tmp") ]];
-  then
-    ok "~/.vim/tmp/"
-  else
-    fail "Vim's tmp folder"
-    errors+=("vim_tmp_dir")
-  fi
 fi
 
 # Check for ag

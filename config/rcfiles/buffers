@@ -6,13 +6,13 @@ noremap <leader><tab> :b#<CR>
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
 
-" backup and swap files are saved in ~/.vim/tmp or the current directory if 
-" that folder doesn't exists
-set backupdir=~/.vim/tmp,.
-set directory=~/.vim/tmp,.
+" backup and swap files are saved in ~/.vimo/tmp
+set backupdir=~/.vimo/tmp
+set directory=~/.vimo/tmp
 
-" undo peristent across sessions -- https://jovicailic.org/2017/04/vim-persistent-undo/
+" undo peristent across sessions
+" https://jovicailic.org/2017/04/vim-persistent-undo/
 set undofile
-set undodir=~/.vim/tmp
+set undodir=~/.vimo/tmp
 
 " vim:ft=vim

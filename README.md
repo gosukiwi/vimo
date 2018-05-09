@@ -27,8 +27,7 @@ check out the [respective lesson here].
 * Very well documented set of configuration
 * Lessons for new users as well as a quick-start guide for experienced Vim users
 
-Take a glance at the features in the [Quick Start
-Guide](doc/quick-start-guide.md).
+Take a glance at the features in the [Quick Start Guide](doc/quick-start-guide.md).
 
 ## Installing
 Clone the repo and run the `install` script:
@@ -40,6 +39,7 @@ Clone the repo and run the `install` script:
 To use Vimo as a separate editor, you can use the `bin/vimo` executable. It will
 open a `vim` instance using the `.vimorc` configuration file.
 
+    $ ln -s $(realpath config) ~/.vimo
     $ ln -s $(realpath bin/vimo) /usr/local/bin/vimo
     $ bin/vimo -c PlugInstall
 
@@ -53,22 +53,23 @@ alias anywhere in your `.profile` or `.zprofile` file.
 
 For example, for `mvim`:
 
-    alias vimo=mvim -u /path/to/vimorc .
+    alias vimo="mvim -u /path/to/vimorc "
 
 Remember to run `:PlugInstall` the first time you open Vimo.
 
 ## Updating
-Simply go to this repo and:
+If you followed the install instructions, you can update with:
 
     $ git pull
 
 ## Uninstall
-To uninstall you can simply
 
+    $ rm ~/.vimrc
+    $ rm ~/.vimo
     $ mv ~/.vimrc.old ~/.vimrc
 
 # New to Vim?
-No worries! We have you covered. Check out the [lessons](lessons/) and get up to
+No worries! We have you covered. Check out the [Lessons](lessons/) and get up to
 speed in no time.
 
 The lessons give a broad overview on how to use Vim (and particularly Vimo)
