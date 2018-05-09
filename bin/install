@@ -28,7 +28,7 @@ then
 fi
 
 ln -s "$BASE_DIR/.vimorc" ~/.vimrc
-mkdir "$HOME/.vimorc"
+ln -s "$BASE_DIR/config" ~/.vimo
 vim -c PlugInstall
 
 echo ""
