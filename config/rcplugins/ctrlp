@@ -1,5 +1,16 @@
 " [ CtrlP Configuration ]
 " File and buffer fuzzy finders
+"
+" Key bindings
+"
+"     <leader>b
+"       List all Buffers
+"       NORMAL MODE
+"
+"     <leader>f
+"       List all Files
+"       NORMAL MODE
+"
 
 Plug 'ctrlpvim/ctrlp.vim'
 

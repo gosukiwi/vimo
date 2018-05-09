@@ -1,5 +1,12 @@
 " [ EMMET ]
 " Expand CSS selectors to HTML with <c-e>
+"
+" Key bindings
+"
+"     <c-e>
+"       Expand CSS selectors to HTML
+"       INSERT MODE
+"
 
 let g:user_emmet_leader_key = '<c-e>'
 

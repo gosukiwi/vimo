@@ -1,4 +1,11 @@
 " [ MOVEMENT ]
+" Key bindings
+"
+"     <leader>a
+"       Select all the text in the current buffer
+"       NORMAL MODE
+"
+
 " most of the time I should use ` instead of ' but typing it with my keyboard
 " is a pain, so just toggle them
 nnoremap ' `

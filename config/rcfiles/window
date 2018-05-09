@@ -1,21 +1,67 @@
 " [ WINDOW MANAGEMENT ]
 " Bindings for managing windows
 "
-"     <leader>ww  - Window horizontal split
-"     <leader>wv  - Window vertical split
-"     <leader>wh  - Window go left
-"     <leader>wj  - Window go down
-"     <leader>wk  - Window go up
-"     <leader>wl  - Window go right
-"     <leader>wq  - Window quit
-"     <leader>wf  - Window full screen (close all other windows)
-"     <leader>wr  - Window rotate to the right
-"     <leader>wf  - Window rotate to the left
-"     <leader>w=  - Window equalize size
-"     <leader>waw - Window add width
-"     <leader>wdw - Window decrease width
-"     <leader>wah - Window add height
-"     <leader>wdh - Window decrease height
+" Key bindings
+"
+"     <leader>ww
+"       Window horizontal split
+"       NORMAL MODE
+"
+"     <leader>wv
+"       Window Vertical split
+"       NORMAL MODE
+"
+"     <leader>wh
+"       Window go left
+"       NORMAL MODE
+"
+"     <leader>wj
+"       Window go down
+"       NORMAL MODE
+"
+"     <leader>wk
+"       Window go up
+"       NORMAL MODE
+"
+"     <leader>wl
+"       Window go right
+"       NORMAL MODE
+"
+"     <leader>wq
+"       Window Quit
+"       NORMAL MODE
+"
+"     <leader>wf
+"       Window Full screen (close all other windows)
+"       NORMAL MODE
+"
+"     <leader>wr
+"       Window Rotate to the right
+"       NORMAL MODE
+"
+"     <leader>wf
+"       Window Rotate to the left
+"       NORMAL MODE
+"
+"     <leader>w=
+"       Window equalize size
+"       NORMAL MODE
+"
+"     <leader>w+w
+"       Window more width
+"       NORMAL MODE
+"
+"     <leader>w-w
+"       Window less width
+"       NORMAL MODE
+"
+"     <leader>w+h
+"       Window more height
+"       NORMAL MODE
+"
+"     <leader>w-h
+"       Window less height
+"       NORMAL MODE
 "
 
 nnoremap <leader>ww :split<CR>

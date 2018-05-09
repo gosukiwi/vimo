@@ -1,5 +1,16 @@
 " [FILEBEAGLE]
 " Like netrw but less buddy
+"
+" Key bindings
+"
+"     -
+"       Open file browser
+"       NORMAL MODE
+"
+"     <leader>F
+"       Open file browser
+"       NORMAL MODE
+"
 
 Plug 'jeetsukumaran/vim-filebeagle'
 

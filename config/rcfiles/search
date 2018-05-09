@@ -2,7 +2,11 @@
 " Highlight as you type kind of search. If a pattern contains an uppercase
 " letter, match for case sensitive, otherwise, match for case-insensitive.
 "
-"   <leader>s - remove Search highlight
+" Key bindings
+"
+"     <leader>s
+"       remove Search highlight
+"       NORMAL MODE
 "
 
 set incsearch

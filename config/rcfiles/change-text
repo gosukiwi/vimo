@@ -1,4 +1,24 @@
 " [ CHANGE TEXT ]
+"
+" Key bindings
+"
+"     <tab>
+"       Indent current selection
+"       VISUAL MODE
+"
+"     <s-tab>
+"       Dedent current selection
+"       VISUAL MODE
+"
+"     <c-j>
+"       Move current line up
+"       NORMAL MODE / INSERT MODE
+"
+"     <c-k>
+"       Move current line down
+"       NORMAL MODE / INSERT MODE
+"
+
 " When the "unnamed" string is included in the 'clipboard' option, the unnamed
 " register is the same as the "* register.  Thus you can yank to and paste the
 " selection without prepending "* to commands.

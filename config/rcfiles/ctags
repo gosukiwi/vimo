@@ -1,10 +1,23 @@
 " [ TAGS ]
 " Using `ctags' with Vim
 "
-"     <leader>cg - Ctags, Go to definition
-"     <leader>cb - Ctags, go Back one definition
-"     <leader>cr - Ctags, Reload
-"     <leader>cl - Ctags, List
+" Key bindings
+"
+"     <leader>cg
+"       Ctags, Go to definition
+"       NORMAL MODE
+"
+"     <leader>cb
+"       Ctags, go Back one definition
+"       NORMAL MODE
+"
+"     <leader>cr
+"       Ctags, Reload
+"       NORMAL MODE
+"
+"     <leader>cl
+"       Ctags, List
+"       NORMAL MODE
 "
 function ReloadCTags()
   silent execute "!git status > /dev/null && ctags -f .tags -R . &"

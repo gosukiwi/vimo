@@ -1,0 +1,23 @@
+" [ SSH ]
+" Useful settings when SSH-ing to a remote file.
+" You can edit a remote file as follows:
+"
+"     $ vim scp://remoteuser@server.tld//absolute/path/to/document
+"
+" Key bindings
+"
+"     <F9>
+"       Toggle paste mode
+"       NORMAL MODE / INSERT MODE
+"
+
+" toggle paste mode with <F9>
+" see `:help paste` for more info on paste-mode
+set pastetoggle=<f9>
+
+" the screen will not be redrawn while executing macros, registers and other
+" commands that have not been typed. Also, updating the window title is
+" postponed.
+set lazyredraw
+
+" vim:ft=vim

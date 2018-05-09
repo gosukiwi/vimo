@@ -41,8 +41,4 @@ set fileformats=unix,mac,dos
 " disable Ex mode
 noremap Q <Nop>
 
-" when pasting over SSH it's a pain to type :set paste and :set nopaste
-" just map it to <f9>
-set pastetoggle=<f9>
-
 " vim:ft=vim

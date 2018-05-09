@@ -1,5 +1,16 @@
 " [ BUFFERS ]
 " map <leader><tab> to toggle active buffers
+"
+" Key bindings
+"
+"     <leader><tab>
+"       Swap current buffer
+"       NORMAL MODE
+"
+"     <c-s>
+"       Save current buffer
+"       NORMAL MODE / INSERT MODE
+"
 noremap <leader><tab> :b#<CR>
 
 " save with ctrl+s

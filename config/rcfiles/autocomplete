@@ -1,4 +1,11 @@
 " use <tab> in insert mode for Vim autocomplete
+"
+" Key bindings
+"
+"     <tab>
+"       Open autocomplete
+"       INSERT MODE
+" 
 function! InsertTabWrapper()
   let col = col('.') - 1
   if !col || getline('.')[col - 1] !~ '\k'
