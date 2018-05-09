@@ -1,18 +1,15 @@
 " [ SEARCH ]
 " Highlight as you type kind of search. If a pattern contains an uppercase
 " letter, match for case sensitive, otherwise, match for case-insensitive.
-
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase       
 
-" use ESC to remove search higlight in normal mode
-" TODO: Check these
+" use <escape> to remove search higlight in normal mode
 nnoremap <esc> :noh<return><esc>
-nnoremap <esc>^[ <esc>^[
 
-" Show next matched string at the center of the screen
+" show next matched string at the center of the screen
 nnoremap n nzz
 nnoremap N Nzz
 
