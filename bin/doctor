@@ -65,7 +65,7 @@ printDocumentation() {
   echo ""
   echo ""
 
-  for error in ${@}
+  for error in "${@}"
   do
       cat "$DOCUMENTATION_DIR/${error}_instructions.txt"
   done
@@ -174,13 +174,13 @@ fi
 # Display warnings
 if [[ ${#warns[@]} -gt 0 ]];
 then
-  printDocumentation ${warns[@]}
+  printDocumentation "${warns[@]}"
 fi
 
 # Display errors
 if [[ ${#errors[@]} -gt 0 ]];
 then
-  printDocumentation ${errors[@]}
+  printDocumentation "${errors[@]}"
   exit 1
 fi
 
