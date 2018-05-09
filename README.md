@@ -42,7 +42,7 @@ Clone the repo and run the `install` script:
 To use Vimo as a separate editor, you can use the `bin/vimo` executable. It will
 open a `vim` instance using the `.vimorc` configuration file.
 
-    $ ln -s bin/vimo /usr/local/bin/vimo
+    $ ln -s $(realpath bin/vimo) /usr/local/bin/vimo
     $ bin/vimo -c PlugInstall
 
 You can now use vimo and pass parameters to it as if it was any other vim
@@ -55,13 +55,14 @@ alias anywhere in your `.profile` or `.zprofile` file.
 
 For example, for `mvim`:
 
-    alias vimo=mvim -u /path/to/.vimorc .
+    alias vimo=mvim -u /path/to/vimorc .
 
 Remember to run `:PlugInstall` the first time you open Vimo.
 
 ## Updating
-To get the latest version simply go to the repo and do `git pull`, because the
-`.vimrc` file is symlinked it will update automatically.
+Simply go to this repo and:
+
+    $ git pull
 
 ## Uninstall
 To uninstall you can simply
