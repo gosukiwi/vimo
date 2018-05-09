@@ -1,0 +1,20 @@
+" [ CtrlP Configuration ]
+" File and buffer fuzzy finders
+
+Plug 'ctrlpvim/ctrlp.vim'
+
+noremap <leader>b :CtrlPBuffer<cr>
+noremap <leader>f :CtrlP<cr>
+
+" no max files limit
+let g:ctrlp_max_files = 0
+
+" use ag when seeking files, super fast and ignores .gitignore and such
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+" always clear cache on startup, useful when swapping between branches a lot
+if has("autocmd")
+  autocmd VimEnter * CtrlPClearCache
+endif
+
+" vim:ft=vim

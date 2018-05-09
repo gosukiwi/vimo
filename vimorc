@@ -5,7 +5,7 @@
 "  DEPENDENCIES:
 "  Run `bin/doctor` to check your system.
 
-" don't make vim compatible with vi
+" Enter the new millenia
 set nocompatible
 
 " use the SPACEBAR as mapleader
@@ -21,118 +21,15 @@ function! s:SourceConfigFilesIn(directory)
   endfor
 endfunction
 
-call s:SourceConfigFilesIn('rcfiles')
-
 " [ PLUGINS & THEMES ] ------------------------------------------------------
 " Plugin-related configuration
-" ---------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-
-" -- Generic
-Plug 'jeetsukumaran/vim-filebeagle'   " like netrw but less buggy
-Plug 'ctrlpvim/ctrlp.vim'             " more actively maintained fork of ctrlp
-Plug 'itchyny/lightline.vim'          " lightweight and pure vimscript status bar
-Plug 'tpope/vim-surround'             " visual mode surround
-Plug 'jiangmiao/auto-pairs'           " smart () [] {} matching
-Plug 'tpope/vim-endwise'              " similar to the one above but this one inserts `end` where needed
-" -- Web Development
-Plug 'w0rp/ale'                       " linters
-Plug 'vim-ruby/vim-ruby'              " default ruby syntax is SLOW
-Plug 'rhysd/vim-textobj-ruby'         " add `r` (for Ruby) text-object, allow for things like `dar` and `cir`
-Plug 'mattn/emmet-vim'                " emmet/zen-coding
-Plug 'kchmck/vim-coffee-script'       " coffeescript support
-Plug 'hail2u/vim-css3-syntax'         " css3 support
-Plug 'slim-template/vim-slim'         " slim support
-Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr' " xml tags as text objects
-Plug 'othree/yajs.vim'                " ES6 syntax
-" -- Theme
-Plug 'trevordmiller/nova-vim'         " pretty colors
-
+call s:SourceConfigFilesIn('rcplugins')
 call plug#end()
-
-" [FILEBEAGLE] --------------------------------------------------------------
-" file-beagle uses <leader>f, don't want that mapping, let's use <leader>F
-" instead.
-let g:filebeagle_suppress_keymaps = 1
-map <silent> - <Plug>FileBeagleOpenCurrentBufferDir
-map <silent> <leader>F <Plug>FileBeagleOpenCurrentBufferDir
+" [ CORE ] ------------------------------------------------------------------
+" Vim core configuration
+call s:SourceConfigFilesIn('rcfiles')
+colorscheme nova
 " ---------------------------------------------------------------------------
-
-" lightline configuration
-let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ 'active': {
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'linter_warnings', 'linter_errors', 'linter_ok' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
-      \ },
-      \ 'component_expand': {
-      \   'linter_warnings': 'LightlineLinterWarnings',
-      \   'linter_errors': 'LightlineLinterErrors',
-      \   'linter_ok': 'LightlineLinterOK'
-      \ },
-      \ 'component_type': {
-      \   'readonly': 'error',
-      \   'linter_warnings': 'warning',
-      \   'linter_errors': 'error',
-      \   'linter_ok': 'ok'
-      \ },
-      \ }
-
-autocmd User ALELint call lightline#update()
-
-" ale + lightline
-function! LightlineLinterWarnings() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d !', all_non_errors)
-endfunction
-
-function! LightlineLinterErrors() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '' : printf('%d ✗', all_errors)
-endfunction
-
-function! LightlineLinterOK() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  let l:all_errors = l:counts.error + l:counts.style_error
-  let l:all_non_errors = l:counts.total - l:all_errors
-  return l:counts.total == 0 ? '✓' : ''
-endfunction
-
-" ale
-let g:ale_sign_error = 'xx'
-let g:ale_sign_warning = '!!'
-
-" [ CtrlP Configuration ]
-noremap <leader>b :CtrlPBuffer<cr>
-noremap <leader>f :CtrlP<cr>
-" no max files limit
-let g:ctrlp_max_files = 0
-" use ag when seeking files, super fast and ignores .gitignore and such
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-" always clear cache on startup, useful when swapping between branches a lot
-if has("autocmd")
-  autocmd VimEnter * CtrlPClearCache
-endif
-
-" use emmet with <C-E>
-let g:user_emmet_leader_key = '<c-e>'
-
-" toggle UndoTree
-nmap <leader>u :UndotreeToggle<cr>
-
-" use Adobe's Source Code Pro font
-set guifont=Source\ Code\ Pro
-
-" THEME SETTINGS
-colorscheme nova   " set the color theme to atom-dark
-set colorcolumn=80 " make a mark for column 80
-" and set the mark color to lightgray
-highlight OverLength ctermbg=lightgray guibg=lightgray
 
 " vim:ft=vim

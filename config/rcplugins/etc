@@ -1,0 +1,14 @@
+" [ ETC ]
+" Plugins which require no special configuration
+
+Plug 'tpope/vim-surround'             " visual mode surround
+Plug 'jiangmiao/auto-pairs'           " smart () [] {} matching
+Plug 'tpope/vim-endwise'              " similar to the one above but this one inserts `end` where needed
+Plug 'vim-ruby/vim-ruby'              " default ruby syntax is SLOW
+Plug 'rhysd/vim-textobj-ruby'         " add `r` (for Ruby) text-object, allow for things like `dar` and `cir`
+Plug 'mattn/emmet-vim'                " emmet/zen-coding
+Plug 'kchmck/vim-coffee-script'       " coffeescript support
+Plug 'hail2u/vim-css3-syntax'         " css3 support
+Plug 'slim-template/vim-slim'         " slim support
+Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr' " xml tags as text objects
+Plug 'othree/yajs.vim'                " ES6 syntax

@@ -1,0 +1,12 @@
+" [FILEBEAGLE]
+" Like netrw but less buddy
+
+Plug 'jeetsukumaran/vim-filebeagle'
+
+" file-beagle uses <leader>f, don't want that mapping, let's use <leader>F
+" instead
+let g:filebeagle_suppress_keymaps = 1
+map <silent> - <Plug>FileBeagleOpenCurrentBufferDir
+map <silent> <leader>F <Plug>FileBeagleOpenCurrentBufferDir
+
+" vim:ft=vim

@@ -1,0 +1,13 @@
+" [ THEME SETTINGS ]
+" Pretty colors
+
+Plug 'trevordmiller/nova-vim'
+
+" make a mark for column 80 and set the mark color to lightgray
+set colorcolumn=80 
+highlight OverLength ctermbg=lightgray guibg=lightgray
+
+" use Adobe's Source Code Pro font
+set guifont=Source\ Code\ Pro
+
+" vim:ft=vim

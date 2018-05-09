@@ -1,7 +1,7 @@
 " [ FILETYPES ]
 " Associations between extensions and file types
 
-" You can configure your own associations between extensions and file types as
+" You can add custom associations between extensions and file types as
 " follows:
 "
 "     autocmd BufNewFile,BufRead *.md setlocal ft=markdown

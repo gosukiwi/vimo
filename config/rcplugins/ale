@@ -1,0 +1,9 @@
+" [ ALE ]
+" Linter support
+
+Plug 'w0rp/ale'
+
+let g:ale_sign_error = 'xx'
+let g:ale_sign_warning = '!!'
+
+" vim:ft=vim
