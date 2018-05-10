@@ -10,6 +10,7 @@
 "     <leader>F
 "       Open file browser
 "       NORMAL MODE
+" 
 "
 
 Plug 'jeetsukumaran/vim-filebeagle'

@@ -1,0 +1,13 @@
+#! /bin/bash
+
+find config -path config/tmp -prune -o -type f -exec grep -il "key bindings" {} \; |
+  xargs sed -n 's/^"\s\+\[\s*\(.*\)\]/\1/p
+    /^"\s\+Key bindings/,/^[^"]/{
+      /^"\s\+</{ 
+        p
+        n;p
+        n;p
+      }
+    }' |
+  sed 's/"       /    /g' |
+  sed 's/"     /  /g'
