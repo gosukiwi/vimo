@@ -47,6 +47,10 @@
 "       Window equalize size
 "       NORMAL MODE
 "
+"     <leader>w<tab>
+"       Toggle window
+"       NORMAL MODE
+"
 "     <leader>w+w
 "       Window more width
 "       NORMAL MODE
@@ -75,6 +79,7 @@ nnoremap <leader>wf <c-w>o
 nnoremap <leader>wr <c-w>r
 nnoremap <leader>wR <c-w>R
 nnoremap <leader>w= <c-w>=
+nnoremap <leader>w<tab> <c-w>w
 nnoremap <leader>w+w 10<c-w>>
 nnoremap <leader>w-w 10<c-w><
 nnoremap <leader>w+h :resize +10<CR>
