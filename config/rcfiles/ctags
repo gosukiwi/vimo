@@ -24,7 +24,16 @@ function ReloadCTags()
   redraw!
 endfunction
 
-nnoremap <leader>cg <C-]>
+let g:vimo_ctags_loaded_count = 0
+function ReloadCTagsOnce()
+  if g:vimo_ctags_loaded_count > 0
+    return
+  endif
+  call ReloadCTags()
+  let g:vimo_ctags_loaded_count += 1
+endfunction
+
+nnoremap <leader>cg :call ReloadCTagsOnce()<CR><C-]>
 nnoremap <leader>cb <C-t>
 nnoremap <leader>cl :CtrlPTag<CR>
 nnoremap <leader>cr :call ReloadCTags()<CR>
