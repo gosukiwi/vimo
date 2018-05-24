@@ -2,8 +2,12 @@
 Let's get you up and running with Vim!
 
 First of all, make sure to have Vimo set up (that is Vim + the Vimo
-configuration).  If you don't, don't worry, just check out the __Installing__
-section and come back, I'll wait.
+configuration) and you are viewing this file with Vim. If you don't, don't
+worry, just check out the __Installing__ section and come back, I'll wait ;)
+
+Once you are done, you can open Vim with
+
+    $ vim /path/to/vimo/lessons/lesson-1.md
 
 There are two common ways of using Vim, in the terminal or as a GUI. There are
 advantages and disadvantages to each, but they are basically the same. So pick
