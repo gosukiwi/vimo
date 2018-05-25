@@ -38,7 +38,7 @@ set hidden
 " first one is the default for new buffers
 set fileformats=unix,mac,dos
 
-" disable Ex mode
-noremap Q <Nop>
+" disable Ex mode, use Q for formatting
+map Q gq
 
 " vim:ft=vim
