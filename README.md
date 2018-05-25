@@ -19,6 +19,7 @@ check out the [respective lesson here].
 
 * Fuzzy-finder for files, buffers and tags
 * Go-To-Definition for popular programming languages
+* Easily find word under the cursor (or selected) in files (ignores files in `.gitignore`)
 * Linting (async) for popular programming languages
 * Persistent undo -- Close vim, open it again, and still be able to use undo!
 * Emmet/Zencoding -- Expand CSS selectors into HTML elements
@@ -32,8 +33,16 @@ Take a glance at the features in the [Quick Start Guide](doc/quick-start-guide.m
 ## Installing
 Clone the repo and run the `install` script:
 
-    $ git clone git@github.com:gosukiwi/vimo.git
-    $ vimo/bin/install
+    $ git clone git@github.com:gosukiwi/vimo.git && cd vimo
+    $ bin/install
+
+## Updating
+
+    $ bin/update
+
+## Uninstalling
+
+    $ bin/uninstall
 
 ## Installing Vimo along-side Vim
 To use Vimo as a separate editor, you can use the `bin/vimo` executable. It will
@@ -41,7 +50,6 @@ open a `vim` instance using the `.vimorc` configuration file.
 
     $ ln -s $(realpath config) ~/.vimo
     $ ln -s $(realpath bin/vimo) /usr/local/bin/vimo
-    $ bin/vimo -c PlugInstall
 
 You can now use vimo and pass parameters to it as if it was any other vim
 executable:
@@ -55,18 +63,14 @@ For example, for `mvim`:
 
     alias vimo="mvim -u /path/to/vimorc "
 
-Remember to run `:PlugInstall` the first time you open Vimo.
+Remember to run `:PlugInstall` the first time you open Vimo. You can do it in
+one command as such:
 
-## Updating
-If you followed the install instructions, you can update with:
+    $ vimo -c PlugInstall
 
-    $ git pull
-
-## Uninstall
-
-    $ rm ~/.vimrc
-    $ rm ~/.vimo
-    $ mv ~/.vimrc.old ~/.vimrc
+Note that the `uninstall` binary will not work with this installation method, so
+you need to __manually uninstall if you use this setup__, which is pretty easy,
+just remove the `~/.vimo` and `/usr/local/bin/vimo` symlinks.
 
 # New to Vim?
 No worries! We have you covered. Check out the [Lessons](lessons/) and get up to

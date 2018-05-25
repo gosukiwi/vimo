@@ -1,0 +1,17 @@
+#! /bin/bash
+
+uninstall() {
+  rm ~/.vimrc
+  rm ~/.vimo
+
+  if [[ -f "$HOME/.vimrc.old" ]];
+  then
+    mv ~/.vimrc.old ~/.vimrc
+  fi
+
+  echo "Vimo has been removed."
+}
+
+read -p "Are you sure you want to delete your '.vimrc' file? This cannot be undone [y/N]: " -n 1 -r
+echo
+[[ $REPLY =~ ^[Y/y]$ ]] && uninstall
