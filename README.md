@@ -19,6 +19,7 @@ check out the [respective lesson here].
 
 * Fuzzy-finder for files, buffers and tags
 * Go-To-Definition for popular programming languages
+* Easily find word under the cursor (or selected) in files (ignores files in `.gitignore`)
 * Linting (async) for popular programming languages
 * Persistent undo -- Close vim, open it again, and still be able to use undo!
 * Emmet/Zencoding -- Expand CSS selectors into HTML elements
