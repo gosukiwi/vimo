@@ -33,8 +33,16 @@ Take a glance at the features in the [Quick Start Guide](doc/quick-start-guide.m
 ## Installing
 Clone the repo and run the `install` script:
 
-    $ git clone git@github.com:gosukiwi/vimo.git
-    $ vimo/bin/install
+    $ git clone git@github.com:gosukiwi/vimo.git && cd vimo
+    $ bin/install
+
+## Updating
+
+    $ bin/update
+
+## Uninstall
+
+    $ bin/uninstall
 
 ## Installing Vimo along-side Vim
 To use Vimo as a separate editor, you can use the `bin/vimo` executable. It will
@@ -56,16 +64,10 @@ For example, for `mvim`:
 
     alias vimo="mvim -u /path/to/vimorc "
 
-Remember to run `:PlugInstall` the first time you open Vimo.
-
-## Updating
-If you followed the install instructions, you can update with:
-
-    $ bin/update
-
-## Uninstall
-
-    $ bin/uninstall
+Remember to run `:PlugInstall` the first time you open Vimo. Also, note that the
+`uninstall` binary will not work in this case, so you need to __manually
+uninstall if you use this setup__, which is pretty easy, just remove the
+`~/.vimo` and `/usr/local/bin/vimo` symlinks.
 
 # New to Vim?
 No worries! We have you covered. Check out the [Lessons](lessons/) and get up to
