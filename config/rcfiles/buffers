@@ -7,15 +7,28 @@
 "       Swap current buffer
 "       NORMAL MODE
 "
+"     <leader>bn
+"       Go to Next buffer
+"       NORMAL MODE
+"
+"     <leader>bp
+"       Go to Previous buffer
+"       NORMAL MODE
+"
 "     <c-s>
 "       Save current buffer
 "       NORMAL MODE / INSERT MODE
 "
-noremap <leader><tab> :b#<CR>
 
 " save with ctrl+s
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
+
+" navigate with bp and bn
+noremap <leader>Bn :bnext<CR>
+noremap <leader>Bp :bprev<CR>
+" toggle with tab
+noremap <leader><tab> :b#<CR>
 
 " backup and swap files are saved in ~/.vimo/tmp
 set backupdir=~/.vimo/tmp
