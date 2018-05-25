@@ -9,12 +9,12 @@
 "       NORMAL MODE
 "
 "     <leader>ss
-"       Search in files with same filetype (eg: only Ruby files)
-"       NORMAL MODE
+"       Search text under cursor or selection in files with same filetype (eg: only Ruby files)
+"       NORMAL MODE / VISUAL MODE
 "
 "     <leader>sa
-"       Search in All files (slow)
-"       NORMAL MODE
+"       Search text under cursor or selection in All files (slow)
+"       NORMAL MODE / VISUAL MODE
 "
 
 set incsearch
