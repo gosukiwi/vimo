@@ -5,7 +5,7 @@ echo
 
 uninstall() {
   rm ~/.vimrc
-  rm -rf ~/.vimo
+  rm ~/.vimo
 
   if [[ -f "$HOME/.vimrc.old" ]];
   then
