@@ -1,4 +1,4 @@
 setlocal textwidth=80
 
-" add `--markdown` flag to `ag`
-setlocal grepprg=ag\ --markdown
+" when searching with vimgrep, see only *.md files
+let g:search_glob="**/*.md"

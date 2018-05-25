@@ -21,12 +21,14 @@ nnoremap <leader>s :noh<return><esc>
 nnoremap n nzz
 nnoremap N Nzz
 
-" use `ag` as default "grep" program
-set grepprg=ag
+" default glob filter of files for `vimgrep`
+let g:search_glob="*"
+" by default, ignore all `/tmp` and `/temp` folders
+set wildignore+=*/tmp/*,*/temp/*
 
 " grep the selected text among all files in current working directory files
 " using `ag`
-vnoremap <leader>S y:execute "grep \"" . escape(@", '"') . "\""<CR><CR>:cw<CR><CR>
-nnoremap <leader>S yaw:execute "grep \"" . escape(@", '"') . "\""<CR><CR>:cw<CR><CR>
+vnoremap <leader>S y:execute "noautocmd vimgrep /" . escape(@", '/') . "/j " . g:search_glob<CR>:cw<CR>
+nnoremap <leader>S yiw:execute "noautocmd vimgrep /" . escape(@", '/') . "/j " . g:search_glob<CR>:cw<CR>
 
 " vim:ft=vim
