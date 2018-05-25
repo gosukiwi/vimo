@@ -4,8 +4,16 @@
 "
 " Key bindings
 "
-"     <leader>s
+"     <leader>sq
 "       remove Search highlight
+"       NORMAL MODE
+"
+"     <leader>ss
+"       Search in files with same filetype (eg: only Ruby files)
+"       NORMAL MODE
+"
+"     <leader>sa
+"       Search in All files (slow)
 "       NORMAL MODE
 "
 
@@ -15,20 +23,23 @@ set ignorecase
 set smartcase       
 
 " use <leaer> to remove search higlight in normal mode
-nnoremap <leader>s :noh<return><esc>
+nnoremap <leader>sq :noh<return><esc>
 
 " show next matched string at the center of the screen
 nnoremap n nzz
 nnoremap N Nzz
 
 " default glob filter of files for `vimgrep`
-let g:search_glob="*"
+let g:search_glob="**/*"
 " by default, ignore all `/tmp` and `/temp` folders
 set wildignore+=*/tmp/*,*/temp/*
 
-" grep the selected text among all files in current working directory files
-" using `ag`
-vnoremap <leader>S y:execute "noautocmd vimgrep /" . escape(@", '/') . "/j " . g:search_glob<CR>:cw<CR>
-nnoremap <leader>S yiw:execute "noautocmd vimgrep /" . escape(@", '/') . "/j " . g:search_glob<CR>:cw<CR>
+" search all
+vnoremap <leader>sa y:execute "noautocmd vimgrep /" . escape(@", '/') . "/j **/*"<CR>:cw<CR>
+nnoremap <leader>sa yiw:execute "noautocmd vimgrep /" . escape(@", '/') . "/j **/*"<CR>:cw<CR>
+
+" search by filetype
+vnoremap <leader>ss y:execute "noautocmd vimgrep /" . escape(@", '/') . "/j " . g:search_glob<CR>:cw<CR>
+nnoremap <leader>ss yiw:execute "noautocmd vimgrep /" . escape(@", '/') . "/j " . g:search_glob<CR>:cw<CR>
 
 " vim:ft=vim
