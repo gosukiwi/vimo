@@ -1,0 +1,25 @@
+function Rename()
+  " full path to current file
+  let oldPath = expand('%:p')
+  let currentFileName = expand('%:t')
+
+  " prompt for new file name
+  call inputsave()
+  let newName = input("New file name: ")
+  call inputrestore()
+
+  if "" == newName
+    return
+  endif
+
+  let newPath = substitute(oldPath, currentFileName, newName, "")
+  echo newPath
+
+  execute "saveas " . newPath
+  execute "!rm " . oldPath
+endfunction
+
+" New name for file -- RenameFile file, but r and f are taken
+nnoremap <leader>n :call Rename()<CR><CR>
+
+" vim:ft=vim
