@@ -23,7 +23,7 @@ endfunction
 
 " [ PLUGINS & THEMES ] ------------------------------------------------------
 " Plugin-related configuration
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vimo/plugged')
 call s:SourceConfigFilesIn('rcplugins')
 call plug#end()
 " [ CORE ] ------------------------------------------------------------------
