@@ -4,12 +4,13 @@
 "
 " Key bindings
 "
-"     <leader>sq
-"       remove Search highlight
+"     <leader>sc
+"       Clear the search highlight
 "       NORMAL MODE
 "
 "     <leader>ss
 "       Search text under cursor or selection in files with same filetype (eg: only Ruby files)
+"       If there is no specified `filetype`, it runs on all files
 "       NORMAL MODE / VISUAL MODE
 "
 "     <leader>sa
@@ -22,8 +23,8 @@ set hlsearch
 set ignorecase
 set smartcase       
 
-" use <leaer> to remove search higlight in normal mode
-nnoremap <leader>sq :noh<return><esc>
+" clear search higlight in normal mode
+nnoremap <leader>sc :noh<return><esc>
 
 " show next matched string at the center of the screen
 nnoremap n nzz
