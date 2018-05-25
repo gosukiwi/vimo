@@ -1,0 +1,2 @@
+#! /bin/bash
+git pull && echo "Vimo updated!"

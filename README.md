@@ -60,13 +60,11 @@ Remember to run `:PlugInstall` the first time you open Vimo.
 ## Updating
 If you followed the install instructions, you can update with:
 
-    $ git pull
+    $ bin/update
 
 ## Uninstall
 
-    $ rm ~/.vimrc
-    $ rm ~/.vimo
-    $ mv ~/.vimrc.old ~/.vimrc
+    $ bin/uninstall
 
 # New to Vim?
 No worries! We have you covered. Check out the [Lessons](lessons/) and get up to
