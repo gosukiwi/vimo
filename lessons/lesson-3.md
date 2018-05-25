@@ -31,11 +31,26 @@ As you might have realized, in this case, both with `f` and `n`, their uppercase
 counterpart does the same but in opposite direction. Vim tries to keep things
 somewhat consistent.
 
+# Find in files
+A very handy feature is searching in similar files for a given string, for
+example, if you go to a Ruby file, position your cursor on "foo" and press
+`<leader>S` for Search, you will run `ag` and get a list of all matches.
+
+Try it here, you can use it in Markdown files aswell. Put the cursor under any
+word and press `<leader>S`. It also works with selections in Visual Mode!
+
 # Go-To-Definition
 This is a very handy feature when writing code. Vimo includes some bindings for
 working with `tags`.
 
-TODO
+In order to go to a definition simply put the cursor on a tag (a function name,
+a variable, a class name, etc) and type `<leader>cg` for ctags-go.
+
+You can manually refresh the tags definitions by running `<leader>cr` which
+stands for ctags-reload. This is done automatically the first time you run
+`<leader>cg` everytime you open Vim. Note that it's async so it exists quickly.
+If there wasn't an already-generated tags file, it will error, simply try again
+and it should work. Remember you can manually update the tags with `<leader>cr`.
 
 # Deleting text
 Deleting text in `VISUAL` mode is quite simple, just press `x` or `d` and your
