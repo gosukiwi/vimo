@@ -1,8 +1,5 @@
 #! /bin/bash
 
-read -p "Are you sure you want to delete your '.vimrc' file? This cannot be undone [Y/n]: " -n 1 -r
-echo
-
 uninstall() {
   rm ~/.vimrc
   rm ~/.vimo
@@ -15,4 +12,6 @@ uninstall() {
   echo "Vimo has been removed."
 }
 
+read -p "Are you sure you want to delete your '.vimrc' file? This cannot be undone [y/N]: " -n 1 -r
+echo
 [[ $REPLY =~ ^[Y/y]$ ]] && uninstall
