@@ -13,7 +13,7 @@ possible.
 
 The biggest feature for Vimo though is the coherent set of key-bindings. If
 you've used Spacemacs, then you know what I mean. Otherwise, don't worry, just
-check out the [respective lesson here].
+check out the [Quick Start Guide](doc/quick-start-guide.md).
 
 # What you get
 
@@ -28,7 +28,11 @@ check out the [respective lesson here].
 * Very well documented set of configuration
 * Lessons for new users as well as a quick-start guide for experienced Vim users
 
-Take a glance at the features in the [Quick Start Guide](doc/quick-start-guide.md).
+# Quickstart Guide
+The [Quick Start Guide](doc/quick-start-guide.md) is the best place to start if
+you already know your way around Vim.
+
+It explains Vimo's philosophy and shows examples in a cheatsheet fashion.
 
 ## Installing
 Clone the repo and run the `install` script:

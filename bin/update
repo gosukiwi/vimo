@@ -1,2 +1,10 @@
 #! /bin/bash
-git pull && echo "Vimo updated!"
+CURRENT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASE_DIR="$(realpath "$CURRENT_DIR/../")"
+
+if [[ $(cd "$BASE_DIR" && git pull) ]];
+then
+  echo "Vimo updated!"
+else
+  echo "There has been an error. Please, make sure `git` is working properly."
+fi
