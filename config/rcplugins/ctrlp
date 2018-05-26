@@ -4,22 +4,31 @@
 " Key bindings
 "
 "     <leader>b
-"       List all Buffers
+"       list all Buffers
 "       NORMAL MODE
 "
 "     <leader>ff
 "       File Find
 "       NORMAL MODE
 "
+"     <leader>tL
+"       Tag List all tags (big List)
+"       NORMAL MODE
+"
 
 Plug 'ctrlpvim/ctrlp.vim'
 
 noremap <leader>b :CtrlPBuffer<cr>
-" the `<leader>f` namespace is taken by "f for File"
+" the `<leader>f` namespace is taken by "file"
 noremap <leader>ff :CtrlP<cr>
+" the `<leader>t` namespace is taken by "tag"
+nnoremap <leader>tL :CtrlPTag<CR>
 
 " no max files limit
 let g:ctrlp_max_files = 0
+
+" use tag plugin
+let g:ctrlp_extensions = ['tag']
 
 " use ag when seeking files, super fast and ignores .gitignore and such
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'

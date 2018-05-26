@@ -89,7 +89,83 @@ You can search tags with `<leader>ts` for `tag search`. Note that this will not
 go to the first match if there are several matches, in which case you need to
 use `<leader>tl` to list all tags so you can see where to go from there.
 
+You can also use `<leader>tL` to list __all__ tags and fuzzy-find them. This
+does not update the tagfile so you might want to run `<leader>tr` for `tags
+refresh` first.
+
 ## Working with Buffers
+Working with buffers is easy. Use `<leader>b` to see all other buffers (besides
+the one being displayed). You can use `<leader><tab>` to toggle with the last
+buffer.
+
+If need to interact with more than two buffers at the same time, then you can
+either use `marks` (`:help marks`), if you still need more, then multiple
+windows is the way to go.
 
 ## Working with Windows
+Windows are very easy with Vimo, here's a cheatsheet:
+
+     <leader>ww
+       Window horizontal split
+       NORMAL MODE
+
+     <leader>wv
+       Window Vertical split
+       NORMAL MODE
+
+     <leader>wh
+       Window go left
+       NORMAL MODE
+
+     <leader>wj
+       Window go down
+       NORMAL MODE
+
+     <leader>wk
+       Window go up
+       NORMAL MODE
+
+     <leader>wl
+       Window go right
+       NORMAL MODE
+
+     <leader>wq
+       Window Quit
+       NORMAL MODE
+
+     <leader>wf
+       Window Full screen (close all other windows)
+       NORMAL MODE
+
+     <leader>wr
+       Window Rotate to the right
+       NORMAL MODE
+
+     <leader>wf
+       Window Rotate to the left
+       NORMAL MODE
+
+     <leader>w=
+       Window equalize size
+       NORMAL MODE
+
+     <leader>w<tab>
+       Toggle window
+       NORMAL MODE
+
+     <leader>w+w
+       Window more width
+       NORMAL MODE
+
+     <leader>w-w
+       Window less width
+       NORMAL MODE
+
+     <leader>w+h
+       Window more height
+       NORMAL MODE
+
+     <leader>w-h
+       Window less height
+       NORMAL MODE
 

@@ -4,11 +4,11 @@
 "
 " Key bindings
 "
-"     <leader><fr>
+"     <leader>fr
 "       File Rename
 "       NORMAL MODE
 "
-"     <leader><fd>
+"     <leader>fd
 "       File Delete
 "       NORMAL MODE
 "

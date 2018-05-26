@@ -68,7 +68,6 @@ nnoremap <leader>tt "tyiw:call GoToTag()<CR>
 nnoremap <leader>tg "tyiw:call GoToTag()<CR>
 nnoremap <leader>tb <C-t>
 nnoremap <leader>tl :ts<CR>
-"nnoremap <leader>tL :CtrlPTag<CR>
 nnoremap <leader>tr :call RefreshTagfile()<CR>
 nnoremap <leader>tn :tnext<CR>
 nnoremap <leader>tp :tp<CR>
