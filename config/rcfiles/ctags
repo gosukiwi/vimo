@@ -1,45 +1,79 @@
 " [ TAGS ]
-" Using `ctags' with Vim
+" Easy and async `ctags' with Vim!
 "
 " Key bindings
 "
-"     <leader>cg
-"       Ctags, Go to definition
+"     <leader>tt
+"     <leader>tg
+"       Tag, Go to definition
 "       NORMAL MODE
 "
-"     <leader>cb
-"       Ctags, go Back one definition
+"     <leader>tb
+"       Tag, go Back one definition
 "       NORMAL MODE
 "
-"     <leader>cr
-"       Ctags, Reload
+"     <leader>tr
+"       Tag Refresh
 "       NORMAL MODE
 "
-"     <leader>cl
-"       Ctags, List
+"     <leader>tl
+"       Tag List
 "       NORMAL MODE
 "
-function ReloadCTags()
-  silent execute "!git status > /dev/null && ctags -f .tags -R . &"
-  redraw!
-endfunction
+"     <leader>tn
+"       Tag Next
+"       NORMAL MODE
+"
+"     <leader>tN
+"     <leader>tp
+"       Tag Previous
+"       NORMAL MODE
+"
 
 let g:vimo_ctags_loaded_count = 0
-function ReloadCTagsOnce()
-  if g:vimo_ctags_loaded_count > 0
-    return
-  endif
-  call ReloadCTags()
-  let g:vimo_ctags_loaded_count += 1
+let g:vimo_ctags_pending_goto = 0
+
+" see `:help tjump` to know how this works
+" NOTE: The register "t" is being used in the keybinding
+function GoToTagOrOpenTagMatchlist()
+  execute "tjump " . @t
 endfunction
 
-nnoremap <leader>cg :call ReloadCTagsOnce()<CR><C-]>
-nnoremap <leader>cb <C-t>
-nnoremap <leader>cl :CtrlPTag<CR>
-nnoremap <leader>cr :call ReloadCTags()<CR>
+function RefreshTagfile()
+  call job_start("ctags -f .tags -R .", { 'close_cb': 'OnReloadCTagsDone' })
+endfunction
+
+function OnReloadCTagsDone(_channel)
+  let g:vimo_ctags_loaded_count += 1
+  echo "Tags refreshed"
+
+  if g:vimo_ctags_pending_goto == 1
+    let g:vimo_ctags_pending_goto = 0
+    call GoToTagOrOpenTagMatchlist()
+  endif
+endfunction
+
+function GoToTag()
+  if g:vimo_ctags_loaded_count == 0
+    let g:vimo_ctags_pending_goto = 1
+    echo "Go to tag (refreshing tagfile)..."
+    call RefreshTagfile()
+  else
+    call GoToTagOrOpenTagMatchlist()
+  endif
+endfunction
+
+nnoremap <leader>tt "tyiw:call GoToTag()<CR>
+nnoremap <leader>tg "tyiw:call GoToTag()<CR>
+nnoremap <leader>tb <C-t>
+nnoremap <leader>tl :CtrlPTag<CR>
+nnoremap <leader>tr :call RefreshTagfile()<CR>
+nnoremap <leader>tn :tnext<CR>
+nnoremap <leader>tp :tp<CR>
+nnoremap <leader>tN :tN<CR>
 
 " on vim open, reload the tags
-":autocmd VimEnter * :call ReloadCTags()
+":autocmd VimEnter * :call RefreshTagfile()
 
 " Allow to use a `.tags` file so it's hidden by default, `tags` can also be
 " used if you prefer.
