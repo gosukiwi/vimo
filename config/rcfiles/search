@@ -1,7 +1,4 @@
 " [ SEARCH ]
-" Highlight as you type kind of search. If a pattern contains an uppercase
-" letter, match for case sensitive, otherwise, match for case-insensitive.
-"
 " Key bindings
 "
 "     <leader>sc
@@ -17,30 +14,67 @@
 "       Search text under cursor or selection in All files (slow)
 "       NORMAL MODE / VISUAL MODE
 "
+"     <leader>sr
+"       Search and Replace. It allows for replacing the search term from the
+"       last search. Example usage:
+"
+"         1. Use "<leader>ss" to search for the word under the cursor.
+"         2. Use "<leader>srPotato" to replace the world with Potato. 
+"            You will be prompted for each replacement. These are not saved.
+"            You can save-all with ":bufdo update".
+"
+"       NORMAL MODE / VISUAL MODE
+"
 
+" highlight as you type kind of search -- if a pattern contains an uppercase
+" letter, match for case sensitive, otherwise, match for case-insensitive
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase       
 
 " clear search higlight in normal mode
-nnoremap <leader>sc :noh<return><esc>
+nnoremap <leader>sc :noh<CR>
 
 " show next matched string at the center of the screen
 nnoremap n nzz
 nnoremap N Nzz
 
-" default glob filter of files for `vimgrep`
+" the default glob matches all files, this gets overriden in each filetype
+" plugin to scan for certain extentions, see `ftplugin/ruby` for an example.
 let g:search_glob="**/*"
-" by default, ignore all `/tmp` and `/temp` folders
-set wildignore+=*/tmp/*,*/temp/*
 
-" search all
-vnoremap <leader>sa y:execute "noautocmd vimgrep /" . escape(@", '/') . "/j **/*"<CR>:cw<CR>
-nnoremap <leader>sa yiw:execute "noautocmd vimgrep /" . escape(@", '/') . "/j **/*"<CR>:cw<CR>
+function SearchIn(glob)
+  let glob = g:search_glob
+  if a:glob != ""
+    let glob = a:glob
+  endif
+
+  execute "noautocmd vimgrep /" . escape(@s, '/') . "/j " . glob
+endfunction
+
+function ReplaceMatch()
+  call inputsave()
+  let replacewith = input("Replace with: ")
+  call inputrestore()
+
+  if replacewith == ""
+    return
+  endif
+
+  execute "cdo %s/" . escape(@", '/') . "/" . replacewith . "/cge"
+endfunction
+
+" search all -- use `s` register and yank stuff there, then just call the
+" `SearchIn` function.
+vnoremap <leader>sa "sy:call SearchIn("**/*")<CR>:cw<CR>
+nnoremap <leader>sa "syiw:call SearchIn("**/*")<CR>:cw<CR>
 
 " search by filetype
-vnoremap <leader>ss y:execute "noautocmd vimgrep /" . escape(@", '/') . "/j " . g:search_glob<CR>:cw<CR>
-nnoremap <leader>ss yiw:execute "noautocmd vimgrep /" . escape(@", '/') . "/j " . g:search_glob<CR>:cw<CR>
+vnoremap <leader>ss "sy:call SearchIn("")<CR>:cw<CR>
+nnoremap <leader>ss "syiw:call SearchIn("")<CR>:cw<CR>
+
+" replace searched term in search result
+nnoremap <leader>sr :call ReplaceMatch()<CR>
 
 " vim:ft=vim

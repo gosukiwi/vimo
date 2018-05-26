@@ -1,0 +1,11 @@
+" [GITIGNORE]
+" Add entries from gitignore into `wildignore`
+
+Plug 'vim-scripts/gitignore' 
+
+" always clear cache on startup, useful when swapping between branches a lot
+if has("autocmd") && filereadable(".gitignore")
+  autocmd VimEnter * WildignoreFromGitignore
+endif
+
+" vim:ft=vim
