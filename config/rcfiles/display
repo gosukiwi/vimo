@@ -22,6 +22,7 @@ highlight OverLength ctermbg=lightgray guibg=lightgray
 " use Adobe's Source Code Pro font
 set guifont=Source\ Code\ Pro
 
+" color theme, see `rcplugins/theme`
 colorscheme nova
 
 " vim:ft=vim
