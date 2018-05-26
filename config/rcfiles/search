@@ -42,12 +42,15 @@ nnoremap N Nzz
 
 " the default glob matches all files, this gets overriden in each filetype
 " plugin to scan for certain extentions, see `ftplugin/ruby` for an example.
-let g:search_glob="**/*"
+let g:default_search_glob="**/*"
 
 function SearchIn(glob)
-  let glob = g:search_glob
   if a:glob != ""
     let glob = a:glob
+  elseif expand("%:e") != ""
+    let glob = "**/*." . expand("%:e")
+  else
+    let glob = g:default_search_glob
   endif
 
   execute "noautocmd vimgrep /" . escape(@s, '/') . "/j " . glob

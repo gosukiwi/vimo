@@ -51,9 +51,9 @@ buffer.
 
 The search is smart enough to ignore files in your `.gitignore` file.
 
-`<leader>ss` is great, but it only searches similar filetypes, this means that
-if you run it in a Ruby file, it will search only `*.rb` files. If you want to 
-search for all files, you can use `<leader>sa` for `search all`.
+`<leader>ss` is great, but it only searches files with the same extension, this
+means that if you run it in a Ruby file, it will search only `*.rb` files. If
+you want to search for all files, you can use `<leader>sa` for `search all`.
 
 Another thing you can do is _find and replace_. Once you have performed a
 search, you can replace whatever you searched for in the files with a new value.

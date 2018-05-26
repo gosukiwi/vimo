@@ -23,6 +23,3 @@
 
 nnoremap <leader>rd obinding.pry<esc>
 nnoremap <leader>rD /binding.pry<cr>
-
-" when searching with vimgrep, see only *.rb files
-let g:search_glob="**/*.rb"
