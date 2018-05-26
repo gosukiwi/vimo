@@ -17,16 +17,31 @@ check out the [Quick Start Guide](doc/quick-start-guide.md).
 
 # What you get
 
-* Fuzzy-finder for files, buffers and tags
-* Go-To-Definition for popular programming languages
-* Easily find word under the cursor (or selected) in files (ignores files in `.gitignore`)
-* Linting (async) for popular programming languages
-* Persistent undo -- Close vim, open it again, and still be able to use undo!
-* Emmet/Zencoding -- Expand CSS selectors into HTML elements
-* Coherent Bindings -- Easily memoizable commands for managing windows, buffers,
-  files, and pretty much every feature.
-* Very well documented set of configuration
-* Lessons for new users as well as a quick-start guide for experienced Vim users
+    FILE MANAGEMENT
+    |-> Fuzzy find files
+    |-> Browse files in your project
+    |-> Bindings for renaming and deleting files
+
+    SEARCHING
+    |-> Seamless search (grep) among all files in your project
+    |-> Search-And-Replace among all files in your project
+    |   Vimo asks for confirmation for each replacement, don't worry!
+
+    TAGS
+    |-> Out-of-the-box ctags (or similar) support - http://ctags.sourceforge.net/languages.html
+    |-> Fuzzy find all tags
+    |-> Go-To-Definition and Find-All-Usages
+    |-> Seamless integration, don't have to worry about managing the `tagfile`
+
+    LINTING
+    |-> Asyncronous Linting provided by Ale - https://github.com/w0rp/ale#1-supported-languages-and-tools
+    |-> Non-blocking
+
+    OTHER
+    |-> Persistent undo, you can close vim, then open it again, and it will
+    |   remember where you left off
+    |-> Coherent bindings! Easily memoizable set of key bindings
+    |-> Great documentation
 
 # Quickstart Guide
 The [Quick Start Guide](doc/quick-start-guide.md) is the best place to start if
