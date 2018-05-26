@@ -63,7 +63,7 @@ function GoToTag()
   endif
 endfunction
 
-nnoremap <leader>ts :tag /
+nnoremap <leader>ts :call RefreshTagfile()<CR>:tag /
 nnoremap <leader>tt "tyiw:call GoToTag()<CR>
 nnoremap <leader>tg "tyiw:call GoToTag()<CR>
 nnoremap <leader>tb <C-t>

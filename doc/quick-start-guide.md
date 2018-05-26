@@ -72,6 +72,22 @@ Ruby, PHP, Javascript, C and so on.
 You don't have to worry about keeping up this file, Vimo does that automatically
 for you in an asyncronous fashion, so it doesn't block the UI.
 
+To find the tag under the cursor use `<leader>tt` or `<leader>tg` for `tag go`.
+If there are many matches, a list of matches will be displayed where you can
+choose which one you want to go to.
+
+You can navigate tags with `<leader>tn` for `tag next` and `<leader>tN` or
+`<leader>tp` for `tag previous`.
+
+You can go back to the previous tag with `<leader>tb` for `tag back`.
+
+You can see all the matches for the current tag using `<leader>tl` which stands
+for `tag list`.
+
+You can search tags with `<leader>ts` for `tag search`. Note that this will not
+go to the first match if there are several matches, in which case you need to
+use `<leader>tl` to list all tags so you can see where to go from there.
+
 ## Working with Buffers
 
 ## Working with Windows
