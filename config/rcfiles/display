@@ -1,4 +1,4 @@
-" [ DISPLAY ] --.
+" [ DISPLAY ]
 " Change the way Vim displays stuff
 
 " use relative line numbers for easier j/k navigation (eg: 10g, 25j, etc)
@@ -14,5 +14,14 @@ set scrolloff=3
 
 " always display the status line
 set laststatus=2
+
+" make a mark for column 80 and set the mark color to lightgray
+set colorcolumn=80 
+highlight OverLength ctermbg=lightgray guibg=lightgray
+
+" use Adobe's Source Code Pro font
+set guifont=Source\ Code\ Pro
+
+colorscheme nova
 
 " vim:ft=vim

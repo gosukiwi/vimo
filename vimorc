@@ -29,7 +29,6 @@ call plug#end()
 " [ CORE ] ------------------------------------------------------------------
 " Vim core configuration
 call s:SourceConfigFilesIn('rcfiles')
-colorscheme nova
 " ---------------------------------------------------------------------------
 
 " vim:ft=vim
