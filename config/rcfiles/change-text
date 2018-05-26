@@ -27,8 +27,9 @@
 let &clipboard = has('unnamedplus') ? 'unnamedplus' : 'unnamed'
 
 " allow <tab> and <shift-tab> to tab selection in visual mode
-vmap <Tab> >gv
-vmap <S-Tab> <gv
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+inoremap <S-Tab> <Esc><<i
 
 " use <C-j> and <C-k> to move lines up and down
 nnoremap <C-j> :m .+1<CR>==

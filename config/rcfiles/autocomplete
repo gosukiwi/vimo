@@ -3,20 +3,19 @@
 " Key bindings
 "
 "     <tab>
-"       Open autocomplete
+"       Open autocomplete if typing something, otherwise, add a tab
 "       INSERT MODE
 " 
-function! InsertTabWrapper()
+function InsertTabWrapper()
   let col = col('.') - 1
   if !col || getline('.')[col - 1] !~ '\k'
     return "\<tab>"
   else
-    return "\<c-p>"
+    return "\<c-n>"
   endif
 endfunction
 
 inoremap <expr> <tab> InsertTabWrapper()
-inoremap <s-tab> <c-n>
 
 " use j and k to scroll though suggestions
 inoremap <expr> j ((pumvisible()) ? ("\<C-n>") : ("j"))
