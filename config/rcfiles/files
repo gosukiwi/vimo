@@ -1,4 +1,4 @@
-function Rename()
+function RenameFile()
   " full path to current file
   let oldPath = expand('%:p')
   let currentFileName = expand('%:t')
@@ -19,7 +19,18 @@ function Rename()
   execute "!rm " . oldPath
 endfunction
 
+function DeleteFile()
+  let currentFile  = expand('%:p')
+  let confirmation = confirm("Are you sure you want to delete this file? [Y/n]")
+
+  if confirmation
+    bd
+    execute "!rm " . currentFile
+  endif
+endfunction
+
 " New name for file -- RenameFile file, but r and f are taken
-nnoremap <leader>n :call Rename()<CR><CR>
+nnoremap <leader>n :call RenameFile()<CR><CR>
+nnoremap <leader>d :call DeleteFile()<CR><CR>
 
 " vim:ft=vim
