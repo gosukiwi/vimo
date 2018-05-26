@@ -7,18 +7,17 @@
 "       Open file browser
 "       NORMAL MODE
 "
-"     <leader>F
-"       Open file browser
+"     <leader>fb
+"       File Browser
 "       NORMAL MODE
 " 
 "
 
 Plug 'jeetsukumaran/vim-filebeagle'
 
-" file-beagle uses <leader>f, don't want that mapping, let's use <leader>F
-" instead
+" file-beagle uses <leader>f, don't want that mapping
 let g:filebeagle_suppress_keymaps = 1
 map <silent> - <Plug>FileBeagleOpenCurrentBufferDir
-map <silent> <leader>F <Plug>FileBeagleOpenCurrentBufferDir
+map <silent> <leader>fb <Plug>FileBeagleOpenCurrentBufferDir
 
 " vim:ft=vim

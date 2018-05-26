@@ -1,3 +1,18 @@
+" [ FILES ]
+" File-related functionality. See also `rcplugins/ctrlp` and
+" `rcplugins/filebeagle`.
+"
+" Key bindings
+"
+"     <leader><fr>
+"       File Rename
+"       NORMAL MODE
+"
+"     <leader><fd>
+"       File Delete
+"       NORMAL MODE
+"
+
 function RenameFile()
   " full path to current file
   let oldPath = expand('%:p')
@@ -29,8 +44,7 @@ function DeleteFile()
   endif
 endfunction
 
-" New name for file -- RenameFile file, but r and f are taken
-nnoremap <leader>n :call RenameFile()<CR><CR>
-nnoremap <leader>d :call DeleteFile()<CR><CR>
+nnoremap <leader>fr :call RenameFile()<CR><CR>
+nnoremap <leader>fd :call DeleteFile()<CR><CR>
 
 " vim:ft=vim

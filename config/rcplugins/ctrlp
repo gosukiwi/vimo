@@ -7,15 +7,16 @@
 "       List all Buffers
 "       NORMAL MODE
 "
-"     <leader>f
-"       List all Files
+"     <leader>ff
+"       File Find
 "       NORMAL MODE
 "
 
 Plug 'ctrlpvim/ctrlp.vim'
 
 noremap <leader>b :CtrlPBuffer<cr>
-noremap <leader>f :CtrlP<cr>
+" the `<leader>f` namespace is taken by "f for File"
+noremap <leader>ff :CtrlP<cr>
 
 " no max files limit
 let g:ctrlp_max_files = 0
