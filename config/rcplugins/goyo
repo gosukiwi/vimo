@@ -1,0 +1,13 @@
+" [ Goyo ]
+" Zen writing setup
+
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+" toggle zen-mode
+nnoremap <leader>z :Goyo<CR>
+
+" vim:ft=vim

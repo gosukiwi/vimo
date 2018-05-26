@@ -38,10 +38,9 @@ check out the [Quick Start Guide](doc/quick-start-guide.md).
     |-> Non-blocking
 
     OTHER
-    |-> Persistent undo, you can close vim, then open it again, and it will
-    |   remember where you left off
-    |-> Coherent bindings! Easily memoizable set of key bindings
+    |-> Coherent bindings
     |-> Great documentation
+    |-> Zen-mode (try it out!)
 
 # Quickstart Guide
 The [Quick Start Guide](doc/quick-start-guide.md) is the best place to start if
