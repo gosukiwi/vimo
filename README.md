@@ -98,3 +98,12 @@ The lessons give a broad overview on how to use Vim (and particularly Vimo)
 efficiently. It's designed to get you out of beginner level and enable you to
 continue learning on your own, using Vim's great `:help` system as well as the
 internet :) 
+
+# Vimo on Windows
+There is no current plan to support Windows, nevertheless, do not worry! You can
+use [WSL](http://wsl-guide.org/en/latest/http://wsl-guide.org/en/latest/) to run
+Ubuntu on Windows!
+
+If you do go this route, make sure to use a good terminal. If you have no
+preference, I personally use
+[wsl-terminal](https://github.com/goreliu/wsl-terminal) and it "just works".
