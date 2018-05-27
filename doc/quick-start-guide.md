@@ -180,7 +180,8 @@ You can see all supported linting engines in [the official ALE
 page](https://github.com/w0rp/ale#1-supported-languages-and-tools).
 
 # Zen-mode
-Focus is very important when writing, be it code or natural language. In Zen
-mode, Vimo will center the screen so you can focus on one thing at a time.
+Focus is very important when writing. It doesn't matter if it's code or just
+english, writing requires concentration. In Zen mode, Vimo will center the
+screen so you can focus on one thing at a time.
 
-You can toggle Zen mode with `<leader>z`, for `zen mode`.
+You can toggle Zen mode with `<leader>z`, for `zen mode`. Give it a shot!
