@@ -53,7 +53,8 @@ function SearchIn(glob)
     let glob = g:default_search_glob
   endif
 
-  execute "noautocmd vimgrep /" . escape(@s, '/') . "/j " . glob
+  " use \C in the search pattern to respect case
+  execute "noautocmd vimgrep /" . escape(@s, '/') . "\\C/j " . glob
 endfunction
 
 function ReplaceMatch()
