@@ -14,8 +14,9 @@
 "
 
 function RenameFile()
+  let fileDirectory = expand('%:h')
   call inputsave()
-  let newName = input("New file name: ")
+  let newName = input("New file name: " . fileDirectory . "/")
   call inputrestore()
 
   if "" == newName
@@ -23,7 +24,7 @@ function RenameFile()
   endif
 
   let oldFileName = expand('%')
-  execute "saveas " . escape(newName, " ")
+  execute "saveas " . fileDirectory . "/" . escape(newName, " ")
   bd# | call delete(oldFileName) | e " re-runs autocommands in case filetype changed
 endfunction
 
