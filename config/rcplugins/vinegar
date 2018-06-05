@@ -1,0 +1,16 @@
+" [VINEGAR]
+" Make Vim's default netrw easy to use.
+"
+" Key bindings
+"
+"     -
+"     <leader>fb
+"       Open file browser, use `I` to see help
+"       NORMAL MODE
+"
+
+Plug 'tpope/vim-vinegar'
+
+map <silent> <leader>fb <Plug>VinegarUp
+
+" vim:ft=vim
