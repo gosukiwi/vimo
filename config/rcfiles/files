@@ -29,11 +29,7 @@ function RenameFile()
 endfunction
 
 function DeleteFile()
-  let confirmation = confirm("Are you sure you want to delete this file? [Y/n]")
-
-  if confirmation
-    call delete(expand('%')) | bdelete!
-  endif
+  call delete(expand('%')) | bdelete!
 endfunction
 
 nnoremap <leader>fr :call RenameFile()<CR><CR>
