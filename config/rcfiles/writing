@@ -4,13 +4,13 @@
 " Key bindings
 "
 "     <C-l>
-"     <C-f>
-"       Move the cursor to the end of the line
+"     <C-e>
+"       Move the cursor to the End of the line
 "       INSERT MODE
 "
 "     <C-h>
 "     <C-b>
-"       Move the cursor to the beginning of the line
+"       Move the cursor to the Beginning of the line
 "       INSERT MODE
 "
 
@@ -23,7 +23,7 @@ set shiftwidth=2    " when reading
 set softtabstop=2   " in insert mode
 
 inoremap <C-l> <Esc>A
-inoremap <C-f> <Esc>A
+inoremap <C-e> <Esc>A
 inoremap <C-h> <Esc>I
 inoremap <C-b> <Esc>I
 

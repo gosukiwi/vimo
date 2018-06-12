@@ -14,7 +14,6 @@ Plug 'rhysd/vim-textobj-ruby'         " add `r` (for Ruby) text-object, allow fo
 Plug 'slim-template/vim-slim'         " slim support
 
 " HTML
-Plug 'mattn/emmet-vim'                " emmet/zen-coding
 Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr' " xml tags as text objects
 
 " Coffeescript
