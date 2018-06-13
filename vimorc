@@ -13,7 +13,7 @@ let mapleader = " "
 
 " load files in a directory
 function! s:SourceConfigFilesIn(directory)
-  let directory_splat = '~/.vimo/' . a:directory . '/*'
+  let directory_splat = '~/.vimo/layers/' . a:directory . '/*'
   for config_file in split(glob(directory_splat), '\n')
     if filereadable(config_file)
       execute 'source' config_file
@@ -21,14 +21,19 @@ function! s:SourceConfigFilesIn(directory)
   endfor
 endfunction
 
+" Here you can enable/disable optional layers individually
+let g:vimo#layers#rails#disabled   = 0
+let g:vimo#layers#webdev#disabled  = 0
+let g:vimo#layers#zenmode#disabled = 0
+
 " [ PLUGINS & THEMES ] ------------------------------------------------------
 " Plugin-related configuration
 call plug#begin('~/.vimo/tmp/plugged')
-call s:SourceConfigFilesIn('rcplugins')
+call s:SourceConfigFilesIn('plugins')
 call plug#end()
 " [ CORE ] ------------------------------------------------------------------
 " Vim core configuration
-call s:SourceConfigFilesIn('rcfiles')
+call s:SourceConfigFilesIn('common')
 " ---------------------------------------------------------------------------
 
 " vim:ft=vim

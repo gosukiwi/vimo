@@ -1,0 +1,13 @@
+" [Rails Configuration Layer]
+if(exists('g:vimo#layers#rails#disabled') && g:vimo#layers#rails#disabled)
+  finish
+endif
+
+" Default Ruby syntax is SLOW - Use this one instead
+Plug 'vim-ruby/vim-ruby'              
+" Slim
+Plug 'slim-template/vim-slim'
+" Coffeescript
+Plug 'kchmck/vim-coffee-script'
+
+" vim:ft=vim

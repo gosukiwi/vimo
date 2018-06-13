@@ -1,5 +1,8 @@
 " [ Goyo ]
 " Zen writing setup
+if(exists('g:vimo#layers#zenmode#disabled') && g:vimo#layers#zenmode#disabled)
+  finish
+endif
 
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
