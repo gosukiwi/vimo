@@ -1,0 +1,9 @@
+" [ TERMINAL / CONSOLE ]
+" Settings related to the terminal. Use the `c` namespace for now, because `t`
+" is reserved for Tags.
+
+nnoremap <leader>cc :vsplit<CR><C-w>l:term ++curwin<CR>
+nnoremap <leader>cv :vsplit<CR><C-w>l:term ++curwin<CR>
+nnoremap <leader>ch :term<CR>
+
+" vim:set ft=vim
