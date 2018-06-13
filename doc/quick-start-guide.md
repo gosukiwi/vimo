@@ -3,16 +3,24 @@ Welcome! In this guide I'll explain to you the ways Vimo adds to vanilla-vim.
 I'll assume some basic Vim knowledge. If something is not clear feel free to
 [open an issue](https://github.com/gosukiwi/vimo/issues/new).
 
+New to Vim? Don't worry, all you need to know to understand the style-guide is
+explained in `vimtutor`, a lesson which is included by default in all Vim
+distributions. To go though the lesson simply:
+
+    $ vimtutor
+
 # Namespaces and Coherent Bindings
-All of Vimo features use _coherent bindings_, this means, it tries to build a
-set of _mnemonic rules_ so you can easily remember the commands. Adhering to
-Vi's original philosophy.
+Vimo's main feature is a set of _coherent key bindings_. The configuration aims
+to build a set of _mnemonic rules_ so you can easily remember the commands.
+Adhering to Vi's original philosophy.
 
-All of Vimo commands start with `<space>`, this is what in Vim jargon is called a
-_leader key_.
+All of Vimo commands start with `<space>`, we'll call this the _leader key_.
 
-The first letter after the space is the _namespace_, some examples are `f` for
-files, `b` for buffers, `w` for windows, `r` for Ruby and so on.
+Whatever key we press after the leader key we'll call the _namespace_, for
+example if we type `<space>f`, `f` is a namespace and stands for files.
+
+There are many namespaces, they are useful for grouping commands. Some more
+namespaces are `s` for searching, `w` for windows, `r` for Ruby and so on.
 
 After the namespace comes the command, some examples are `<space>fr` for `file
 rename`, `<space>ff` for file find and `<space>wv` for `window vertical split`.
@@ -25,22 +33,23 @@ Note that `<leader>` is the same as `<space>`. Because you can change the
 default leader key if you want, I will call it `<leader>` from now on.
 
 The file browser quite minimal, it allows for navigation though a directory
-structure and opening and creating files.
+structure, opening and creating files, renaming files, deleting files, creating
+folders, etc. You can toggle the help by pressing `I`.
 
-You can fuzzy find files with `<leader>ff`, this one is very convenient and is
-the one you want to use most of the time.
+You can fuzzy-find files with `<leader>ff`, this one is very convenient and is
+the command you want to use most of the time for quickly opening files.
 
-You can rename the file in the current buffer with `<leader>fr` which stands for
-`file rename`. Likewise, you can delete the current buffer and it's file with
-`<leader>fd` which reads as `file delete`.
+You can rename the file in the current buffer with `<leader>fr` which stands
+for `file rename`. Likewise, you can delete the current buffer and it's file
+with `<leader>fd` which reads as `file delete`.
 
 # Searching
 Searching is easy in Vimo. You can use Vim's `/` to search for stuff in the
 current buffer. Notice that as you type, it highlights the matches. You can go
 to the next match by pressing `n` and the previous by pressing `N`. Both of
-these commands will center the screen for you after each search so you don't get
-confused by the screen jumping around. Once done, you can use `<leader>sc` to
-clear the highlight.
+these commands will center the screen for you after each search so you don't
+get confused by the screen jumping around. Once done, you can use `<leader>sc`
+to clear the highlight.
 
 Besides Vim's built-in functionality, you can use `<leader>ss` to search for the
 word under the cursor __in all files in the current directory__. You can also

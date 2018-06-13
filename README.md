@@ -6,14 +6,11 @@
 
 Vimo is a vim configuration fine-tuned for Web Development, designed to include
 everything you'll need for efficient web development while keeping it minimal
-and follow the UNIX philosophy.
+and following the UNIX philosophy.
 
-Vimo tries to keep plugins minimal and use as many core functionality as
-possible.
-
-The biggest feature for Vimo though is the coherent set of key-bindings. If
-you've used Spacemacs, then you know what I mean. Otherwise, don't worry, just
-check out the [Quick Start Guide](doc/quick-start-guide.md).
+The biggest feature for Vimo is the coherent set of key-bindings. If you've
+used Spacemacs, then you know what I mean. Otherwise, don't worry, just check
+out the [Quistart Guide](doc/quick-start-guide.md).
 
 # What you get
 
@@ -43,7 +40,7 @@ check out the [Quick Start Guide](doc/quick-start-guide.md).
     |-> Zen-mode (try it out!)
 
 # Quickstart Guide
-The [Quick Start Guide](doc/quick-start-guide.md) is the best place to start if
+The [Quickstart Guide](doc/quick-start-guide.md) is the best place to start if
 you already know your way around Vim.
 
 It explains Vimo's philosophy and shows examples in a cheatsheet fashion.
@@ -90,19 +87,10 @@ Note that the `uninstall` binary will not work with this installation method, so
 you need to __manually uninstall if you use this setup__, which is pretty easy,
 just remove the `~/.vimo` and `/usr/local/bin/vimo` symlinks.
 
-# New to Vim?
-No worries! We have you covered. Check out the [Lessons](lessons/) and get up to
-speed in no time.
-
-The lessons give a broad overview on how to use Vim (and particularly Vimo)
-efficiently. It's designed to get you out of beginner level and enable you to
-continue learning on your own, using Vim's great `:help` system as well as the
-internet :) 
-
 # Vimo on Windows
-There is no current plan to support Windows, nevertheless, do not worry! You can
-use [WSL](http://wsl-guide.org/en/latest/http://wsl-guide.org/en/latest/) to run
-Ubuntu on Windows!
+There is no current plan to support Windows, nevertheless, do not worry! You
+can use [WSL](http://wsl-guide.org/en/latest/http://wsl-guide.org/en/latest/)
+to run Ubuntu on Windows!
 
 If you do go this route, make sure to use a good terminal. If you have no
 preference, I personally use
