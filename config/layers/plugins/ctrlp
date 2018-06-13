@@ -15,6 +15,9 @@
 "       Tag List all tags (big List)
 "       NORMAL MODE
 "
+if(exists('g:vimo#layers#ctrlp#disabled') && g:vimo#layers#ctrlp#disabled)
+  finish
+endif
 
 Plug 'ctrlpvim/ctrlp.vim'
 

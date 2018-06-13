@@ -1,6 +1,5 @@
 " [ Vimo ] -------------------------------------------------------------------
-"  This is the Vimo configuration file. A batteries-included vim configuration
-"  of web development.
+"  This is the Vimo configuration file.
 "
 "  DEPENDENCIES:
 "  Run `bin/doctor` to check your system.
@@ -12,9 +11,14 @@ set nocompatible
 let mapleader = " "
 
 " Here you can enable/disable optional layers individually
-let g:vimo#layers#rails#disabled   = 0
-let g:vimo#layers#webdev#disabled  = 0
-let g:vimo#layers#zenmode#disabled = 0
+let g:vimo#layers#ctrlp#disabled     = 0
+let g:vimo#layers#ale#disabled       = 0
+let g:vimo#layers#gitignore#disabled = 0
+let g:vimo#layers#lightline#disabled = 0
+let g:vimo#layers#vinegar#disabled   = 0
+let g:vimo#layers#rails#disabled     = 0
+let g:vimo#layers#webdev#disabled    = 0
+let g:vimo#layers#zenmode#disabled   = 0
 
 " [ DO NOT MODIFY BELOW THIS LINE ] ------------------------------------------
 function! s:SourceConfigFilesIn(directory)

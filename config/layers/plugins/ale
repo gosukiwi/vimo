@@ -1,5 +1,8 @@
 " [ ALE ]
 " Linter support
+if(exists('g:vimo#layers#ale#disabled') && g:vimo#layers#ale#disabled)
+  finish
+endif
 
 Plug 'w0rp/ale'
 

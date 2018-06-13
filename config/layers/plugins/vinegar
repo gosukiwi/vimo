@@ -8,6 +8,9 @@
 "       Open file browser, use `I` to see help
 "       NORMAL MODE
 "
+if(exists('g:vimo#layers#vinegar#disabled') && g:vimo#layers#vinegar#disabled)
+  finish
+endif
 
 Plug 'tpope/vim-vinegar'
 

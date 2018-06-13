@@ -1,5 +1,8 @@
 " [GITIGNORE]
 " Add entries from gitignore into `wildignore`
+if(exists('g:vimo#layers#gitignore#disabled') && g:vimo#layers#gitignore#disabled)
+  finish
+endif
 
 Plug 'vim-scripts/gitignore' 
 

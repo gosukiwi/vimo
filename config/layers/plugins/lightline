@@ -1,5 +1,8 @@
 " [LIGHTLINE]
 " Lightweight and pure vimscript status bar
+if(exists('g:vimo#layers#lightline#disabled') && g:vimo#layers#lightline#disabled)
+  finish
+endif
 
 Plug 'itchyny/lightline.vim'          
 
@@ -23,6 +26,10 @@ let g:lightline = {
       \   'linter_ok': 'ok'
       \ },
       \ }
+
+if(exists('g:vimo#layers#ale#disabled') && g:vimo#layers#ale#disabled)
+  finish
+endif
 
 autocmd User ALELint call lightline#update()
 
