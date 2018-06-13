@@ -96,3 +96,41 @@ to run Ubuntu on Windows!
 If you do go this route, make sure to use a good terminal. If you have no
 preference, I personally use
 [wsl-terminal](https://github.com/goreliu/wsl-terminal) and it "just works".
+
+# Configuration Layers
+Configuration is split in several layers, grouped by functionality. The
+plugin-related configuration lives in `config/layers/plugins/`, the
+configuration related to vanilla Vim lives in `config/layers/core/`.
+
+You can choose which layers to enable in the `vimorc` file, it looks something
+like this:
+
+
+    " Here you can enable/disable optional layers individually
+    let g:vimo#layers#ctrlp#disabled     = 0
+    let g:vimo#layers#ale#disabled       = 0
+    let g:vimo#layers#gitignore#disabled = 0
+    let g:vimo#layers#lightline#disabled = 0
+    let g:vimo#layers#vinegar#disabled   = 0
+    let g:vimo#layers#rails#disabled     = 0
+    let g:vimo#layers#webdev#disabled    = 0
+    let g:vimo#layers#zenmode#disabled   = 0
+    ...
+
+If you change from `0` to `1` it will disable the layer. Note that because I
+work with Rails, there is a Rails configuration layer in place, as well as a
+generic web development layer which adds some goodies when working with HTML,
+CSS and ES6.
+
+## Custom Layers
+If you have more specific needs, for example, for working with Node, React or
+PHP, you can create a new configuration layer in `config/layers/`. Remember,
+`plugins` is for plugin-related configuration, and `core` is for core Vim
+functionality. If you want to add a `filetype` plugin, drop it in
+`config/ftplugin`.
+
+If you feel like others would benefit from it, feel free to [submit a
+PR](https://github.com/gosukiwi/vimo/pulls)!
+
+A layer can live in several files, for example, the Rails layer includes the
+files `config/ftplugin/ruby.vim` as well as `config/layers/plugins/rails`.
