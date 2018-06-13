@@ -1,8 +1,7 @@
 " [CORE]
 " Defaults we can all agree on
 
-" in insert mode, force backspace to delete over line breaks, or
-" automatically-inserted indentation.
+" make the backspace behave like it's supposed to in insert mode 
 set backspace=indent,eol,start
 
 " a filetype plugin is a Vim script that is loaded whenever Vim opens or
@@ -36,7 +35,7 @@ set hidden
 
 " the order in which vim tries the file formats when reading a new file. The
 " first one is the default for new buffers
-set fileformats=unix,mac,dos
+"set fileformats=unix,mac,dos
 
 " disable Ex mode, use Q for formatting
 map Q gq
