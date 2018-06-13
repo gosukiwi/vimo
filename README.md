@@ -4,13 +4,14 @@
   <img src="img/logo.gif">
 </p>
 
-Vimo is a vim configuration fine-tuned for Web Development, designed to include
-everything you'll need for efficient web development while keeping it minimal
-and following the UNIX philosophy.
+Vimo is a vim configuration which focuses on providing a set of _coherent
+key-bindings_ on top of vanilla-vim.
 
-The biggest feature for Vimo is the coherent set of key-bindings. If you've
-used Spacemacs, then you know what I mean. Otherwise, don't worry, just check
-out the [Quistart Guide](doc/quick-start-guide.md).
+Vimo aims to minimize the use of plugins, only very important quality-of-life
+plugins are included by default, such as ALE, CtrlP, Surround, as well as
+syntax-specific plugins for Ruby, SCSS and ES6.
+
+Check out [Quistart Guide](doc/quick-start-guide.md) to get started!
 
 # What you get
 
