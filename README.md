@@ -23,16 +23,16 @@ Check out [Quistart Guide](doc/quick-start-guide.md) to get started!
     SEARCHING
     |-> Seamless search (grep) among all files in your project
     |-> Search-And-Replace among all files in your project
-    |   Vimo asks for confirmation for each replacement, don't worry!
+        Vimo asks for confirmation for each replacement, don't worry!
 
     TAGS
-    |-> Out-of-the-box ctags (or similar) support - http://ctags.sourceforge.net/languages.html
-    |-> Fuzzy find all tags
-    |-> Go-To-Definition and Find-All-Usages
+    |-> Go-To-Definition (provided by ctags) - http://ctags.sourceforge.net/languages.html
+    |-> Fuzzy find tags
     |-> Seamless integration, don't have to worry about managing the `tagfile`
+        used by ctags
 
     LINTING
-    |-> Asyncronous Linting provided by Ale - https://github.com/w0rp/ale#1-supported-languages-and-tools
+    |-> Asyncronous Linting provided by ALE - https://github.com/w0rp/ale#1-supported-languages-and-tools
     |-> Non-blocking
 
     OTHER
