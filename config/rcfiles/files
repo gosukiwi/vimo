@@ -12,6 +12,18 @@
 "       File Delete
 "       NORMAL MODE
 "
+"     <C-s>
+"       Save current file
+"       NORMAL MODE / INSERT MODE
+"
+
+" save with <C-s>
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>a
+
+" backup and swap files are saved in ~/.vimo/tmp
+set backupdir=~/.vimo/tmp
+set directory=~/.vimo/tmp
 
 function RenameFile()
   let fileDirectory = expand('%:h')

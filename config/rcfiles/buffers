@@ -1,5 +1,4 @@
 " [ BUFFERS ]
-" map <leader><tab> to toggle active buffers
 "
 " Key bindings
 "
@@ -7,23 +6,6 @@
 "       Swap current buffer
 "       NORMAL MODE
 "
-"     <c-s>
-"       Save current buffer
-"       NORMAL MODE / INSERT MODE
-"
 noremap <leader><tab> :b#<CR>
-
-" save with ctrl+s
-nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
-
-" backup and swap files are saved in ~/.vimo/tmp
-set backupdir=~/.vimo/tmp
-set directory=~/.vimo/tmp
-
-" undo peristent across sessions
-" https://jovicailic.org/2017/04/vim-persistent-undo/
-set undofile
-set undodir=~/.vimo/tmp
 
 " vim:ft=vim

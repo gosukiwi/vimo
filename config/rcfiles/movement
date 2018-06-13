@@ -2,12 +2,17 @@
 " Key bindings
 "
 "     <leader>a
-"       Select all the text in the current buffer
+"       Select All the text in the current buffer
 "       NORMAL MODE
 "
 
-" most of the time I should use ` instead of ' but typing it with my keyboard
-" is a pain, so just toggle them
+" 'a is used to go to mark a, but it only remembers the line, not the column.
+" This is good, but we can use `a to go to the line as well as column where
+" the mark was defined. Let's use this "better default" instead and swap `
+" with '
+"
+" So 'a will go to the column as well as the line of the mark a.
+"
 nnoremap ' `
 nnoremap ` '
 

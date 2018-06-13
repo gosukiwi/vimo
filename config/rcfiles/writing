@@ -22,6 +22,11 @@ set smartindent     " smarter indent for C-like languages
 set shiftwidth=2    " when reading
 set softtabstop=2   " in insert mode
 
+" undo peristent across sessions
+" https://jovicailic.org/2017/04/vim-persistent-undo/
+set undofile
+set undodir=~/.vimo/tmp
+
 inoremap <C-l> <Esc>A
 inoremap <C-e> <Esc>A
 inoremap <C-h> <Esc>I
