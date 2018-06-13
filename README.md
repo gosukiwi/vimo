@@ -102,11 +102,8 @@ Configuration is split in several layers, grouped by functionality. The
 plugin-related configuration lives in `config/layers/plugins/`, the
 configuration related to vanilla Vim lives in `config/layers/core/`.
 
-You can choose which layers to enable in the `vimorc` file, it looks something
-like this:
+You can see all layers in the `vimorc` file:
 
-
-    " Here you can enable/disable optional layers individually
     let g:vimo#layers#ctrlp#disabled     = 0
     let g:vimo#layers#ale#disabled       = 0
     let g:vimo#layers#gitignore#disabled = 0
@@ -115,12 +112,10 @@ like this:
     let g:vimo#layers#rails#disabled     = 0
     let g:vimo#layers#webdev#disabled    = 0
     let g:vimo#layers#zenmode#disabled   = 0
-    ...
 
-If you change from `0` to `1` it will disable the layer. Note that because I
-work with Rails, there is a Rails configuration layer in place, as well as a
-generic web development layer which adds some goodies when working with HTML,
-CSS and ES6.
+If you want to change this, the easiest way is to make a new file
+`~/.vimoconfig` with the layers you want to disable set to `1`. By default (for
+now) all layers are enabled.
 
 ## Custom Layers
 If you have more specific needs, for example, for working with Node, React or
