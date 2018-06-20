@@ -23,6 +23,12 @@
 "            You will be prompted for each replacement. These are not saved.
 "            You can save-all with ":bufdo update".
 "
+"       This will ask for confirmation to replace each match. You can `yes to
+"       all` by pressing `a`. Otherwise, you can use `y` for `yes` and `n` for
+"       next. See `:help :s_flags` for more on this.
+"
+"       It saves the file after each replacement.
+"
 "       NORMAL MODE / VISUAL MODE
 "
 
@@ -66,7 +72,7 @@ function ReplaceMatch()
     return
   endif
 
-  execute "cdo %s/" . escape(@", '/') . "/" . replacewith . "/cge"
+  execute "cdo %s/" . escape(@", '/') . "/" . replacewith . "/cge | update"
 endfunction
 
 " search all -- use `s` register and yank stuff there, then just call the
