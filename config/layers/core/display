@@ -1,28 +1,31 @@
-" [ DISPLAY ]
-" Change the way Vim displays stuff
+" [Display]
+" These settings customize the way Vim displays stuff
 
-" use relative line numbers for easier j/k navigation (eg: 10g, 25j, etc)
+":setting Use relative line numbers for easier j/k navigation (eg: 10g, 25j, etc)
 set relativenumber
-" also, show the current line number instead of 0 for the cursor line
+
+":setting Show the current line number instead of 0 for the cursor line
 set number
 
-" suggestion for normal mode commands
+":setting Long suggestions for normal mode commands
 set wildmode=list:longest
 
-" keep the cursor visible within 3 lines when scrolling
+":setting Keep the cursor visible within 3 lines when scrolling
 set scrolloff=3
 
-" always display the status line
+":setting Always display the status line
 set laststatus=2
 
-" make a mark for column 80 and set the mark color to lightgray
+":setting Make a mark for column 80 
 set colorcolumn=80 
+
+":setting Set the mark color to lightgray
 highlight OverLength ctermbg=lightgray guibg=lightgray
 
-" use Adobe's Source Code Pro font
+":setting Use Adobe's Source Code Pro font
 set guifont=Source\ Code\ Pro
 
-" color theme, see `rcplugins/theme`
+":setting Color theme, see `layers/plugins/theme`
 colorscheme nova
 
 " vim:ft=vim

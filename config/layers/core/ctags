@@ -1,34 +1,6 @@
 " [ TAGS ]
 " Easy and async `ctags' with Vim!
-"
-" Key bindings
-"
-"     <leader>tt
-"     <leader>tg
-"       Tag, Go to definition
-"       NORMAL MODE
-"
-"     <leader>tb
-"       Tag, go Back one definition
-"       NORMAL MODE
-"
-"     <leader>tr
-"       Tag Refresh
-"       NORMAL MODE
-"
-"     <leader>tl
-"       Tag List
-"       NORMAL MODE
-"
-"     <leader>tn
-"       Tag Next
-"       NORMAL MODE
-"
-"     <leader>tN
-"     <leader>tp
-"       Tag Previous
-"       NORMAL MODE
-"
+" This is not perfect but it "just works".
 
 let g:vimo_ctags_loaded_count = 0
 let g:vimo_ctags_pending_goto = 0
@@ -63,24 +35,32 @@ function GoToTag()
   endif
 endfunction
 
+":mapping Search for a tag
 nnoremap <leader>ts :call RefreshTagfile()<CR>:tag /
+":mapping Go to tag definition
 nnoremap <leader>tt "tyiw:call GoToTag()<CR>
+":mapping Go to tag definition
 nnoremap <leader>tg "tyiw:call GoToTag()<CR>
+":mapping Go back to previous tag definition
 nnoremap <leader>tb <C-t>
+":mapping List all tags
 nnoremap <leader>tl :ts<CR>
+":mapping Refresh the tagfile
 nnoremap <leader>tr :call RefreshTagfile()<CR>
+":mapping Go to next tag
 nnoremap <leader>tn :tnext<CR>
+":mapping Go to previous tag
 nnoremap <leader>tp :tp<CR>
+":mapping Go to previous tag
 nnoremap <leader>tN :tN<CR>
 
-" on vim open, reload the tags
-":autocmd VimEnter * :call RefreshTagfile()
-
-" Allow to use a `.tags` file so it's hidden by default, `tags` can also be
-" used if you prefer.
+":setting
+" Use `.tags` as the name of the tagfile so it's hidden by default.
 "
-" Because of the `;`, vim also recurses upwards so you can open deeply nested
-" files and Vim will look up for a corresponding tagfile.
+" Because of `;` Vim will also recurse upwards when searching for the tagfile,
+" so you can open deeply nested files and Vim will look up for a corresponding
+" tagfile.
+"
 set tags=./.tags;,./tags;
 
 " vim:ft=vim

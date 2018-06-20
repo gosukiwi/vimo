@@ -1,11 +1,6 @@
-" [ BUFFERS ]
-"
-" Key bindings
-"
-"     <leader><tab>
-"       Swap current buffer
-"       NORMAL MODE
-"
+" [Buffers]
+
+":mapping Swap current buffers
 noremap <leader><tab> :b#<CR>
 
 " vim:ft=vim

@@ -1,40 +1,30 @@
-" [ CHANGE TEXT ]
-"
-" Key bindings
-"
-"     <tab>
-"       Indent current selection
-"       VISUAL MODE
-"
-"     <s-tab>
-"       Dedent current selection
-"       VISUAL MODE
-"
-"     <c-j>
-"       Move current line up
-"       NORMAL MODE / INSERT MODE
-"
-"     <c-k>
-"       Move current line down
-"       NORMAL MODE / INSERT MODE
+" [Change Text]
+" Settings related to changing text and moving it around.
 "
 
-" When the "unnamed" string is included in the 'clipboard' option, the unnamed
-" register is the same as the "* register.  Thus you can yank to and paste the
-" selection without prepending "* to commands.
+":setting
+" When the `"unnamed"` string is included in the `clipboard` option, the
+" unnamed register is the same as the `"*` register. Thus you can yank to and
+" paste the selection without prepending `"*` to commands.
 "
-" X-11 systems use other registers, that's why we check for "unnamedplus"
+" X-11 systems use other registers, that's why we check for "unnamedplus".
+"
 let &clipboard = has('unnamedplus') ? 'unnamedplus' : 'unnamed'
 
-" allow <tab> and <shift-tab> to tab selection in visual mode
+":mapping Indent visual selection
 vnoremap <Tab> >gv
+":mapping Dedent visual selection
 vnoremap <S-Tab> <gv
+":mapping Dedent current line
 inoremap <S-Tab> <Esc><<i
 
-" use <C-j> and <C-k> to move lines up and down
+":mapping Move the line down
 nnoremap <C-j> :m .+1<CR>==
+":mapping Move the line up
 nnoremap <C-k> :m .-2<CR>==
+":mapping Move the line down
 inoremap <C-j> <ESC>:m .+1<CR>==gi
+":mapping Move the line up
 inoremap <C-k> <ESC>:m .-2<CR>==gi
 
 " vim:ft=vim
