@@ -1,36 +1,3 @@
-# MARKDOWN
-These settings are specific for the markdown filetype.
-
-Use 80 columns for text.
-
-```vim
-setlocal textwidth=79
-```
-
-# PHP
-These settings are specific for the PHP filetype.
-
-Use 4 spaces for indentation
-
-```vim
-setlocal shiftwidth=4 softtabstop=4
-```
-
-# Ruby
-These settings are specific for the Ruby filetype.
-
-Add debugging line (binding.pry)
-
-```vim
-nnoremap <leader>rd obinding.pry<esc>
-```
-
-Go to next debugging line (binding.pry)
-
-```vim
-nnoremap <leader>rD /binding.pry<cr>
-```
-
 # Autocomplete
 Use <tab> in insert mode to toggle Vim's autocomplete
 
@@ -779,11 +746,42 @@ Toggle zen-mode
 nnoremap <leader>z :Goyo<CR>
 ```
 
+# MARKDOWN
+These settings are specific for the markdown filetype.
+
+Use 80 columns for text.
+
+```vim
+setlocal textwidth=79
+```
+
+# PHP
+These settings are specific for the PHP filetype.
+
+Use 4 spaces for indentation
+
+```vim
+setlocal shiftwidth=4 softtabstop=4
+```
+
+# Ruby
+These settings are specific for the Ruby filetype.
+
+Add debugging line (binding.pry)
+
+```vim
+nnoremap <leader>rd obinding.pry<esc>
+```
+
+Go to next debugging line (binding.pry)
+
+```vim
+nnoremap <leader>rD /binding.pry<cr>
+```
+
 # Mapping List
 |Mode|Key|Description|
 |---|---|---|
-|`NORMAL`|<leader>rd|Add debugging line (binding.pry)|
-|`NORMAL`|<leader>rD|Go to next debugging line (binding.pry)|
 |`INSERT`|<tab>|Open autocomplete if typing something, otherwise, add a tab|
 |`INSERT`|j|Use j to scroll down suggestions|
 |`INSERT`|k|Use k to scroll up suggestions|
@@ -841,3 +839,5 @@ nnoremap <leader>z :Goyo<CR>
 |`INSERT`|<C-b>|Go to the beginning of the line|
 |`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|<leader>fb|Open file browser, use `I` to see help|
 |`NORMAL`|<leader>z|Toggle zen-mode|
+|`NORMAL`|<leader>rd|Add debugging line (binding.pry)|
+|`NORMAL`|<leader>rD|Go to next debugging line (binding.pry)|
