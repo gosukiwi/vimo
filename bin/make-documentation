@@ -1,5 +1,7 @@
 #! /bin/bash
 
+echo "Building reference documentation..."
+
 hasRuby() {
   [[ $(command -v ruby) ]];
 }
@@ -20,3 +22,5 @@ then
 fi
 
 vimdoc config/ftplugin/* config/layers/**/* > doc/reference.md
+
+echo "Done!"
