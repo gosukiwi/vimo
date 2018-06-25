@@ -21,4 +21,4 @@ then
   gem install vimdoc
 fi
 
-vimdoc config/ftplugin/* config/layers/**/* > doc/reference.md && echo "Done!"
+vimdoc config/layers/**/* config/ftplugin/* > doc/reference.md && echo "Done!"

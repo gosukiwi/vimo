@@ -130,8 +130,13 @@ PR](https://github.com/gosukiwi/vimo/pulls)!
 A layer can live in several files, for example, the Rails layer includes the
 files `config/ftplugin/ruby.vim` as well as `config/layers/plugins/rails`.
 
+# Reference
+Vimo uses Vimdoc, check out the [Reference](doc/reference.md) for an automatic,
+up-to-date reference on everything Vimo provides. It explains each setting and
+displays all key-bindings (does not include plugin-specific commands).
+
 # Contributing
 If you plan on contributing, you can install the git-hook in order to re-build
 reference documentation automatically for you:
 
-    $ ln -s -f ../../bin/make-documentation .git/hooks/pre-commit
+    $ ln -s -f ../../bin/make-documentation .git/hooks/post-commit
