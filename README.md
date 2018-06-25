@@ -134,4 +134,4 @@ files `config/ftplugin/ruby.vim` as well as `config/layers/plugins/rails`.
 If you plan on contributing, you can install the git-hook in order to re-build
 reference documentation automatically for you:
 
-    $ ln -s bin/make-documentation .git/hooks/pre-commit
+    $ ln -s -f ../../bin/make-documentation .git/hooks/pre-commit
