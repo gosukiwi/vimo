@@ -1,12 +1,16 @@
-" [ ALE ]
-" Linter support
+" [ALE]
+" [Asyncronous Lint Engine](https://github.com/w0rp/ale) for Vim.
+
 if(exists('g:vimo#layers#ale#disabled') && g:vimo#layers#ale#disabled)
   finish
 endif
 
+":setting ALE
 Plug 'w0rp/ale'
 
+":setting Use `xx` to signal errors
 let g:ale_sign_error = 'xx'
+":setting Use `!!` to signal warnings
 let g:ale_sign_warning = '!!'
 
 " vim:ft=vim

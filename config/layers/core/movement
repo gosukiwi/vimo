@@ -1,22 +1,16 @@
-" [ MOVEMENT ]
-" Key bindings
-"
-"     <leader>a
-"       Select All the text in the current buffer
-"       NORMAL MODE
-"
+" [Movement]
 
-" 'a is used to go to mark a, but it only remembers the line, not the column.
-" This is good, but we can use `a to go to the line as well as column where
-" the mark was defined. Let's use this "better default" instead and swap `
-" with '
+":setting _'a_ is used to go to mark _a_, but it only remembers the line, not
+" the column. This is not bad, but we can use _`a_ to go to the line as well as
+" column where the mark was defined. Let's use this "better default" instead
+" and swap _`_ with _'_.
 "
-" So 'a will go to the column as well as the line of the mark a.
+" So _'a_ will go to the column as well as the line of the mark _a_.
 "
 nnoremap ' `
 nnoremap ` '
 
-" select all mapping
+":mapping Select all
 noremap <leader>a ggVG
 
 " vim:ft=vim

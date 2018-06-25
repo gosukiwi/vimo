@@ -1,27 +1,8 @@
-" [ FILES ]
+" [Files]
 " File-related functionality. See also `rcplugins/ctrlp` and
 " `rcplugins/filebeagle`.
-"
-" Key bindings
-"
-"     <leader>fr
-"       File Rename
-"       NORMAL MODE
-"
-"     <leader>fd
-"       File Delete
-"       NORMAL MODE
-"
-"     <C-s>
-"       Save current file
-"       NORMAL MODE / INSERT MODE
-"
 
-" save with <C-s>
-nnoremap <C-s> :w<CR>
-inoremap <C-s> <Esc>:w<CR>a
-
-" backup and swap files are saved in ~/.vimo/tmp
+":setting Backup and swap files are saved in ~/.vimo/tmp
 set backupdir=~/.vimo/tmp
 set directory=~/.vimo/tmp
 
@@ -44,7 +25,14 @@ function DeleteFile()
   call delete(expand('%')) | bdelete!
 endfunction
 
+":mapping Rename current file
 nnoremap <leader>fr :call RenameFile()<CR><CR>
+":mapping Delete current file
 nnoremap <leader>fd :call DeleteFile()<CR><CR>
+
+":mapping Save current file
+nnoremap <C-s> :w<CR>
+":mapping Save current file
+inoremap <C-s> <Esc>:w<CR>a
 
 " vim:ft=vim

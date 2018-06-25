@@ -1,9 +1,12 @@
-" [ TERMINAL / CONSOLE ]
+" [Terminal / Console]
 " Settings related to the terminal. Use the `c` namespace for now, because `t`
 " is reserved for Tags.
 
+":mapping Open a new terminal in a vertical split
 nnoremap <leader>cc :vsplit<CR><C-w>l:term ++curwin<CR>
+":mapping Open a new terminal in a vertical split
 nnoremap <leader>cv :vsplit<CR><C-w>l:term ++curwin<CR>
+":mapping Open a new terminal in a horizontal split
 nnoremap <leader>ch :term<CR>
 
-" vim:set ft=vim
+" vim:ft=vim

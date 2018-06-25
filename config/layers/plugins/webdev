@@ -3,11 +3,11 @@ if(exists('g:vimo#layers#webdev#disabled') && g:vimo#layers#webdev#disabled)
   finish
 endif
 
-" Use XML/HTML tags as text objects
+":setting Use XML/HTML tags as text objects
 Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
-" CSS 3
+":setting CSS3 Syntax
 Plug 'hail2u/vim-css3-syntax'
-" ES6
+":setting ES6 Syntax
 Plug 'othree/yajs.vim'
 
 " vim:ft=vim

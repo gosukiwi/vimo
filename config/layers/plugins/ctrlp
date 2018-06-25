@@ -1,42 +1,35 @@
-" [ CtrlP Configuration ]
-" File and buffer fuzzy finders
-"
-" Key bindings
-"
-"     <leader>b
-"       list all Buffers
-"       NORMAL MODE
-"
-"     <leader>ff
-"       File Find
-"       NORMAL MODE
-"
-"     <leader>tL
-"       Tag List all tags (big List)
-"       NORMAL MODE
-"
+" [CtrlP]
+" [Fuzzy Finder](https://github.com/ctrlpvim/ctrlp.vim) for Vim, works with
+" files, buffers and tags.
+
 if(exists('g:vimo#layers#ctrlp#disabled') && g:vimo#layers#ctrlp#disabled)
   finish
 endif
 
+":setting CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
 
+":setting Fuzzy-find buffers
 noremap <leader>b :CtrlPBuffer<cr>
-" the `<leader>f` namespace is taken by "file"
+":setting Fuzzy-find files
 noremap <leader>ff :CtrlP<cr>
-" the `<leader>t` namespace is taken by "tag"
+":setting Fuzzy-find tags (tag list)
 nnoremap <leader>tL :CtrlPTag<CR>
 
-" no max files limit
+":setting No max files limit
 let g:ctrlp_max_files = 0
 
-" use tag plugin
+":setting Enable tag plugin
 let g:ctrlp_extensions = ['tag']
 
-" use ag when seeking files, super fast and ignores .gitignore and such
+":setting Use `ag` when seeking files, super fast and ignores `.gitignore` and
+" such.
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-" always clear cache on startup, useful when swapping between branches a lot
+":setting Always clear cache on startup, useful when swapping between git 
+" branches a lot. Just close/open Vim when you swap branches. You can also
+" press `<F5>` while the fuzzy-find popup is active to manually update the
+" cache.
 if has("autocmd")
   autocmd VimEnter * CtrlPClearCache
 endif

@@ -1,8 +1,11 @@
-" [ ETC ]
+" [Etc]
 " Plugins which require no special configuration
 
-Plug 'tpope/vim-surround'             " visual mode surround
-Plug 'jiangmiao/auto-pairs'           " smart () [] {} matching
-Plug 'tpope/vim-endwise'              " similar to the one above but this one inserts `end` where needed
+":setting Surround
+Plug 'tpope/vim-surround'
+":setting Autopairs - Smart (), [], {}, etc
+Plug 'jiangmiao/auto-pairs'
+":setting Similar to Autopairs but works with `end` (eg: Ruby, Vimscript).
+Plug 'tpope/vim-endwise'
 
 " vim:ft=vim

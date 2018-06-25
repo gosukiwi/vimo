@@ -1,19 +1,14 @@
 " [VINEGAR]
 " Make Vim's default netrw easy to use.
-"
-" Key bindings
-"
-"     -
-"     <leader>fb
-"       Open file browser, use `I` to see help
-"       NORMAL MODE
-"
+
 if(exists('g:vimo#layers#vinegar#disabled') && g:vimo#layers#vinegar#disabled)
   finish
 endif
 
+":setting Vinegar
 Plug 'tpope/vim-vinegar'
 
+":mapping Open file browser, use `I` to see help
 map <silent> <leader>fb <Plug>VinegarUp
 
 " vim:ft=vim

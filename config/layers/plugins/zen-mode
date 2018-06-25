@@ -4,13 +4,15 @@ if(exists('g:vimo#layers#zenmode#disabled') && g:vimo#layers#zenmode#disabled)
   finish
 endif
 
+":setting Pair or plugins to set up zen-mode
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
+":setting Toggle Limelight on Goyo enter/leave
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-" toggle zen-mode
+":mapping Toggle zen-mode
 nnoremap <leader>z :Goyo<CR>
 
 " vim:ft=vim

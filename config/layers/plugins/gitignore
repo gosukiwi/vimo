@@ -1,12 +1,13 @@
-" [GITIGNORE]
-" Add entries from gitignore into `wildignore`
+" [gitignore]
+
 if(exists('g:vimo#layers#gitignore#disabled') && g:vimo#layers#gitignore#disabled)
   finish
 endif
 
+":setting Add entries from gitignore into `wildignore`
 Plug 'vim-scripts/gitignore' 
 
-" always clear cache on startup, useful when swapping between branches a lot
+":setting Check for gitignore when opening Vim
 if has("autocmd") && filereadable(".gitignore")
   autocmd VimEnter * WildignoreFromGitignore
 endif

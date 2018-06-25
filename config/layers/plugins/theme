@@ -1,6 +1,7 @@
-" [ THEME SETTINGS ]
-" Pretty colors
+" [Theme]
+" Pretty colors!
 
+":setting Use Nova theme
 Plug 'trevordmiller/nova-vim'
 
 " vim:ft=vim

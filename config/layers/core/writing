@@ -1,35 +1,33 @@
-" [ WRITING ]
-" Settings for writing
-"
-" Key bindings
-"
-"     <C-l>
-"     <C-e>
-"       Move the cursor to the End of the line
-"       INSERT MODE
-"
-"     <C-h>
-"     <C-b>
-"       Move the cursor to the Beginning of the line
-"       INSERT MODE
+" [Writing]
+" Settings for writing.
 "
 
-set expandtab       " use spaces instead of tabs
-set autoindent      " autoindent based on line above, works most of the time
-set smartindent     " smarter indent for C-like languages
+":setting Use spaces instead of tabs
+set expandtab       
 
-" tabs are 2 spaces
+":setting Autoindent based on line above, works most of the time
+set autoindent
+
+":setting Smarter indent for C-like languages
+set smartindent
+
+":setting Use 2 spaces for indentation
 set shiftwidth=2    " when reading
 set softtabstop=2   " in insert mode
 
-" undo peristent across sessions
-" https://jovicailic.org/2017/04/vim-persistent-undo/
+":setting Undo peristent across sessions. [See this
+" article](https://jovicailic.org/2017/04/vim-persistent-undo/) for more
+" information.
 set undofile
 set undodir=~/.vimo/tmp
 
+":mapping Go to the end of the line
 inoremap <C-l> <Esc>A
+":mapping Go to the end of the line
 inoremap <C-e> <Esc>A
+":mapping Go to the beginning of the line
 inoremap <C-h> <Esc>I
+":mapping Go to the beginning of the line
 inoremap <C-b> <Esc>I
 
 " vim:ft=vim

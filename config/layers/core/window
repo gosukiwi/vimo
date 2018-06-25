@@ -1,88 +1,37 @@
-" [ WINDOW MANAGEMENT ]
-" Bindings for managing windows
-"
-" Key bindings
-"
-"     <leader>ww
-"       Window horizontal split
-"       NORMAL MODE
-"
-"     <leader>wv
-"       Window Vertical split
-"       NORMAL MODE
-"
-"     <leader>wh
-"       Window go left
-"       NORMAL MODE
-"
-"     <leader>wj
-"       Window go down
-"       NORMAL MODE
-"
-"     <leader>wk
-"       Window go up
-"       NORMAL MODE
-"
-"     <leader>wl
-"       Window go right
-"       NORMAL MODE
-"
-"     <leader>wq
-"       Window Quit
-"       NORMAL MODE
-"
-"     <leader>wf
-"       Window Full screen (close all other windows)
-"       NORMAL MODE
-"
-"     <leader>wr
-"       Window Rotate to the right
-"       NORMAL MODE
-"
-"     <leader>wf
-"       Window Rotate to the left
-"       NORMAL MODE
-"
-"     <leader>w=
-"       Window equalize size
-"       NORMAL MODE
-"
-"     <leader>w<tab>
-"       Toggle window
-"       NORMAL MODE
-"
-"     <leader>w+w
-"       Window more width
-"       NORMAL MODE
-"
-"     <leader>w-w
-"       Window less width
-"       NORMAL MODE
-"
-"     <leader>w+h
-"       Window more height
-"       NORMAL MODE
-"
-"     <leader>w-h
-"       Window less height
-"       NORMAL MODE
-"
+" [Window Management]
+" Bindings for managing windows.
 
+":mapping Horizontal split
 nnoremap <leader>ww :split<CR>
+":mapping Vertical split
 nnoremap <leader>wv :vsplit<CR>
+":mapping Go to window on the left
 nnoremap <leader>wh <c-w>h
+":mapping Go to window on the bottom
 nnoremap <leader>wj <c-w>j
+":mapping Go to window on the top
 nnoremap <leader>wk <c-w>k
+":mapping Go to window on the right
 nnoremap <leader>wl <c-w>l
+":mapping Quit window
 nnoremap <leader>wq <c-w>q
+":mapping Full-screen this window (expand)
 nnoremap <leader>wf <c-w>o
+":mapping Rotate windows clockwise
 nnoremap <leader>wr <c-w>r
+":mapping Rotate windows counter-clockwise
 nnoremap <leader>wR <c-w>R
+":mapping Equalize size of all windows
 nnoremap <leader>w= <c-w>=
+":mapping Toggle window
 nnoremap <leader>w<tab> <c-w>w
+":mapping Increase width of current window
 nnoremap <leader>w+w 10<c-w>>
+":mapping Decrease width of current window
 nnoremap <leader>w-w 10<c-w><
+":mapping Increase height of current window
 nnoremap <leader>w+h :resize +10<CR>
+":mapping Decrease height of current window
 nnoremap <leader>w-h :resize -10<CR>
 
 " vim:ft=vim

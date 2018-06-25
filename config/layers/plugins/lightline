@@ -1,11 +1,14 @@
-" [LIGHTLINE]
-" Lightweight and pure vimscript status bar
+" [Lightline]
+" Lightweight and pure vimscript status bar.
+
 if(exists('g:vimo#layers#lightline#disabled') && g:vimo#layers#lightline#disabled)
   finish
 endif
 
+":setting Lightline plugin
 Plug 'itchyny/lightline.vim'          
 
+":setting Lightline display settings
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'active': {

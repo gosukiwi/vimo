@@ -1,0 +1,22 @@
+#! /bin/bash
+
+hasRuby() {
+  [[ $(command -v ruby) ]];
+}
+
+hasVimdoc() {
+  [[ $(command -v vimdoc) ]];
+}
+
+if !hasRuby
+then
+  echo "In order to make the documentation, Vimdoc is required, which requires Ruby"
+  exit 1
+fi
+
+if !hasVimdoc
+then
+  gem install vimdoc
+fi
+
+vimdoc config/ftplugin/* config/layers/**/* | less

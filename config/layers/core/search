@@ -1,50 +1,13 @@
-" [ SEARCH ]
-" Key bindings
-"
-"     <leader>sc
-"       Clear the search highlight
-"       NORMAL MODE
-"
-"     <leader>ss
-"       Search text under cursor or selection in files with same filetype (eg: only Ruby files)
-"       If there is no specified `filetype`, it runs on all files
-"       NORMAL MODE / VISUAL MODE
-"
-"     <leader>sa
-"       Search text under cursor or selection in All files (slow)
-"       NORMAL MODE / VISUAL MODE
-"
-"     <leader>sr
-"       Search and Replace. It allows for replacing the search term from the
-"       last search. Example usage:
-"
-"         1. Use "<leader>ss" to search for the word under the cursor.
-"         2. Use "<leader>srPotato" to replace the world with Potato. 
-"            You will be prompted for each replacement. These are not saved.
-"            You can save-all with ":bufdo update".
-"
-"       This will ask for confirmation to replace each match. You can `yes to
-"       all` by pressing `a`. Otherwise, you can use `y` for `yes` and `n` for
-"       next. See `:help :s_flags` for more on this.
-"
-"       It saves the file after each replacement.
-"
-"       NORMAL MODE / VISUAL MODE
-"
+" [Search]
+" Useful settings for quickly searching among files in the project.
 
-" highlight as you type kind of search -- if a pattern contains an uppercase
-" letter, match for case sensitive, otherwise, match for case-insensitive
+":setting Highlight as you type kind of search -- if a pattern contains an
+" uppercase letter, match for case sensitive, otherwise, match for
+" case-insensitive.
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase       
-
-" clear search higlight in normal mode
-nnoremap <leader>sc :noh<CR>
-
-" show next matched string at the center of the screen
-nnoremap n nzz
-nnoremap N Nzz
 
 " the default glob matches all files, this gets overriden in each filetype
 " plugin to scan for certain extentions, see `ftplugin/ruby` for an example.
@@ -75,16 +38,25 @@ function ReplaceMatch()
   execute "cdo %s/" . escape(@", '/') . "/" . replacewith . "/cge | update"
 endfunction
 
-" search all -- use `s` register and yank stuff there, then just call the
-" `SearchIn` function.
+":mapping Search recursively in all filetypes within the current working 
+" directory.
 vnoremap <leader>sa "sy:call SearchIn("**/*")<CR>:cw<CR>
 nnoremap <leader>sa "syiw:call SearchIn("**/*")<CR>:cw<CR>
 
-" search by filetype
+":mapping Search recursively withing files of the same type within the current
+" working directory.
 vnoremap <leader>ss "sy:call SearchIn("")<CR>:cw<CR>
 nnoremap <leader>ss "syiw:call SearchIn("")<CR>:cw<CR>
 
-" replace searched term in search result
+":mapping Replace searched term in search result
 nnoremap <leader>sr :call ReplaceMatch()<CR>
+
+":mapping Clear search higlight
+nnoremap <leader>sc :noh<CR>
+
+":mapping Show next matched string at the center of the screen
+nnoremap n nzz
+":mapping Show previous matched string at the center of the screen
+nnoremap N Nzz
 
 " vim:ft=vim
