@@ -129,3 +129,9 @@ PR](https://github.com/gosukiwi/vimo/pulls)!
 
 A layer can live in several files, for example, the Rails layer includes the
 files `config/ftplugin/ruby.vim` as well as `config/layers/plugins/rails`.
+
+# Contributing
+If you plan on contributing, you can install the git-hook in order to re-build
+reference documentation automatically for you:
+
+    $ ln -s bin/make-documentation .git/hooks/pre-commit
