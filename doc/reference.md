@@ -563,7 +563,11 @@ Use `xx` to signal errors
 
 ```vim
 let g:ale_sign_error = 'xx'
-":setting Use `!!` to signal warnings
+```
+
+Use `!!` to signal warnings
+
+```vim
 let g:ale_sign_warning = '!!'
 ```
 
@@ -581,9 +585,17 @@ Fuzzy-find buffers
 
 ```vim
 noremap <leader>b :CtrlPBuffer<cr>
-":setting Fuzzy-find files
+```
+
+Fuzzy-find files
+
+```vim
 noremap <leader>ff :CtrlP<cr>
-":setting Fuzzy-find tags (tag list)
+```
+
+Fuzzy-find tags (tag list)
+
+```vim
 nnoremap <leader>tL :CtrlPTag<CR>
 ```
 
@@ -620,9 +632,17 @@ Surround
 
 ```vim
 Plug 'tpope/vim-surround'
-":setting Autopairs - Smart (), [], {}, etc
+```
+
+Autopairs - Smart (), [], {}, etc
+
+```vim
 Plug 'jiangmiao/auto-pairs'
-":setting Similar to Autopairs but works with `end` (eg: Ruby, Vimscript).
+```
+
+Similar to Autopairs but works with `end` (eg: Ruby, Vimscript).
+
+```vim
 Plug 'tpope/vim-endwise'
 ```
 
@@ -681,10 +701,18 @@ ale + lightline
 Default Ruby syntax is SLOW - Use this one instead
 
 ```vim
-Plug 'vim-ruby/vim-ruby'              
-":setting Slim syntax
+Plug 'vim-ruby/vim-ruby'
+```
+
+Slim syntax
+
+```vim
 Plug 'slim-template/vim-slim'
-":setting Coffeescript syntax
+```
+
+Coffeescript syntax
+
+```vim
 Plug 'kchmck/vim-coffee-script'
 ```
 
@@ -717,9 +745,17 @@ Use XML/HTML tags as text objects
 
 ```vim
 Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
-":setting CSS3 Syntax
+```
+
+CSS3 Syntax
+
+```vim
 Plug 'hail2u/vim-css3-syntax'
-":setting ES6 Syntax
+```
+
+ES6 Syntax
+
+```vim
 Plug 'othree/yajs.vim'
 ```
 
@@ -780,64 +816,64 @@ nnoremap <leader>rD /binding.pry<cr>
 ```
 
 # Mapping List
-|Mode|Key|Description|
+|Key|Mode|Description|
 |---|---|---|
-|`INSERT`|<tab>|Open autocomplete if typing something, otherwise, add a tab|
-|`INSERT`|j|Use j to scroll down suggestions|
-|`INSERT`|k|Use k to scroll up suggestions|
-|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|<leader><tab>|Swap current buffers|
-|`VISUAL`, `SELECT`|<Tab>|Indent visual selection|
-|`VISUAL`, `SELECT`|<S-Tab>|Dedent visual selection|
-|`INSERT`|<S-Tab>|Dedent current line|
-|`NORMAL`|<C-j>|Move the line down|
-|`NORMAL`|<C-k>|Move the line up|
-|`INSERT`|<C-j>|Move the line down|
-|`INSERT`|<C-k>|Move the line up|
-|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|Q|Disable Ex mode, use Q for formatting|
-|`NORMAL`|<leader>ts|Search for a tag|
-|`NORMAL`|<leader>tt|Go to tag definition|
-|`NORMAL`|<leader>tg|Go to tag definition|
-|`NORMAL`|<leader>tb|Go back to previous tag definition|
-|`NORMAL`|<leader>tl|List all tags|
-|`NORMAL`|<leader>tr|Refresh the tagfile|
-|`NORMAL`|<leader>tn|Go to next tag|
-|`NORMAL`|<leader>tp|Go to previous tag|
-|`NORMAL`|<leader>tN|Go to previous tag|
-|`NORMAL`|<leader>fr|Rename current file|
-|`NORMAL`|<leader>fd|Delete current file|
-|`NORMAL`|<C-s>|Save current file|
-|`INSERT`|<C-s>|Save current file|
-|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|<leader>a|Select all|
-|`VISUAL`, `SELECT`|<leader>sa|Search recursively in all filetypes within the current working directory.|
-|`VISUAL`, `SELECT`|<leader>ss|Search recursively withing files of the same type within the current working directory.|
-|`NORMAL`|<leader>sr|Replace searched term in search result|
-|`NORMAL`|<leader>sc|Clear search higlight|
-|`NORMAL`|n|Show next matched string at the center of the screen|
-|`NORMAL`|N|Show previous matched string at the center of the screen|
-|`NORMAL`|<leader>cc|Open a new terminal in a vertical split|
-|`NORMAL`|<leader>cv|Open a new terminal in a vertical split|
-|`NORMAL`|<leader>ch|Open a new terminal in a horizontal split|
-|`NORMAL`|<leader>ww|Horizontal split|
-|`NORMAL`|<leader>wv|Vertical split|
-|`NORMAL`|<leader>wh|Go to window on the left|
-|`NORMAL`|<leader>wj|Go to window on the bottom|
-|`NORMAL`|<leader>wk|Go to window on the top|
-|`NORMAL`|<leader>wl|Go to window on the right|
-|`NORMAL`|<leader>wq|Quit window|
-|`NORMAL`|<leader>wf|Full-screen this window (expand)|
-|`NORMAL`|<leader>wr|Rotate windows clockwise|
-|`NORMAL`|<leader>wR|Rotate windows counter-clockwise|
-|`NORMAL`|<leader>w=|Equalize size of all windows|
-|`NORMAL`|<leader>w<tab>|Toggle window|
-|`NORMAL`|<leader>w+w|Increase width of current window|
-|`NORMAL`|<leader>w-w|Decrease width of current window|
-|`NORMAL`|<leader>w+h|Increase height of current window|
-|`NORMAL`|<leader>w-h|Decrease height of current window|
-|`INSERT`|<C-l>|Go to the end of the line|
-|`INSERT`|<C-e>|Go to the end of the line|
-|`INSERT`|<C-h>|Go to the beginning of the line|
-|`INSERT`|<C-b>|Go to the beginning of the line|
-|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|<leader>fb|Open file browser, use `I` to see help|
-|`NORMAL`|<leader>z|Toggle zen-mode|
-|`NORMAL`|<leader>rd|Add debugging line (binding.pry)|
-|`NORMAL`|<leader>rD|Go to next debugging line (binding.pry)|
+|`<tab>`|`INSERT`|Open autocomplete if typing something, otherwise, add a tab|
+|`j`|`INSERT`|Use j to scroll down suggestions|
+|`k`|`INSERT`|Use k to scroll up suggestions|
+|`<leader><tab>`|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|Swap current buffers|
+|`<Tab>`|`VISUAL`, `SELECT`|Indent visual selection|
+|`<S-Tab>`|`VISUAL`, `SELECT`|Dedent visual selection|
+|`<S-Tab>`|`INSERT`|Dedent current line|
+|`<C-j>`|`NORMAL`|Move the line down|
+|`<C-k>`|`NORMAL`|Move the line up|
+|`<C-j>`|`INSERT`|Move the line down|
+|`<C-k>`|`INSERT`|Move the line up|
+|`Q`|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|Disable Ex mode, use Q for formatting|
+|`<leader>ts`|`NORMAL`|Search for a tag|
+|`<leader>tt`|`NORMAL`|Go to tag definition|
+|`<leader>tg`|`NORMAL`|Go to tag definition|
+|`<leader>tb`|`NORMAL`|Go back to previous tag definition|
+|`<leader>tl`|`NORMAL`|List all tags|
+|`<leader>tr`|`NORMAL`|Refresh the tagfile|
+|`<leader>tn`|`NORMAL`|Go to next tag|
+|`<leader>tp`|`NORMAL`|Go to previous tag|
+|`<leader>tN`|`NORMAL`|Go to previous tag|
+|`<leader>fr`|`NORMAL`|Rename current file|
+|`<leader>fd`|`NORMAL`|Delete current file|
+|`<C-s>`|`NORMAL`|Save current file|
+|`<C-s>`|`INSERT`|Save current file|
+|`<leader>a`|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|Select all|
+|`<leader>sa`|`VISUAL`, `SELECT`|Search recursively in all filetypes within the current working directory.|
+|`<leader>ss`|`VISUAL`, `SELECT`|Search recursively withing files of the same type within the current working directory.|
+|`<leader>sr`|`NORMAL`|Replace searched term in search result|
+|`<leader>sc`|`NORMAL`|Clear search higlight|
+|`n`|`NORMAL`|Show next matched string at the center of the screen|
+|`N`|`NORMAL`|Show previous matched string at the center of the screen|
+|`<leader>cc`|`NORMAL`|Open a new terminal in a vertical split|
+|`<leader>cv`|`NORMAL`|Open a new terminal in a vertical split|
+|`<leader>ch`|`NORMAL`|Open a new terminal in a horizontal split|
+|`<leader>ww`|`NORMAL`|Horizontal split|
+|`<leader>wv`|`NORMAL`|Vertical split|
+|`<leader>wh`|`NORMAL`|Go to window on the left|
+|`<leader>wj`|`NORMAL`|Go to window on the bottom|
+|`<leader>wk`|`NORMAL`|Go to window on the top|
+|`<leader>wl`|`NORMAL`|Go to window on the right|
+|`<leader>wq`|`NORMAL`|Quit window|
+|`<leader>wf`|`NORMAL`|Full-screen this window (expand)|
+|`<leader>wr`|`NORMAL`|Rotate windows clockwise|
+|`<leader>wR`|`NORMAL`|Rotate windows counter-clockwise|
+|`<leader>w=`|`NORMAL`|Equalize size of all windows|
+|`<leader>w<tab>`|`NORMAL`|Toggle window|
+|`<leader>w+w`|`NORMAL`|Increase width of current window|
+|`<leader>w-w`|`NORMAL`|Decrease width of current window|
+|`<leader>w+h`|`NORMAL`|Increase height of current window|
+|`<leader>w-h`|`NORMAL`|Decrease height of current window|
+|`<C-l>`|`INSERT`|Go to the end of the line|
+|`<C-e>`|`INSERT`|Go to the end of the line|
+|`<C-h>`|`INSERT`|Go to the beginning of the line|
+|`<C-b>`|`INSERT`|Go to the beginning of the line|
+|`<leader>fb`|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|Open file browser, use `I` to see help|
+|`<leader>z`|`NORMAL`|Toggle zen-mode|
+|`<leader>rd`|`NORMAL`|Add debugging line (binding.pry)|
+|`<leader>rD`|`NORMAL`|Go to next debugging line (binding.pry)|
