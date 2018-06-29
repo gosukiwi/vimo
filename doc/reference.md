@@ -625,13 +625,33 @@ if has("autocmd")
 endif
 ```
 
+# Emmet
+Writing HTML by hand is a pain, Emmet makes it less-awful
+
+```vim
+Plug 'mattn/emmet-vim'
+```
+
+Do not set up Emmet on all filetypes, only on HTML, CSS and PHP
+
+```vim
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,php EmmetInstall
+```
+
+Use `<C-q>,` to trigger it
+
+```vim
+let g:user_emmet_leader_key = '<C-q>'
+```
+
 # Etc
 Plugins which require no special configuration
 
-Surround
+Sandwich, like surround but better
 
 ```vim
-Plug 'tpope/vim-surround'
+Plug 'machakann/vim-sandwich'
 ```
 
 Autopairs - Smart (), [], {}, etc

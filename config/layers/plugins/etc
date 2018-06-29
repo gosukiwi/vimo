@@ -1,8 +1,8 @@
 " [Etc]
 " Plugins which require no special configuration
 
-":setting Surround
-Plug 'tpope/vim-surround'
+":setting Sandwich, like surround but better
+Plug 'machakann/vim-sandwich'
 ":setting Autopairs - Smart (), [], {}, etc
 Plug 'jiangmiao/auto-pairs'
 ":setting Similar to Autopairs but works with `end` (eg: Ruby, Vimscript).
