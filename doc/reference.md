@@ -648,6 +648,12 @@ let g:user_emmet_leader_key = '<C-q>'
 # Etc
 Plugins which require no special configuration
 
+Highlights yanked text so it's easy to see
+
+```vim
+Plug 'machakann/vim-highlightedyank'
+```
+
 Sandwich, like surround but better
 
 ```vim

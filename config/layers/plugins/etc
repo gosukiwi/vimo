@@ -1,6 +1,8 @@
 " [Etc]
 " Plugins which require no special configuration
 
+":setting Highlights yanked text so it's easy to see
+Plug 'machakann/vim-highlightedyank'
 ":setting Sandwich, like surround but better
 Plug 'machakann/vim-sandwich'
 ":setting Autopairs - Smart (), [], {}, etc
