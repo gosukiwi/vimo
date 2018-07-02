@@ -723,6 +723,19 @@ let g:lightline = {
 
 ale + lightline
 
+# Quick Scope
+Makes it easy to see what to target with `f`
+
+```vim
+Plug 'unblevable/quick-scope'
+```
+
+Only trigger this when using f, F, t or T
+
+```vim
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+```
+
 # Rails
 Default Ruby syntax is SLOW - Use this one instead
 
