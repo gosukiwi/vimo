@@ -301,6 +301,20 @@ nnoremap ' `
 nnoremap ` '
 ```
 
+`0` will move to the beginning of a line. `^` will move to the beginning too, but it's smarter as it respects empty spaces. Because `0` is easier to reach, let's swap these.
+
+Go to the beginning of the line, respecting empty spaces
+
+```vim
+nnoremap 0 ^
+```
+
+Go to the real beginning of the line
+
+```vim
+nnoremap ^ 0
+```
+
 Select all
 
 ```vim
@@ -882,6 +896,8 @@ nnoremap <leader>rD /binding.pry<cr>
 |`<leader>fd`|`NORMAL`|Delete current file|
 |`<C-s>`|`NORMAL`|Save current file|
 |`<C-s>`|`INSERT`|Save current file|
+|`0`|`NORMAL`|Go to the beginning of the line, respecting empty spaces|
+|`^`|`NORMAL`|Go to the real beginning of the line|
 |`<leader>a`|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|Select all|
 |`<leader>sa`|`VISUAL`, `SELECT`|Search recursively in all filetypes within the current working directory.|
 |`<leader>ss`|`VISUAL`, `SELECT`|Search recursively withing files of the same type within the current working directory.|

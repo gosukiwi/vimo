@@ -10,6 +10,15 @@
 nnoremap ' `
 nnoremap ` '
 
+" `0` will move to the beginning of a line. `^` will move to the
+" beginning too, but it's smarter as it respects empty spaces. Because `0` is
+" easier to reach, let's swap these.
+"
+":mapping Go to the beginning of the line, respecting empty spaces
+nnoremap 0 ^
+":mapping Go to the real beginning of the line
+nnoremap ^ 0
+
 ":mapping Select all
 noremap <leader>a ggVG
 
