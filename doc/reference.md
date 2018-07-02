@@ -301,6 +301,13 @@ nnoremap ' `
 nnoremap ` '
 ```
 
+`0` will move to the beginning of a line. `^` will move to the beginning too, but it's smarter as it respect empty spaces. Because `0` is easier to reach, let's swap these.
+
+```vim
+noremap 0 ^
+noremap ^ 0
+```
+
 Select all
 
 ```vim
