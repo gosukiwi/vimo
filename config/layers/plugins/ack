@@ -1,0 +1,12 @@
+" [Ack]
+" Integrate Vim with external search tools like `ag`.
+
+":setting Easily integrate `ag` with Vim
+Plug 'mileszs/ack.vim'
+
+":setting Use `ag` if available
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" vim:ft=vim

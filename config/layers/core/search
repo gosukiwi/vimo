@@ -22,8 +22,7 @@ function SearchIn(glob)
     let glob = g:default_search_glob
   endif
 
-  " use \C in the search pattern to respect case
-  execute "noautocmd vimgrep /" . escape(@s, '/') . "\\C/j " . glob
+  execute "Ack! '" . escape(@s, "'") . "' " . glob
 endfunction
 
 function ReplaceMatch()
@@ -40,13 +39,13 @@ endfunction
 
 ":mapping Search recursively in all filetypes within the current working 
 " directory.
-vnoremap <leader>sa "sy:call SearchIn("**/*")<CR>:cw<CR>
-nnoremap <leader>sa "syiw:call SearchIn("**/*")<CR>:cw<CR>
+vnoremap <leader>sa "sy:call SearchIn("**/*")<CR>
+nnoremap <leader>sa "syiw:call SearchIn("**/*")<CR>
 
 ":mapping Search recursively withing files of the same type within the current
 " working directory.
-vnoremap <leader>ss "sy:call SearchIn("")<CR>:cw<CR>
-nnoremap <leader>ss "syiw:call SearchIn("")<CR>:cw<CR>
+vnoremap <leader>ss "sy:call SearchIn("")<CR>
+nnoremap <leader>ss "syiw:call SearchIn("")<CR>
 
 ":mapping Replace searched term in search result
 nnoremap <leader>sr :call ReplaceMatch()<CR>
