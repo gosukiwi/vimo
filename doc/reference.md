@@ -153,6 +153,12 @@ Go to tag definition
 nnoremap <leader>tg "tyiw:call GoToTag()<CR>
 ```
 
+Go to tag definition
+
+```vim
+vnoremap <leader>tg "ty:call GoToTag()<CR>
+```
+
 Go back to previous tag definition
 
 ```vim
@@ -338,13 +344,13 @@ the default glob matches all files, this gets overriden in each filetype plugin 
 Search recursively in all filetypes within the current working directory.
 
 ```vim
-vnoremap <leader>sa "sy:call SearchIn("**/*")<CR>:cw<CR>
+vnoremap <leader>sa "sy:call SearchIn("**/*")<CR>
 ```
 
 Search recursively withing files of the same type within the current working directory.
 
 ```vim
-vnoremap <leader>ss "sy:call SearchIn("")<CR>:cw<CR>
+vnoremap <leader>ss "sy:call SearchIn("")<CR>
 ```
 
 Replace searched term in search result
@@ -563,6 +569,23 @@ Go to the beginning of the line
 
 ```vim
 inoremap <C-b> <Esc>I
+```
+
+# Ack
+Integrate Vim with external search tools like `ag`.
+
+Easily integrate `ag` with Vim
+
+```vim
+Plug 'mileszs/ack.vim'
+```
+
+Use `ag` if available
+
+```vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 ```
 
 # ALE
@@ -812,6 +835,12 @@ ES6 Syntax
 Plug 'othree/yajs.vim'
 ```
 
+Elixir Syntax
+
+```vim
+Plug 'elixir-editors/vim-elixir'
+```
+
 # Goyo
 Zen writing setup
 
@@ -886,6 +915,7 @@ nnoremap <leader>rD /binding.pry<cr>
 |`<leader>ts`|`NORMAL`|Search for a tag|
 |`<leader>tt`|`NORMAL`|Go to tag definition|
 |`<leader>tg`|`NORMAL`|Go to tag definition|
+|`<leader>tg`|`VISUAL`, `SELECT`|Go to tag definition|
 |`<leader>tb`|`NORMAL`|Go back to previous tag definition|
 |`<leader>tl`|`NORMAL`|List all tags|
 |`<leader>tr`|`NORMAL`|Refresh the tagfile|
