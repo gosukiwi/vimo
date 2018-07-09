@@ -41,6 +41,8 @@ nnoremap <leader>ts :call RefreshTagfile()<CR>:tag /
 nnoremap <leader>tt "tyiw:call GoToTag()<CR>
 ":mapping Go to tag definition
 nnoremap <leader>tg "tyiw:call GoToTag()<CR>
+":mapping Go to tag definition
+vnoremap <leader>tg "ty:call GoToTag()<CR>
 ":mapping Go back to previous tag definition
 nnoremap <leader>tb <C-t>
 ":mapping List all tags
