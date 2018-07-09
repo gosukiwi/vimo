@@ -9,5 +9,7 @@ Plug 'kana/vim-textobj-user' | Plug 'whatyouhide/vim-textobj-xmlattr'
 Plug 'hail2u/vim-css3-syntax'
 ":setting ES6 Syntax
 Plug 'othree/yajs.vim'
+":setting Elixir Syntax
+Plug 'elixir-editors/vim-elixir'
 
 " vim:ft=vim
