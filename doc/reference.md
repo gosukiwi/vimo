@@ -669,17 +669,16 @@ Writing HTML by hand is a pain, Emmet makes it less-awful
 Plug 'mattn/emmet-vim'
 ```
 
-Do not set up Emmet on all filetypes, only on HTML, CSS and PHP
+Do not set up Emmet on all filetypes, only on HTML, CSS and PHP let g:user_emmet_install_global = 0 autocmd FileType html,css,php EmmetInstall
 
 ```vim
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,php EmmetInstall
+
 ```
 
-Use `<C-q>,` to trigger it
+Use `<C-q>,` to trigger it let g:user_emmet_leader_key = '<C-q>'
 
 ```vim
-let g:user_emmet_leader_key = '<C-q>'
+
 ```
 
 # Etc
