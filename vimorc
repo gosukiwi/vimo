@@ -19,6 +19,7 @@ let g:vimo#layers#vinegar#disabled   = 0
 let g:vimo#layers#rails#disabled     = 0
 let g:vimo#layers#webdev#disabled    = 0
 let g:vimo#layers#zenmode#disabled   = 0
+let g:vimo#layers#vimtest#disabled   = 0
 
 " [ DO NOT MODIFY BELOW THIS LINE ] ------------------------------------------
 " Override layer configuration so it doesn't mess up when updating vimo

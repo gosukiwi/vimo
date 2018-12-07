@@ -1,0 +1,25 @@
+" [vim-test]
+" Awesome way to run tests
+
+if(exists('g:vimo#layers#vimtest#disabled') && g:vimo#layers#vimtest#disabled)
+  finish
+endif
+
+":setting vim-test
+Plug 'janko-m/vim-test'
+
+":mapping Run test nearest to the cursor
+nmap <silent> <leader>Tt :TestNearest<CR>
+":mapping Run test nearest to the cursor
+nmap <silent> <leader>Tn :TestNearest<CR>
+":mapping Run all tests in current file
+nmap <silent> <leader>Tf :TestFile<CR>
+":mapping Run the whole test suite
+nmap <silent> <leader>Ts :TestSuite<CR>
+":mapping Run the last test
+nmap <silent> <leader>Tl :TestLast<CR>
+":mapping Visit the last file from which you run the tests, useful for
+" toggling buffers
+nmap <silent> <leader>Tv :TestVisit<CR>
+
+" vim:ft=vim
