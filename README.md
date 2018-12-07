@@ -38,6 +38,7 @@ Check out [Quistart Guide](doc/quick-start-guide.md) to get started!
     OTHER
     |-> Coherent bindings
     |-> Great documentation
+    |-> Integrated test runner
     |-> Zen-mode (try it out!)
 
 # Quickstart Guide
