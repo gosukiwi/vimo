@@ -800,6 +800,51 @@ Use Nova theme
 Plug 'trevordmiller/nova-vim'
 ```
 
+# vim-test
+Awesome way to run tests
+
+vim-test
+
+```vim
+Plug 'janko-m/vim-test'
+```
+
+Run test nearest to the cursor
+
+```vim
+nmap <silent> <leader>Tt :TestNearest<CR>
+```
+
+Run test nearest to the cursor
+
+```vim
+nmap <silent> <leader>Tn :TestNearest<CR>
+```
+
+Run all tests in current file
+
+```vim
+nmap <silent> <leader>Tf :TestFile<CR>
+```
+
+Run the whole test suite
+
+```vim
+nmap <silent> <leader>Ts :TestSuite<CR>
+```
+
+Run the last test
+
+```vim
+nmap <silent> <leader>Tl :TestLast<CR>
+```
+
+Visit the last file from which you run the tests, useful for toggling buffers
+
+```vim
+nmap <silent> <leader>Tv :TestVisit<CR>
+```
+
 # VINEGAR
 Make Vim's default netrw easy to use.
 
@@ -887,7 +932,7 @@ These settings are specific for the Ruby filetype.
 Add debugging line (binding.pry)
 
 ```vim
-nnoremap <leader>rd obinding.pry<esc>
+nnoremap <leader>rd orequire "pry"<cr>binding.pry<esc>
 ```
 
 Go to next debugging line (binding.pry)
@@ -957,6 +1002,12 @@ nnoremap <leader>rD /binding.pry<cr>
 |`<C-e>`|`INSERT`|Go to the end of the line|
 |`<C-h>`|`INSERT`|Go to the beginning of the line|
 |`<C-b>`|`INSERT`|Go to the beginning of the line|
+|`<leader>Tt`|`NORMAL`|Run test nearest to the cursor|
+|`<leader>Tn`|`NORMAL`|Run test nearest to the cursor|
+|`<leader>Tf`|`NORMAL`|Run all tests in current file|
+|`<leader>Ts`|`NORMAL`|Run the whole test suite|
+|`<leader>Tl`|`NORMAL`|Run the last test|
+|`<leader>Tv`|`NORMAL`|Visit the last file from which you run the tests, useful for toggling buffers|
 |`<leader>fb`|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|Open file browser, use `I` to see help|
 |`<leader>z`|`NORMAL`|Toggle zen-mode|
 |`<leader>rd`|`NORMAL`|Add debugging line (binding.pry)|
