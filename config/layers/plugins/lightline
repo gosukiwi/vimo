@@ -12,12 +12,14 @@ Plug 'itchyny/lightline.vim'
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'active': {
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
+      \   'right': [ [ 'lineinfo' ], [ 'percent' ],
       \              [ 'linter_warnings', 'linter_errors', 'linter_ok' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \              [ 'fugitive', 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
-      \ 'component_expand': {
+      \ 'component': {
+      \   'fugitive': '%{FugitiveStatusline()}'
+      \ },
+      \ 'component_function': {
       \   'linter_warnings': 'LightlineLinterWarnings',
       \   'linter_errors': 'LightlineLinterErrors',
       \   'linter_ok': 'LightlineLinterOK'
