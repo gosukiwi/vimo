@@ -9,7 +9,7 @@ Plug 'machakann/vim-sandwich'
 Plug 'jiangmiao/auto-pairs'
 ":setting Similar to Autopairs but works with `end` (eg: Ruby, Vimscript).
 Plug 'tpope/vim-endwise'
-":setting Enhance Git
+":setting Greatly enhance the git experience
 Plug 'tpope/vim-fugitive'
 
 " vim:ft=vim

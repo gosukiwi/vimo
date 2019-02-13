@@ -393,7 +393,15 @@ set lazyredraw
 ```
 
 # Terminal / Console
-Settings related to the terminal. Use the `c` namespace for now, because `t` is reserved for Tags.
+Settings related to the terminal/console.
+
+Aliases are diabled in non-interactive shells. So by default, Vim can't access your defined aliases. But using an interactive shell in Vim is troublesome. We can specify a custom shell file to be loaded here and enable aliases there as such:  ``` #!/bin/bash shopt -s expand_aliases alias la='ls -la' ```  For more info on this, check out: https://stackoverflow.com/a/19819036  __NOTE__: If you are using `zsh`, then simply put the aliases in `~/.zshenv` instead.
+
+```vim
+if !empty(glob("~/.vimo_bashrc"))
+  let $BASH_ENV = "~/.vimo_bashrc"
+endif
+```
 
 Open a new terminal in a vertical split
 
@@ -708,7 +716,7 @@ Similar to Autopairs but works with `end` (eg: Ruby, Vimscript).
 Plug 'tpope/vim-endwise'
 ```
 
-Enhance Git
+Greatly enhance the git experience
 
 ```vim
 Plug 'tpope/vim-fugitive'

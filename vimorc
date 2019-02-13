@@ -1,5 +1,5 @@
 " [ Vimo ] -------------------------------------------------------------------
-"  This is the Vimo configuration file.
+" This is the Vimo configuration file.
 "
 "  DEPENDENCIES:
 "  Run `bin/doctor` to check your system.
@@ -7,10 +7,11 @@
 " Enter the new millenia
 set nocompatible
 
-" use the SPACEBAR as mapleader
+" Use the SPACEBAR as mapleader
 let mapleader = " "
 
-" Here you can enable/disable optional layers individually
+" These are all the layers in Vimo, you can copy/paste these into your
+" `.vimoconfig` file and cherry-pick there which ones you want to enable.
 let g:vimo#layers#ctrlp#disabled     = 0
 let g:vimo#layers#ale#disabled       = 0
 let g:vimo#layers#gitignore#disabled = 0
@@ -21,7 +22,6 @@ let g:vimo#layers#webdev#disabled    = 0
 let g:vimo#layers#zenmode#disabled   = 0
 let g:vimo#layers#vimtest#disabled   = 0
 
-" [ DO NOT MODIFY BELOW THIS LINE ] ------------------------------------------
 " Override layer configuration so it doesn't mess up when updating vimo
 if !empty(glob("~/.vimoconfig"))
   execute 'source ~/.vimoconfig'
