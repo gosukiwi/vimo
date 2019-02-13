@@ -36,25 +36,25 @@ function GoToTag()
 endfunction
 
 ":mapping Search for a tag
-nnoremap <leader>ts :call RefreshTagfile()<CR>:tag /
+nnoremap <leader>Ts :call RefreshTagfile()<CR>:tag /
 ":mapping Go to tag definition
-nnoremap <leader>tt "tyiw:call GoToTag()<CR>
+nnoremap <leader>Tt "tyiw:call GoToTag()<CR>
 ":mapping Go to tag definition
-nnoremap <leader>tg "tyiw:call GoToTag()<CR>
+nnoremap <leader>Tg "tyiw:call GoToTag()<CR>
 ":mapping Go to tag definition
-vnoremap <leader>tg "ty:call GoToTag()<CR>
+vnoremap <leader>Tg "ty:call GoToTag()<CR>
 ":mapping Go back to previous tag definition
-nnoremap <leader>tb <C-t>
+nnoremap <leader>Tb <C-t>
 ":mapping List all tags
-nnoremap <leader>tl :ts<CR>
+nnoremap <leader>Tl :ts<CR>
 ":mapping Refresh the tagfile
-nnoremap <leader>tr :call RefreshTagfile()<CR>
+nnoremap <leader>Tr :call RefreshTagfile()<CR>
 ":mapping Go to next tag
-nnoremap <leader>tn :tnext<CR>
+nnoremap <leader>Tn :tnext<CR>
 ":mapping Go to previous tag
-nnoremap <leader>tp :tp<CR>
+nnoremap <leader>Tp :tp<CR>
 ":mapping Go to previous tag
-nnoremap <leader>tN :tN<CR>
+nnoremap <leader>TN :tN<CR>
 
 ":setting
 " Use `.tags` as the name of the tagfile so it's hidden by default.
