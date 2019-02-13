@@ -138,61 +138,61 @@ see `:help tjump` to know how this works NOTE: The register "t" is being used in
 Search for a tag
 
 ```vim
-nnoremap <leader>ts :call RefreshTagfile()<CR>:tag /
+nnoremap <leader>Ts :call RefreshTagfile()<CR>:tag /
 ```
 
 Go to tag definition
 
 ```vim
-nnoremap <leader>tt "tyiw:call GoToTag()<CR>
+nnoremap <leader>Tt "tyiw:call GoToTag()<CR>
 ```
 
 Go to tag definition
 
 ```vim
-nnoremap <leader>tg "tyiw:call GoToTag()<CR>
+nnoremap <leader>Tg "tyiw:call GoToTag()<CR>
 ```
 
 Go to tag definition
 
 ```vim
-vnoremap <leader>tg "ty:call GoToTag()<CR>
+vnoremap <leader>Tg "ty:call GoToTag()<CR>
 ```
 
 Go back to previous tag definition
 
 ```vim
-nnoremap <leader>tb <C-t>
+nnoremap <leader>Tb <C-t>
 ```
 
 List all tags
 
 ```vim
-nnoremap <leader>tl :ts<CR>
+nnoremap <leader>Tl :ts<CR>
 ```
 
 Refresh the tagfile
 
 ```vim
-nnoremap <leader>tr :call RefreshTagfile()<CR>
+nnoremap <leader>Tr :call RefreshTagfile()<CR>
 ```
 
 Go to next tag
 
 ```vim
-nnoremap <leader>tn :tnext<CR>
+nnoremap <leader>Tn :tnext<CR>
 ```
 
 Go to previous tag
 
 ```vim
-nnoremap <leader>tp :tp<CR>
+nnoremap <leader>Tp :tp<CR>
 ```
 
 Go to previous tag
 
 ```vim
-nnoremap <leader>tN :tN<CR>
+nnoremap <leader>TN :tN<CR>
 ```
 
 Use `.tags` as the name of the tagfile so it's hidden by default.  Because of `;` Vim will also recurse upwards when searching for the tagfile, so you can open deeply nested files and Vim will look up for a corresponding tagfile.
@@ -708,6 +708,12 @@ Similar to Autopairs but works with `end` (eg: Ruby, Vimscript).
 Plug 'tpope/vim-endwise'
 ```
 
+Enhance Git
+
+```vim
+Plug 'tpope/vim-fugitive'
+```
+
 # gitignore
 Add entries from gitignore into `wildignore`
 
@@ -738,12 +744,14 @@ Lightline display settings
 let g:lightline = {
       \ 'colorscheme': 'one',
       \ 'active': {
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
+      \   'right': [ [ 'lineinfo' ], [ 'percent' ],
       \              [ 'linter_warnings', 'linter_errors', 'linter_ok' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \              [ 'fugitive', 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
-      \ 'component_expand': {
+      \ 'component': {
+      \   'fugitive': '%{FugitiveStatusline()}'
+      \ },
+      \ 'component_function': {
       \   'linter_warnings': 'LightlineLinterWarnings',
       \   'linter_errors': 'LightlineLinterErrors',
       \   'linter_ok': 'LightlineLinterOK'
@@ -812,37 +820,37 @@ Plug 'janko-m/vim-test'
 Run test nearest to the cursor
 
 ```vim
-nmap <silent> <leader>Tt :TestNearest<CR>
+nmap <silent> <leader>tt :TestNearest<CR>
 ```
 
 Run test nearest to the cursor
 
 ```vim
-nmap <silent> <leader>Tn :TestNearest<CR>
+nmap <silent> <leader>tn :TestNearest<CR>
 ```
 
 Run all tests in current file
 
 ```vim
-nmap <silent> <leader>Tf :TestFile<CR>
+nmap <silent> <leader>tf :TestFile<CR>
 ```
 
 Run the whole test suite
 
 ```vim
-nmap <silent> <leader>Ts :TestSuite<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
 ```
 
 Run the last test
 
 ```vim
-nmap <silent> <leader>Tl :TestLast<CR>
+nmap <silent> <leader>tl :TestLast<CR>
 ```
 
 Visit the last file from which you run the tests, useful for toggling buffers
 
 ```vim
-nmap <silent> <leader>Tv :TestVisit<CR>
+nmap <silent> <leader>tv :TestVisit<CR>
 ```
 
 # VINEGAR
@@ -956,16 +964,16 @@ nnoremap <leader>rD /binding.pry<cr>
 |`<C-j>`|`INSERT`|Move the line down|
 |`<C-k>`|`INSERT`|Move the line up|
 |`Q`|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|Disable Ex mode, use Q for formatting|
-|`<leader>ts`|`NORMAL`|Search for a tag|
-|`<leader>tt`|`NORMAL`|Go to tag definition|
-|`<leader>tg`|`NORMAL`|Go to tag definition|
-|`<leader>tg`|`VISUAL`, `SELECT`|Go to tag definition|
-|`<leader>tb`|`NORMAL`|Go back to previous tag definition|
-|`<leader>tl`|`NORMAL`|List all tags|
-|`<leader>tr`|`NORMAL`|Refresh the tagfile|
-|`<leader>tn`|`NORMAL`|Go to next tag|
-|`<leader>tp`|`NORMAL`|Go to previous tag|
-|`<leader>tN`|`NORMAL`|Go to previous tag|
+|`<leader>Ts`|`NORMAL`|Search for a tag|
+|`<leader>Tt`|`NORMAL`|Go to tag definition|
+|`<leader>Tg`|`NORMAL`|Go to tag definition|
+|`<leader>Tg`|`VISUAL`, `SELECT`|Go to tag definition|
+|`<leader>Tb`|`NORMAL`|Go back to previous tag definition|
+|`<leader>Tl`|`NORMAL`|List all tags|
+|`<leader>Tr`|`NORMAL`|Refresh the tagfile|
+|`<leader>Tn`|`NORMAL`|Go to next tag|
+|`<leader>Tp`|`NORMAL`|Go to previous tag|
+|`<leader>TN`|`NORMAL`|Go to previous tag|
 |`<leader>fr`|`NORMAL`|Rename current file|
 |`<leader>fd`|`NORMAL`|Delete current file|
 |`<C-s>`|`NORMAL`|Save current file|
@@ -1002,12 +1010,12 @@ nnoremap <leader>rD /binding.pry<cr>
 |`<C-e>`|`INSERT`|Go to the end of the line|
 |`<C-h>`|`INSERT`|Go to the beginning of the line|
 |`<C-b>`|`INSERT`|Go to the beginning of the line|
-|`<leader>Tt`|`NORMAL`|Run test nearest to the cursor|
-|`<leader>Tn`|`NORMAL`|Run test nearest to the cursor|
-|`<leader>Tf`|`NORMAL`|Run all tests in current file|
-|`<leader>Ts`|`NORMAL`|Run the whole test suite|
-|`<leader>Tl`|`NORMAL`|Run the last test|
-|`<leader>Tv`|`NORMAL`|Visit the last file from which you run the tests, useful for toggling buffers|
+|`<leader>tt`|`NORMAL`|Run test nearest to the cursor|
+|`<leader>tn`|`NORMAL`|Run test nearest to the cursor|
+|`<leader>tf`|`NORMAL`|Run all tests in current file|
+|`<leader>ts`|`NORMAL`|Run the whole test suite|
+|`<leader>tl`|`NORMAL`|Run the last test|
+|`<leader>tv`|`NORMAL`|Visit the last file from which you run the tests, useful for toggling buffers|
 |`<leader>fb`|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|Open file browser, use `I` to see help|
 |`<leader>z`|`NORMAL`|Toggle zen-mode|
 |`<leader>rd`|`NORMAL`|Add debugging line (binding.pry)|
