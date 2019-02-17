@@ -1,42 +1,21 @@
 " [ TAGS ]
-" Easy and async `ctags' with Vim!
-" This is not perfect but it "just works".
+" Forget about managing the tagfile.
 
-let g:vimo_ctags_loaded_count = 0
-let g:vimo_ctags_pending_goto = 0
+if(exists('g:vimo#layers#gutentags#disabled') && g:vimo#layers#gutentags#disabled)
+  finish
+endif
 
-" see `:help tjump` to know how this works
+" See `:help tjump` to know how this works
 " NOTE: The register "t" is being used in the keybinding
-function GoToTagOrOpenTagMatchlist()
+function GoToTag()
   execute "tjump " . @t
 endfunction
 
-function RefreshTagfile()
-  call job_start("ctags -f .tags -R .", { 'close_cb': 'OnReloadCTagsDone' })
-endfunction
-
-function OnReloadCTagsDone(_channel)
-  let g:vimo_ctags_loaded_count += 1
-  echo "Tags refreshed"
-
-  if g:vimo_ctags_pending_goto == 1
-    let g:vimo_ctags_pending_goto = 0
-    call GoToTagOrOpenTagMatchlist()
-  endif
-endfunction
-
-function GoToTag()
-  if g:vimo_ctags_loaded_count == 0
-    let g:vimo_ctags_pending_goto = 1
-    echo "Go to tag (refreshing tagfile)..."
-    call RefreshTagfile()
-  else
-    call GoToTagOrOpenTagMatchlist()
-  endif
-endfunction
+":setting Manage tag files for us automagically
+Plug 'ludovicchabant/vim-gutentags'              
 
 ":mapping Search for a tag
-nnoremap <leader>Ts :call RefreshTagfile()<CR>:tag /
+nnoremap <leader>Ts :tag /
 ":mapping Go to tag definition
 nnoremap <leader>Tt "tyiw:call GoToTag()<CR>
 ":mapping Go to tag definition
@@ -48,7 +27,7 @@ nnoremap <leader>Tb <C-t>
 ":mapping List all tags
 nnoremap <leader>Tl :ts<CR>
 ":mapping Refresh the tagfile
-nnoremap <leader>Tr :call RefreshTagfile()<CR>
+nnoremap <leader>Tr :GutentagsUpdate<CR>
 ":mapping Go to next tag
 nnoremap <leader>Tn :tnext<CR>
 ":mapping Go to previous tag
@@ -62,7 +41,6 @@ nnoremap <leader>TN :tN<CR>
 " Because of `;` Vim will also recurse upwards when searching for the tagfile,
 " so you can open deeply nested files and Vim will look up for a corresponding
 " tagfile.
-"
 set tags=./.tags;,./tags;
 
 " vim:ft=vim
