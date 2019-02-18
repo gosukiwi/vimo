@@ -130,77 +130,6 @@ Disable Ex mode, use Q for formatting
 map Q gq
 ```
 
-# TAGS
-Easy and async `ctags' with Vim! This is not perfect but it "just works".
-
-see `:help tjump` to know how this works NOTE: The register "t" is being used in the keybinding
-
-Search for a tag
-
-```vim
-nnoremap <leader>Ts :call RefreshTagfile()<CR>:tag /
-```
-
-Go to tag definition
-
-```vim
-nnoremap <leader>Tt "tyiw:call GoToTag()<CR>
-```
-
-Go to tag definition
-
-```vim
-nnoremap <leader>Tg "tyiw:call GoToTag()<CR>
-```
-
-Go to tag definition
-
-```vim
-vnoremap <leader>Tg "ty:call GoToTag()<CR>
-```
-
-Go back to previous tag definition
-
-```vim
-nnoremap <leader>Tb <C-t>
-```
-
-List all tags
-
-```vim
-nnoremap <leader>Tl :ts<CR>
-```
-
-Refresh the tagfile
-
-```vim
-nnoremap <leader>Tr :call RefreshTagfile()<CR>
-```
-
-Go to next tag
-
-```vim
-nnoremap <leader>Tn :tnext<CR>
-```
-
-Go to previous tag
-
-```vim
-nnoremap <leader>Tp :tp<CR>
-```
-
-Go to previous tag
-
-```vim
-nnoremap <leader>TN :tN<CR>
-```
-
-Use `.tags` as the name of the tagfile so it's hidden by default.  Because of `;` Vim will also recurse upwards when searching for the tagfile, so you can open deeply nested files and Vim will look up for a corresponding tagfile.
-
-```vim
-set tags=./.tags;,./tags;
-```
-
 # Display
 These settings customize the way Vim displays stuff
 
@@ -737,6 +666,89 @@ if has("autocmd") && filereadable(".gitignore")
 endif
 ```
 
+# TAGS
+Forget about managing the tagfile.
+
+Use `gutentags` to manage tag files for us automagically
+
+```vim
+Plug 'ludovicchabant/vim-gutentags'
+```
+
+Use vimo's temp directory to avoid polluting git projects.
+
+```vim
+let g:gutentags_cache_dir = $HOME . '/.vimo/tmp/tagfiles'
+```
+
+See `:help tjump` to know how this works NOTE: The register "t" is being used in the keybinding
+
+```vim
+function GoToTag()
+  execute "tjump " . @t
+endfunction
+```
+
+Search for a tag
+
+```vim
+nnoremap <leader>Ts :tag /
+```
+
+Go to tag definition
+
+```vim
+nnoremap <leader>Tt "tyiw:call GoToTag()<CR>
+```
+
+Go to tag definition
+
+```vim
+nnoremap <leader>Tg "tyiw:call GoToTag()<CR>
+```
+
+Go to tag definition
+
+```vim
+vnoremap <leader>Tg "ty:call GoToTag()<CR>
+```
+
+Go back to previous tag definition
+
+```vim
+nnoremap <leader>Tb <C-t>
+```
+
+List all tags
+
+```vim
+nnoremap <leader>Tl :ts<CR>
+```
+
+Refresh the tagfile
+
+```vim
+nnoremap <leader>Tr :GutentagsUpdate<CR>
+```
+
+Go to next tag
+
+```vim
+nnoremap <leader>Tn :tnext<CR>
+```
+
+Go to previous tag
+
+```vim
+nnoremap <leader>Tp :tp<CR>
+```
+
+Go to previous tag
+
+```vim
+nnoremap <leader>TN :tN<CR>
+```
+
 # Lightline
 Lightweight and pure vimscript status bar.
 
@@ -972,16 +984,6 @@ nnoremap <leader>rD /binding.pry<cr>
 |`<C-j>`|`INSERT`|Move the line down|
 |`<C-k>`|`INSERT`|Move the line up|
 |`Q`|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|Disable Ex mode, use Q for formatting|
-|`<leader>Ts`|`NORMAL`|Search for a tag|
-|`<leader>Tt`|`NORMAL`|Go to tag definition|
-|`<leader>Tg`|`NORMAL`|Go to tag definition|
-|`<leader>Tg`|`VISUAL`, `SELECT`|Go to tag definition|
-|`<leader>Tb`|`NORMAL`|Go back to previous tag definition|
-|`<leader>Tl`|`NORMAL`|List all tags|
-|`<leader>Tr`|`NORMAL`|Refresh the tagfile|
-|`<leader>Tn`|`NORMAL`|Go to next tag|
-|`<leader>Tp`|`NORMAL`|Go to previous tag|
-|`<leader>TN`|`NORMAL`|Go to previous tag|
 |`<leader>fr`|`NORMAL`|Rename current file|
 |`<leader>fd`|`NORMAL`|Delete current file|
 |`<C-s>`|`NORMAL`|Save current file|
@@ -1018,6 +1020,16 @@ nnoremap <leader>rD /binding.pry<cr>
 |`<C-e>`|`INSERT`|Go to the end of the line|
 |`<C-h>`|`INSERT`|Go to the beginning of the line|
 |`<C-b>`|`INSERT`|Go to the beginning of the line|
+|`<leader>Ts`|`NORMAL`|Search for a tag|
+|`<leader>Tt`|`NORMAL`|Go to tag definition|
+|`<leader>Tg`|`NORMAL`|Go to tag definition|
+|`<leader>Tg`|`VISUAL`, `SELECT`|Go to tag definition|
+|`<leader>Tb`|`NORMAL`|Go back to previous tag definition|
+|`<leader>Tl`|`NORMAL`|List all tags|
+|`<leader>Tr`|`NORMAL`|Refresh the tagfile|
+|`<leader>Tn`|`NORMAL`|Go to next tag|
+|`<leader>Tp`|`NORMAL`|Go to previous tag|
+|`<leader>TN`|`NORMAL`|Go to previous tag|
 |`<leader>tt`|`NORMAL`|Run test nearest to the cursor|
 |`<leader>tn`|`NORMAL`|Run test nearest to the cursor|
 |`<leader>tf`|`NORMAL`|Run all tests in current file|

@@ -5,14 +5,18 @@ if(exists('g:vimo#layers#gutentags#disabled') && g:vimo#layers#gutentags#disable
   finish
 endif
 
-" See `:help tjump` to know how this works
+":setting Use `gutentags` to manage tag files for us automagically
+Plug 'ludovicchabant/vim-gutentags'
+
+":setting
+" Use vimo's temp directory to avoid polluting git projects.
+let g:gutentags_cache_dir = $HOME . '/.vimo/tmp/tagfiles'
+
+":setting:3 See `:help tjump` to know how this works
 " NOTE: The register "t" is being used in the keybinding
 function GoToTag()
   execute "tjump " . @t
 endfunction
-
-":setting Manage tag files for us automagically
-Plug 'ludovicchabant/vim-gutentags'              
 
 ":mapping Search for a tag
 nnoremap <leader>Ts :tag /
@@ -34,13 +38,5 @@ nnoremap <leader>Tn :tnext<CR>
 nnoremap <leader>Tp :tp<CR>
 ":mapping Go to previous tag
 nnoremap <leader>TN :tN<CR>
-
-":setting
-" Use `.tags` as the name of the tagfile so it's hidden by default.
-"
-" Because of `;` Vim will also recurse upwards when searching for the tagfile,
-" so you can open deeply nested files and Vim will look up for a corresponding
-" tagfile.
-set tags=./.tags;,./tags;
 
 " vim:ft=vim
