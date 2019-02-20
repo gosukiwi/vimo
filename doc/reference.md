@@ -692,61 +692,61 @@ endfunction
 Search for a tag
 
 ```vim
-nnoremap <leader>Ts :tag /
+nnoremap <leader>ts :tag /
 ```
 
 Go to tag definition
 
 ```vim
-nnoremap <leader>Tt "tyiw:call GoToTag()<CR>
+nnoremap <leader>tt "tyiw:call GoToTag()<CR>
 ```
 
 Go to tag definition
 
 ```vim
-nnoremap <leader>Tg "tyiw:call GoToTag()<CR>
+nnoremap <leader>tg "tyiw:call GoToTag()<CR>
 ```
 
 Go to tag definition
 
 ```vim
-vnoremap <leader>Tg "ty:call GoToTag()<CR>
+vnoremap <leader>tg "ty:call GoToTag()<CR>
 ```
 
 Go back to previous tag definition
 
 ```vim
-nnoremap <leader>Tb <C-t>
+nnoremap <leader>tb <C-t>
 ```
 
 List all tags
 
 ```vim
-nnoremap <leader>Tl :ts<CR>
+nnoremap <leader>tl :ts<CR>
 ```
 
 Refresh the tagfile
 
 ```vim
-nnoremap <leader>Tr :GutentagsUpdate<CR>
+nnoremap <leader>tr :GutentagsUpdate<CR>
 ```
 
 Go to next tag
 
 ```vim
-nnoremap <leader>Tn :tnext<CR>
+nnoremap <leader>tn :tnext<CR>
 ```
 
 Go to previous tag
 
 ```vim
-nnoremap <leader>Tp :tp<CR>
+nnoremap <leader>tp :tp<CR>
 ```
 
 Go to previous tag
 
 ```vim
-nnoremap <leader>TN :tN<CR>
+nnoremap <leader>tN :tN<CR>
 ```
 
 # Lightline
@@ -840,37 +840,37 @@ Plug 'janko-m/vim-test'
 Run test nearest to the cursor
 
 ```vim
-nmap <silent> <leader>tt :TestNearest<CR>
+nmap <silent> <leader>Tt :TestNearest<CR>
 ```
 
 Run test nearest to the cursor
 
 ```vim
-nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>Tn :TestNearest<CR>
 ```
 
 Run all tests in current file
 
 ```vim
-nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>Tf :TestFile<CR>
 ```
 
 Run the whole test suite
 
 ```vim
-nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>Ts :TestSuite<CR>
 ```
 
 Run the last test
 
 ```vim
-nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>Tl :TestLast<CR>
 ```
 
 Visit the last file from which you run the tests, useful for toggling buffers
 
 ```vim
-nmap <silent> <leader>tv :TestVisit<CR>
+nmap <silent> <leader>Tv :TestVisit<CR>
 ```
 
 # VINEGAR
@@ -1020,22 +1020,22 @@ nnoremap <leader>rD /binding.pry<cr>
 |`<C-e>`|`INSERT`|Go to the end of the line|
 |`<C-h>`|`INSERT`|Go to the beginning of the line|
 |`<C-b>`|`INSERT`|Go to the beginning of the line|
-|`<leader>Ts`|`NORMAL`|Search for a tag|
-|`<leader>Tt`|`NORMAL`|Go to tag definition|
-|`<leader>Tg`|`NORMAL`|Go to tag definition|
-|`<leader>Tg`|`VISUAL`, `SELECT`|Go to tag definition|
-|`<leader>Tb`|`NORMAL`|Go back to previous tag definition|
-|`<leader>Tl`|`NORMAL`|List all tags|
-|`<leader>Tr`|`NORMAL`|Refresh the tagfile|
-|`<leader>Tn`|`NORMAL`|Go to next tag|
-|`<leader>Tp`|`NORMAL`|Go to previous tag|
-|`<leader>TN`|`NORMAL`|Go to previous tag|
-|`<leader>tt`|`NORMAL`|Run test nearest to the cursor|
-|`<leader>tn`|`NORMAL`|Run test nearest to the cursor|
-|`<leader>tf`|`NORMAL`|Run all tests in current file|
-|`<leader>ts`|`NORMAL`|Run the whole test suite|
-|`<leader>tl`|`NORMAL`|Run the last test|
-|`<leader>tv`|`NORMAL`|Visit the last file from which you run the tests, useful for toggling buffers|
+|`<leader>ts`|`NORMAL`|Search for a tag|
+|`<leader>tt`|`NORMAL`|Go to tag definition|
+|`<leader>tg`|`NORMAL`|Go to tag definition|
+|`<leader>tg`|`VISUAL`, `SELECT`|Go to tag definition|
+|`<leader>tb`|`NORMAL`|Go back to previous tag definition|
+|`<leader>tl`|`NORMAL`|List all tags|
+|`<leader>tr`|`NORMAL`|Refresh the tagfile|
+|`<leader>tn`|`NORMAL`|Go to next tag|
+|`<leader>tp`|`NORMAL`|Go to previous tag|
+|`<leader>tN`|`NORMAL`|Go to previous tag|
+|`<leader>Tt`|`NORMAL`|Run test nearest to the cursor|
+|`<leader>Tn`|`NORMAL`|Run test nearest to the cursor|
+|`<leader>Tf`|`NORMAL`|Run all tests in current file|
+|`<leader>Ts`|`NORMAL`|Run the whole test suite|
+|`<leader>Tl`|`NORMAL`|Run the last test|
+|`<leader>Tv`|`NORMAL`|Visit the last file from which you run the tests, useful for toggling buffers|
 |`<leader>fb`|`NORMAL`, `VISUAL`, `SELECT`, `OPERATOR-PENDING`|Open file browser, use `I` to see help|
 |`<leader>z`|`NORMAL`|Toggle zen-mode|
 |`<leader>rd`|`NORMAL`|Add debugging line (binding.pry)|

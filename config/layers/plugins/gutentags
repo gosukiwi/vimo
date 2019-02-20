@@ -19,24 +19,24 @@ function GoToTag()
 endfunction
 
 ":mapping Search for a tag
-nnoremap <leader>Ts :tag /
+nnoremap <leader>ts :tag /
 ":mapping Go to tag definition
-nnoremap <leader>Tt "tyiw:call GoToTag()<CR>
+nnoremap <leader>tt "tyiw:call GoToTag()<CR>
 ":mapping Go to tag definition
-nnoremap <leader>Tg "tyiw:call GoToTag()<CR>
+nnoremap <leader>tg "tyiw:call GoToTag()<CR>
 ":mapping Go to tag definition
-vnoremap <leader>Tg "ty:call GoToTag()<CR>
+vnoremap <leader>tg "ty:call GoToTag()<CR>
 ":mapping Go back to previous tag definition
-nnoremap <leader>Tb <C-t>
+nnoremap <leader>tb <C-t>
 ":mapping List all tags
-nnoremap <leader>Tl :ts<CR>
+nnoremap <leader>tl :ts<CR>
 ":mapping Refresh the tagfile
-nnoremap <leader>Tr :GutentagsUpdate<CR>
+nnoremap <leader>tr :GutentagsUpdate<CR>
 ":mapping Go to next tag
-nnoremap <leader>Tn :tnext<CR>
+nnoremap <leader>tn :tnext<CR>
 ":mapping Go to previous tag
-nnoremap <leader>Tp :tp<CR>
+nnoremap <leader>tp :tp<CR>
 ":mapping Go to previous tag
-nnoremap <leader>TN :tN<CR>
+nnoremap <leader>tN :tN<CR>
 
 " vim:ft=vim

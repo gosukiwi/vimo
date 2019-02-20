@@ -9,17 +9,17 @@ endif
 Plug 'janko-m/vim-test'
 
 ":mapping Run test nearest to the cursor
-nmap <silent> <leader>tt :TestNearest<CR>
+nmap <silent> <leader>Tt :TestNearest<CR>
 ":mapping Run test nearest to the cursor
-nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>Tn :TestNearest<CR>
 ":mapping Run all tests in current file
-nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>Tf :TestFile<CR>
 ":mapping Run the whole test suite
-nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>Ts :TestSuite<CR>
 ":mapping Run the last test
-nmap <silent> <leader>tl :TestLast<CR>
+nmap <silent> <leader>Tl :TestLast<CR>
 ":mapping Visit the last file from which you run the tests, useful for
 " toggling buffers
-nmap <silent> <leader>tv :TestVisit<CR>
+nmap <silent> <leader>Tv :TestVisit<CR>
 
 " vim:ft=vim
