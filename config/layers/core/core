@@ -13,6 +13,10 @@ set backspace=indent,eol,start
 let &runtimepath = "~/.vimo" . "," . &runtimepath
 filetype plugin indent on
 
+":setting The home directory for where bookmarks and history are saved (as
+" .netrwbook and .netrwhist). See `:help g:netrw_home` for more info.
+let g:netrw_home = $HOME . "/.vimo/tmp"
+
 ":setting Reload files changed outside vim
 set autoread
 

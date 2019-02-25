@@ -26,6 +26,18 @@ function LoadSession() abort
   execute "source " . name
 endfunction
 
+function DeleteSession() abort
+  call inputsave()
+  let name = input("Session name: ", "", "customlist,SessionLoadAutocomplete")
+  call inputrestore()
+
+  if name == ""
+    return
+  endif
+
+  call delete(name)
+endfunction
+
 function SessionLoadAutocomplete(ArgLead, _CmdLine, _CursorPos) abort
   let filename = split(a:ArgLead, "/")[-1]
   return globpath($HOME, ".vimo/tmp/sessions/" . filename . "*", 1, 1)
@@ -33,11 +45,9 @@ endfunction
 
 ":mapping Save a session
 noremap <leader>Ss :call SaveSession()<CR>
-":mapping Save a session
-noremap <leader>SS :call SaveSession()<CR>
 ":mapping Load a session
 noremap <leader>Sl :call LoadSession()<CR>
-":mapping Load a session
-noremap <leader>SL :call LoadSession()<CR>
+":mapping Delete a session
+noremap <leader>Sd :call DeleteSession()<CR>
 
 " vim:ft=vim
