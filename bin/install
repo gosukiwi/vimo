@@ -31,6 +31,12 @@ ln -s "$BASE_DIR/vimorc" ~/.vimrc
 ln -s "$BASE_DIR/config" ~/.vimo
 vim -c PlugInstall
 
+if ![[ -e "$BASE_DIR/tmp/sessions" ]];
+then
+  mkdir "$BASE_DIR/tmp/sessions"
+  echo "Creating sessions directory"
+fi
+
 echo ""
 echo "  Vimo has been installed. Happy Vimming!"
 echo ""
