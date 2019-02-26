@@ -26,5 +26,10 @@ nnoremap <leader>cc :vsplit<CR><C-w>l:term ++curwin<CR>
 nnoremap <leader>cv :vsplit<CR><C-w>l:term ++curwin<CR>
 ":mapping Open a new terminal in a horizontal split
 nnoremap <leader>ch :term<CR>
+":mapping Use `<esc><esc>` to enter normal mode in a terminal. We can't simply
+" use `<esc>` here because the up arrow inserts an `<esc>` as part of a key
+" sequence, so pressing up would trigger normal mode. More info:
+" https://github.com/vim/vim/issues/2716
+tnoremap <esc><esc> <C-w>N
 
 " vim:ft=vim
