@@ -30,4 +30,9 @@ inoremap <C-h> <Esc>I
 ":mapping Go to the beginning of the line
 inoremap <C-b> <Esc>I
 
+":setting Sometimes you forget to edit a file as `sudo`, and you have to close
+" it and open it again. This is a pain, the `:w!!` command-line map fixes this
+" by doing some UNIX magic
+cnoremap w!! w !sudo tee > /dev/null %
+
 " vim:ft=vim
