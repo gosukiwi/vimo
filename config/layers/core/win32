@@ -1,0 +1,19 @@
+" [Win32]
+" Settings for Windows only.
+"
+
+if !has('win32')
+  finish
+endif
+
+":setting:5 Hide GUI if running gVim
+if has('gui_running')
+  set guioptions-=m  " hide menu bar
+  set guioptions-=T  " hide toolbar
+  set guioptions-=r  " hide scrollbar
+endif
+
+":setting Use UNIX line-endings when creating new files
+set ffs=unix,dos
+
+" vim:ft=vim
