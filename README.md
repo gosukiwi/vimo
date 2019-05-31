@@ -90,12 +90,33 @@ you need to __manually uninstall if you use this setup__, which is pretty easy,
 just remove the `~/.vimo` and `/usr/local/bin/vimo` symlinks.
 
 # Vimo on Windows
-There is no current plan to support Windows, nevertheless, do not worry! You
-can use [WSL](http://wsl-guide.org/en/latest/http://wsl-guide.org/en/latest/)
-to run Ubuntu on Windows!
+To run Vimo on Windows, you won't be able to use the bash scripts in `bin/`,
+but you can do a manual installation.
 
-If you do go this route, make sure to use a good terminal. If you have no
-preference, I personally use
+Using PowerShell (__requires to run as admin to be able to create a symlink__):
+
+    PS> cd C:/Users/MyUser
+    PS> git clone https://github.com/gosukiwi/vimo.git vimfiles
+    PS> cd vimfiles
+    PS> New-Item -ItemType SymbolicLink -path . -name .\vimrc -value .\vimorc
+
+Then, install Vim-Plug with (also in PowerShell):
+
+    md ~\vimfiles\autoload
+    $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    (New-Object Net.WebClient).DownloadFile(
+      $uri,
+      $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath(
+        "~\vimfiles\autoload\plug.vim"
+      )
+    )
+
+## WSL
+If you use
+[WSL](http://wsl-guide.org/en/latest/http://wsl-guide.org/en/latest/), just follow 
+the UNIX instructions.
+
+Make sure to use a good terminal. If you have no preference, I personally use
 [wsl-terminal](https://github.com/goreliu/wsl-terminal) and it "just works".
 
 # Configuration Layers
