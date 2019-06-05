@@ -14,6 +14,7 @@ let mapleader = " "
 " `.vimoconfig` file and cherry-pick there which ones you want to enable.
 let g:vimo#layers#ale#disabled       = 0
 let g:vimo#layers#ctrlp#disabled     = 0
+let g:vimo#layers#gitgutter#disabled = 0
 let g:vimo#layers#gitignore#disabled = 0
 let g:vimo#layers#gutentags#disabled = 0
 let g:vimo#layers#lightline#disabled = 0
