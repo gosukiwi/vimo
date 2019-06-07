@@ -10,7 +10,9 @@ if(exists('g:vimo#layers#languageclient#disabled') && g:vimo#layers#languageclie
   finish
 endif
 
-":setting Default location for `solarpath`:
+":setting Default location for `solarpath`. If this doesn't work for you (eg,
+" you are using Windows) set the path in your `~/.vimoconfig` file by
+" overwriting this variable.
 if !exists("g:vimo#solargraph_path")
   let g:vimo#solargraph_path = 'solargraph'
 endif
