@@ -12,17 +12,18 @@ let mapleader = " "
 
 " These are all the layers in Vimo, you can copy/paste these into your
 " `.vimoconfig` file and cherry-pick there which ones you want to enable.
-let g:vimo#layers#ale#disabled       = 0
-let g:vimo#layers#ctrlp#disabled     = 0
-let g:vimo#layers#gitgutter#disabled = 0
-let g:vimo#layers#gitignore#disabled = 0
-let g:vimo#layers#gutentags#disabled = 0
-let g:vimo#layers#lightline#disabled = 0
-let g:vimo#layers#rails#disabled     = 0
-let g:vimo#layers#vimtest#disabled   = 0
-let g:vimo#layers#vinegar#disabled   = 0
-let g:vimo#layers#webdev#disabled    = 0
-let g:vimo#layers#zenmode#disabled   = 0
+let g:vimo#layers#ale#disabled            = 0
+let g:vimo#layers#ctrlp#disabled          = 0
+let g:vimo#layers#gitgutter#disabled      = 0
+let g:vimo#layers#gitignore#disabled      = 0
+let g:vimo#layers#gutentags#disabled      = 0
+let g:vimo#layers#languageclient#disabled = 0
+let g:vimo#layers#lightline#disabled      = 0
+let g:vimo#layers#rails#disabled          = 0
+let g:vimo#layers#vimtest#disabled        = 0
+let g:vimo#layers#vinegar#disabled        = 0
+let g:vimo#layers#webdev#disabled         = 0
+let g:vimo#layers#zenmode#disabled        = 0
 
 " Override layer configuration so it doesn't mess up when updating vimo
 if !empty(glob("~/.vimoconfig"))

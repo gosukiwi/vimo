@@ -1,6 +1,6 @@
 " [git-gutter]
 
-if(exists('g:vimo#layers#gitgutter#disabled') && g:vimo#layers#gitignore#disabled)
+if(exists('g:vimo#layers#gitgutter#disabled') && g:vimo#layers#gitgutter#disabled)
   finish
 endif
 
