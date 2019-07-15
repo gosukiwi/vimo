@@ -17,6 +17,10 @@ if !exists("g:vimo#solargraph_path")
   let g:vimo#solargraph_path = 'solargraph'
 endif
 
+if !exists("g:vimo#js_language_server_path")
+  let g:vimo#js_language_server_path = 'javascript-typescript-stdio'
+endif
+
 if has('win32')
   Plug 'autozimu/LanguageClient-neovim', {
       \ 'branch': 'next',
@@ -31,7 +35,10 @@ endif
 
 let g:LanguageClient_serverCommands = {
     \ 'ruby':       [g:vimo#solargraph_path, 'stdio'],
+    \ 'javascript': [g:vimo#js_language_server_path],
     \ }
+
+let g:LanguageClient_rootMarkers = ['.git']
 
 function LC_maps()
   if has_key(g:LanguageClient_serverCommands, &filetype)
