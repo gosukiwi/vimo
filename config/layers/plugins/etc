@@ -1,6 +1,8 @@
 " [Etc]
 " Plugins which require no special configuration
 
+":setting Fancy start page for Vim
+Plug 'mhinz/vim-startify'
 ":setting Highlights yanked text so it's easy to see
 Plug 'machakann/vim-highlightedyank'
 ":setting Sandwich, like surround but better

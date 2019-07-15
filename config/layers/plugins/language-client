@@ -4,53 +4,23 @@
 " * Smart rename
 " * Go to definition
 " * Get identifier info
-" * Etc, see https://github.com/autozimu/LanguageClient-neovim for more
+" * Etc, see https://github.com/neoclide/coc.nvim for more
 
 if(exists('g:vimo#layers#languageclient#disabled') && g:vimo#layers#languageclient#disabled)
   finish
 endif
 
-":setting Default location for `solarpath`. If this doesn't work for you (eg,
-" you are using Windows) set the path in your `~/.vimoconfig` file by
-" overwriting this variable.
-if !exists("g:vimo#solargraph_path")
-  let g:vimo#solargraph_path = 'solargraph'
-endif
+":setting Use `ncoc.vim`, intellisense for Vim
+" https://github.com/neoclide/coc.nvim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-if !exists("g:vimo#js_language_server_path")
-  let g:vimo#js_language_server_path = 'javascript-typescript-stdio'
-endif
-
-if has('win32')
-  Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'powershell -executionpolicy bypass -File install.ps1',
-      \ }
-else
-  Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
-endif
-
-let g:LanguageClient_serverCommands = {
-    \ 'ruby':       [g:vimo#solargraph_path, 'stdio'],
-    \ 'javascript': [g:vimo#js_language_server_path],
-    \ }
-
-let g:LanguageClient_rootMarkers = ['.git']
-
-function LC_maps()
-  if has_key(g:LanguageClient_serverCommands, &filetype)
-    ":mapping Documentation
-    nnoremap <silent> <leader>ld :call LanguageClient#textDocument_hover()<CR>
-    ":mapping Go to definition
-    nnoremap <silent> <leader>lg :call LanguageClient#textDocument_definition()<CR>
-    ":mapping Rename
-    nnoremap <silent> <leader>lr :call LanguageClient#textDocument_rename()<CR>
-  endif
-endfunction
-
-autocmd FileType * call LC_maps()
+":mapping Documentation
+nmap <silent> <leader>ld :call <SID>show_documentation()<CR>
+":mapping Go to definition
+nmap <silent> <leader>lg <Plug>(coc-definition)
+":mapping Rename
+nmap <silent> <leader>lr <Plug>(coc-rename)
+":mapping Find All References
+nmap <silent> <leader>lf <Plug>(coc-references)
 
 " vim:ft=vim
