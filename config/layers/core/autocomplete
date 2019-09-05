@@ -13,10 +13,4 @@ endfunction
 ":mapping Open autocomplete if typing something, otherwise, add a tab
 inoremap <expr> <tab> InsertTabWrapper()
 
-":mapping Use j to scroll down suggestions
-inoremap <expr> j ((pumvisible()) ? ("\<C-n>") : ("j"))
-
-":mapping Use k to scroll up suggestions
-inoremap <expr> k ((pumvisible()) ? ("\<C-p>") : ("k"))
-
 " vim:ft=vim
