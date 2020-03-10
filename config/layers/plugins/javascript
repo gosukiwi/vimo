@@ -1,0 +1,10 @@
+" [Rails]
+if(exists('g:vimo#layers#javascript#disabled') && g:vimo#layers#javascript#disabled)
+  finish
+endif
+
+" Modern JS syntax + JSX support
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+
+" vim:ft=vim
