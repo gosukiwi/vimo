@@ -1,0 +1,11 @@
+" [Markdown]
+if(exists('g:vimo#layers#markdown#disabled') && g:vimo#layers#markdown#disabled)
+  finish
+endif
+
+":setting Markdown Preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
+nmap <silent> <leader>mp <Plug>MarkdownPreview
+
+" vim:ft=vim
