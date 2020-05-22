@@ -111,6 +111,10 @@ Then, install Vim-Plug with (also in PowerShell):
       )
     )
 
+Then open Vim once and run `:PlugInstall`. You'll need to install `node` as well. You can do it with the new awesome WinGet:
+
+    PS> winget install node.js
+
 ## WSL
 If you use
 [WSL](http://wsl-guide.org/en/latest/http://wsl-guide.org/en/latest/), just follow 
